@@ -1,0 +1,86 @@
+\paragraph{Brunn-Minkowski ineq. ($ℝ^d$)}
+$A,b⊂ℝ^d$ measurable. $A+B=\{a+b:a∈A,,b∈B\}$. $λA=\{λa:a∈A\}$ ($λ>0$).
+
+Q.: Can $|A+B|$ be controlled in terms of $|A|,|B|$? No! There exist sets $A,B$ $|A|=|B|=0$ with $|A+B|>0$. Example $[0,1]\times[0,1]$. Another example $A=B=C⊂[0,1]$ Cantor set. Then $A+B=[0,2]$.
+
+Q.: Can $|A+B|^α\geq c_α(|A|^α+|B|^α)$ hold? (for some $α>0$ with $c_α<∞‚$ indep of $A,B$) Best possible $c_α=1$.
+
+What about $α$? Convex sets play a role. $A=$ convex, $B=λA$. $|B|=|λA|=λ^d|A|$. $|A+B|=|A+λA|=|(1+λ)A|=(1+λ)^d|A|$ because $A$ is convex.
+
+($λ_1A+λ_2A=(λ_1+λ_2)A$ iff $A$ is convex.)
+
+$|A+B|^α\geq |A|^α+|B|^α$ iff $(1+λ)^{dα}\geq 1+λ^{dα}$ $⇒α\geq\frac1d$.
+
+$(a+b)^γ\geq a^γ+b^γ∀a,b\geq 0,\ γ\geq 1$.
+
+Candidate inequality: \[|A+B|^{\frac1d}\geq|A|^{\frac1d}+|B|^{\frac1d}\](BM)
+
+$A,B$ measurable $\not\implies A+B$ measurable. Take $[0,1]\times\text{nonmeasurable}$.
+
+\begin{enumerate}
+	\item $A,B$ closed $⇒$ $A+B$ measurable
+	\item $A,B$ compact $⇒$ $A+B$ compact
+	\item $A,B$ open $⇒$ $A+B$ open
+\end{enumerate}
+\begin{theo} (BM) holds if $A,B,A+B$ measurable.
+\end{theo}
+\begin{enumerate}
+	\item $A,B$ rectangles with sidelengths $\{a_j\}_{j=1}^∞,\ \{b_j\}_{j=1}^∞$
+	\item $A,B$ unions of fifinely many rectangles with disjoint interiors.
+	\item $A,B$ open sets of finite measure
+	\item $A,B$ compact
+	\item $A,B,A+B$ measurable.
+\end{enumerate}
+\begin{proof}
+
+	\begin{enumerate}
+		\item (BM) becomes \[\prod_{j=1}^d(a_j+b_j)^{\frac1d}\geq\prod_{j=1}^da_j^{\frac1d}+\prod_{j=1}^db_j^{\frac1d}\]
+			$a_j\toλ_la_j,\ b_j\toλ_jb_j$. Both sides are multiplied by $(λ_1λ_2…λ_d)^{\frac1d}$: wglog can assume $a_j+b_j=1∀j$ (Choose $λ_j=a_j+b_j$)
+
+			AMGM:\[\prod_{j=1}^da_j^{\frac1d}\leq\frac1d\sum_{j_1}^da_j\]
+			\[\prod_{j=1}^db_j^{\frac1d}\leq\frac1d\sum_{j_1}^db_j\]
+			\[\prod a_j^{\frac1d}+\prod b_j^{\frac1d}\leq\frac1d\sum_{j=1}^d(a_j+b_j)=1\]
+		\item Induction on $n=$ numeber of rectangles in $A$ and $B$. Choose pair of disjoint rectangles $R_1,R_2$ in $A$. Can rotate s.t. $R_1$ and $R_2$ are separated by hyperplane $\{x_j=0\}$. $R_1$ lies in $A_+=A∩\{x_j\geq 0\},\ A_I=A∩\{x_j\leq 0\}$.
+
+			Rem.: Both $A_+,A_-$ contain at leas one less rectangle than $A$, $A=A_+⊂A_-$ and $A_B∩A_-$ has measure zero.
+
+			Now: translate $B$ s.t. $B_-$ and $B_+$ satisfy \[\frac{|B_\pm|}{|B|}=\frac{|A_\pm|}{|A|}\]
+			$(A_++B_+)∪(A_-+B_-)⊂A+B$ Number of rectangles in $A_+$ and $B_+$, number of rectangles in $A_-$ and $B_-$ is $<n$.
+
+			\begin{align*}
+				|A+B|&\geq|A_++B_-|+|A_-B+_-|\geq(|A_+|^{\frac1d}+|B_+|^{\frac1d})^d+(|A_-|^{\frac1d}+|B_-|^{\frac1d})^d\\
+				     &=(|A_+|(1+(\frac{|B_+|}{|A_+|})^{\frac1d})^d+|A_-|(1+(\frac{|B_-|}{|A_-|})^{\frac1d})^d=(|A_+|+|A_-|)(1+(\frac{|B|}{|A|})^{\frac1d})^d\\
+				     &=(|A|^{\frac1d}+|B|^{\frac1d})^d.
+			\end{align*}
+		\item Open sets of finite measure $A,B$. $∀ε>0∃A_ε,B_ε$ finet unions of parallel rectangles with disjoint interiors. $A_ε⊂A,B_α⊂B$, $|A|\leq|A_ε|+ε,\ |B|\leq|B_ε|+ε$.
+
+			$|A+B|\geq |A_ε+B_ε|\geq(|A_ε|^{\frac1d}+|B_ε|^{\frac1d})^d\geq((|A|-ε)^{\frac1d}+(|B|-ε)^{\frac1d})^d$. Let $ε→0^+$, done.
+		\item $A,B$ compact. Let $A^ε=\{x:d(x,A)<ε\}$. $A+B⊂A^ε+B^ε⊂(A+B)^{2ε}$
+		\item $A,B,A+B$ measurable: usi inner regularity of Lebesque measure.
+	\end{enumerate}
+\end{proof}
+
+\begin{rem} $A,B$ open sets of finite positive measure. Equality in (BM) iff $A,B$ convex and similar. $∃δ>0∃h∈ℝ^d:A=δB+h$ ($A$ convex iff $λ_iA+λ_2A=(λ_1+λ_2)A$)
+\end{rem}
+\paragraph{Consequences for isoperimetric inequality}
+$A⊂ℝ^d$ bounded open with smooth boundary. ($∂A$, $B⊂ℝ^d$ ball $|B|=|A|$)
+\[|∂A|=\lim_{ε→0^+}\frac{|A+εB|-|A|}ε\]
+Isoper ineq.: $|∂A|\geq|∂B|$.
+\begin{proof}
+	\[\frac{|A+εB|-|A|}ε\geq\frac{(|A|^{\frac1d}+|εB|^{\frac1d})^d-|A|}ε=\frac{(1+ε)^d-1}ε|B|→d|B|=|∂B|\]
+	for $ε→0$.
+\end{proof}
+Better: $A⊂ℝ^d$ has finite perimeter ($\iff 1_A∈\BV(U),\ U⊂ℝ^d$ bdd open)
+\[\frac{\hm^{d-1}(∂A)}{|A|^{\frac{d-1}d}}\geq\frac{\hm^{d-1}(S^{d-1})}{|B^d(0,1)|^{\frac{d-1}d}}\]
+
+\paragraph{Hausdorff measure} 
+Q: How does a set replicate under scaling? $E→ nE=E_1∪…∪E_m$ disjoint congruent copies of $E$. Examples: line $m=n^1$, square $m=n^2$, cube $m=n^3$, Cantor set $3C=C_1∪C_2$ $2=3^α\iffα=\frac{\log3}{\log2}$
+
+$\#(ε)=$least $\#$ of segments that arise from such poygonal lines. $Γ$ rectifiable iff $\#(ε)\simε^{-1}$ as $ε→0^+$. If $\#(ε)\simε^{-α}$ ($α>1$) In this case, say "$Γ$ has dim $α$". Snowflake has $α=\frac{\log 4}{\log3}>1$.
+
+Upshot: $E$ $α>1$. $m_α(E)=$ $α$-dimensional mass of $E$ among sets of "dimension" $α$.
+\begin{itemize}
+	\item $α>\dim(E)⇒m_α(E)=0$
+	\item $α<\dim(E)⇒m_α(E)=∞$
+	\item $α=\dim(E)$ interesting
+\end{itemize}

@@ -1,0 +1,144 @@
+\paragraph{Q1}
+\begin{equation*}
+	\left.
+		\begin{matrix}
+			f:[a,b]→ℝ\text{ integrable}\\
+			F(x)=∫_a^xf(t)\md t
+		\end{matrix}
+	\right]\underset?⇒ F\text{ diff. (a.e. $x$)},\ F'=f
+\end{equation*}
+\paragraph{Q2} Conditions of $F$ (on $[a,b]$) s.t. 
+\begin{itemize}
+	\item $F'(x)$ exists a.e.
+	\item $F'$ integrable
+	\item $∫_a^bF'(x)\md x=F(b)-F(a)$
+\end{itemize} ?
+\paragraph{Q1} Differentiation of the integral
+\begin{equation*}
+	\frac{F(x+h)-F(x)}h=\frac1h∫_x^{x+h}f(t)\md t=\frac1{|I|}∫f=\avg_If=\intbar_If
+\end{equation*}
+$I=(x,x+b)$, $|I|$ Lebesgue measure of $I$.
+
+Q1 equivalent to averaging problem: Given $f∈L^1(ℝ^d)$, is it true, that
+\begin{equation*}
+	\lim_{|B|→0,\ x\in B}=\frac1{|B|}∫_Bf=f(x)\quad (\text{$x$-a.e.)?}
+\end{equation*}
+$B⊂ℝ^d$ open ball
+
+\highl{Yes}, if $f$ continuous $∀ε∃δ|x-y|<δ⇒|f(x)-f(y)<ε$. $x∈B$
+\begin{equation}
+	|f(x)=\intbar_Bf|=|\intbar_B(f(y)-f(x))\md y|<ε
+\end{equation}
+provided $B$ is an opeb ball of radius $<\fracδ2$ containing $x$
+
+\highl{Yes}, if $f$ is integrable (not so easy). Hardy, Littlewood (1D, rearrangements; later Wiener for $d>1$). $f∈L^1(ℝ^d)$
+\begin{equation*}
+	(Mf)(x):=\sup_{x∈B}\frac1{|B|}∫_B|f|
+\end{equation*}
+\highl{uncentered} HL maximal function
+\begin{theo}
+	Let $f$ be integrable on $ℝ^d$. Then
+	\begin{enumerate}
+		\item $Mf$ is measurable.
+		\item $(Mf)(x)<∞$ a.e. $x$
+		\item 
+			\begin{equation} 
+				\{x∈ℝ^d:(Mf)(x)>α\}|<\frac cα\|f\|_{L^1(ℝ^d)}\ (∀x>0)\label{eq:maxweak}.
+			\end{equation} $c=c_d=3^d$, independent of $f,α$.
+	\end{enumerate}
+\end{theo}
+$f\neq f∈L^1 ⇒Mf(x)\sim|x|^{-d}$ for large radius of $x$. So then $Mf\not\in L^1$.
+\begin{equation*}
+	M:
+	\begin{matrix}
+		L^1\not\to L^1\\
+		L^1→L^{1,∞}
+	\end{matrix}
+\end{equation*}
+\begin{proof}
+	\begin{enumerate}
+		\item easy $E_α=\{x∈ℝ^d:(Mf)(x)>α\}$ is open ($∀x>0$) (because $Mf$ is lowes semicontinuous)
+		\item $|\{x∈ℝ^d: (Mf)(x)=∞\}|⊂|\{x∈ℝ^d:Mf(x)>α\}|$, take $α→∞$.
+		\item follows from an elemantary version of \highl{Vitali covering}
+	\end{enumerate}
+\end{proof}%not end proof
+\begin{lem}
+	Let $B=\{B_1,B_2,\ldots, B_N\}$ be a finite collection of open balls on $ℝ^d$. Then there exists a disjoint subcolletcino $B_{i_1},B_{i_2},\ldots,B_{i_k}$ of $B$ such that
+	\begin{equation*}
+		|\bigcup_{j=1}^nB_j|\leq3^d\sum_{j=1}^k|B_{ij}
+	\end{equation*}
+\end{lem}
+\begin{proof}
+	\begin{enumerate}
+		\item $B_{i_1}=$ largest ball
+		\item Delete $B_{i_1}$ and its neighbors
+		\item $B_{i_2}=$ largest ball
+		\item repeat\ldots
+	\end{enumerate}
+	\begin{itemize}
+		\item Algorithm stops in at most $N$ steps
+		\item output has desired properties:
+			\begin{itemize}
+				\item disjointness is clear
+				\item size $B∩B'\neq∅$, $r_{B'}\leq r_B$. $B^*=$ ball with the same center as $B$ but 3 times the radius. $⇒B'⊂B^*$. $|B^*|=3^d|B|$
+			\end{itemize}
+	\end{itemize}
+\end{proof}
+\paragraph{Back to (iii):} Choose $α>0$, $E_α=\{x∈ℝ^d:(Mf)(x)>α\}$. Fr each \[x∈E_α∃B=B_x:=\frac1{|B_x|}∫_{B_x}|f(y)|\md y>α\]
+equivalent \[|B_x|<α^{-1}∫_{B_x}|f(y)|\md y\]
+Fix $K\ll E_α$ compact subset covered by $\bigcup_{x∈K}B_x$, $K⊂\bigcup_{l=1}]NB_l$
+
+\begin{align*}
+|K|\leq|\bigcup_{l=1}^NB_l|\underset{\text{Vitali}}{\leq}3^d\sum_{j=1}^k|B_{ij}|\leq\frac{3^d}α∈_{j=1}^k∫_{B_{i_j}}|f()|\md y=\frac{3^d}α∫_{\bigcup_{j=1}^kB_{i_j}}|f(y)|\md y\leq\frac{3^d}α\|f\|_{L^1(ℝ^d)}
+\end{align*}
+Since $K$ was choseen arbitrary (cpt.), it follows that \[E_α|\leq\frac{3^d}α\|f\|_{L^1}\]
+Can interpolate between weak type $L^1$-inequality and $L^∞→L^∞$ (very easy).
+\begin{cor}[Lebesque differentiation theorem]
+Let $f∈L^1(ℝ^d)$ Then 
+\begin{equation}
+	\lim_{|B|,→0,x∈B}\intbar f=f(x)\quad \text{$x$-a.e.}\label{eq:lebeqdiff}
+\end{equation}
+\end{cor}
+\begin{proof}
+	\begin{equation*}
+		E_α=\{x∈ℝ^d:\limsup_{|B|→0,x∈B}|\intbar_Bf-f(x)>2α\}
+	\end{equation*}
+	ETS $|E_α|=0\ ∀α>0$. Then $E=\bigcup_{n∈ℕ}E_{\frac1n}=0$ and \eqref{eq:lebeqdiff} holds on $E^\complement$.
+
+	Fix $α>0$, given $ε>0$ choose $g∈C^0_0(ℝ^d)$ s.t. $\|f-g\|_{L^1}<ε$. Already seen \[\lim_{|B|⇒0,x∈B}\intbar g=g(x)\ ∀x\]
+	\[\intbar_Bf-f(x)=\intbar_B(f-g)+\intbar_Bg-g(x)+g(x)-f(x)\]
+	\begin{align*}
+		F_α=\{x:M(f-r)(x)>α\}\\
+		G_α=\{x:|f(x)-g(x)|>α\}
+	\end{align*}
+	$E_α⊂F_α∪G_α$ since $u_1,u_2>0,\ u_1+u_2>2α⇒u_1>α∨u_2>α$.
+	\begin{align*}
+		|G_α|\leq\frac1α\|f-g\|_{L^1}\quad\text{(Chebyshew)}\\
+		|F_α|\leq\frac{c_d}α\|f-g\|_{L^1}\quad\text{(weak type)}\\
+		|E_α|\leq|F_α|+|G_α|\leq(\frac{c_d}α+\frac1α)\|f-g\|_{L^1}\leq\frac{c_d'ε}α
+	\end{align*}
+Since $ε>0$ was arbitrary $|E_α|=0$.
+\end{proof}
+$h∈L^1⊂L^{1,∞}$ by Chebyshew: $∞>\|h\|_{l^1}=∫_{ℝ^d}|h(y)|\md y\geq∫_{h(y)\geqα}|h(y)|\md y\geq α|\{|h|>α\}|$.
+
+Would have been enough to replace $L^1(ℝ^d)$ by $L^1_\loc$.
+
+\paragraph{Sets}
+$E⊂ℝ^d$ measurable, $x∈ℝ^d$ (not necc. in $E$)
+$x$ is a point of Lebesque density of $E$ if \[\lim_{|B|→0,x∈B}\frac{|B∩E|}B=1\]
+\begin{cor}
+	Let $E⊂ℝ^d$ be measurable. Then
+	\begin{enumerate}
+		\item Almost every $x∈E$ is a point of Lebesque density of $E$.
+		\item Almost every $x\not\in E$ is not a point of Lebesque density.
+	\end{enumerate}
+\end{cor}
+\paragraph{Functions}
+$f∈L^1_\loc(ℝ^d)$. \[Leb(f):=\{x∈ℝ^d:f(x)<∞\text{ and }\lim_{|B|→0,x∈B}\intbar_B|f(y)-f(x)|\md y=0\}\]
+$f$ continuous at $\bar x⇒\bar x∈\Leb(f)⇒\intbar_Bf\underset{|B|→0,x∈B}→f(\bar x)$ (all the inverse implications are wrong)
+\begin{cor}
+	$f∈L^1_\loc(ℝ^d)⇒$ Almost every point belongs to $\Leb(f)$.
+\end{cor}
+(By checking the proof again?)
+
+These things also works with other sets that "shrink regularly to $x$ than balls". It gets worse however when one takes all parallel rectangles and even worse when arbitrarily oriented rectangles are allowed.

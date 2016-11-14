@@ -1,0 +1,117 @@
+
+$z(t)=(x(t),y(t))$. curve $γ$. $x,y:[a,b]→ℝ$ continuous.
+
+$γ$ rectifiable if length
+\[L(γ)=\sup\sum_{j=1}^N|z(t_j)-z(t_{j-1})|<∞\]
+$\sup$ over all partitions $P=\{a=t_0<t_1<_<t_N=b\}$ of $[a,b]$
+
+When is
+\[L(γ)=∫_a^b|z'(t)|\md t?\]
+\begin{lem} $γ$ is rectifiable iff $x,y$ are of bounded variation (and cont.).
+\end{lem}
+see $F=x+iy$
+
+Assume $γ$ rectifiable, let $L(A,B)$ length of $γ(A,B)$, ($a\leq A\leq B\leq b$)
+\begin{enumerate}
+	\item $L(A,B)=T_F(A,B)$ (where $F(t)=z(t)$)
+	\item $L(A,C)+L(C,B)=L(A,B)$ ($A\leq C\leq B$)
+	\item $A\mapsto L(A,B)$ (fix $B$) is continuous
+
+		$B\mapsto L(A,B)$ (fix $A$) 
+		
+		seen: $F∈\BV(a,b)$, cont. $⇒T_F$ cont.
+\end{enumerate}
+Warning: $[0,1]\ni t\mapsto(F(t),F(t))$, $F$ Cantor. $F$ cont. incr. $F(0)=0,\ F(1)=1,\ F'=0$ a.e.
+\begin{theo} $z:[a,b]→ℝ^2,t\mapsto(x(t),y(t))$ $\sim$ curve $γ$. $x,y∈\AC(a,b)$. $⇒$ $γ$ rectifiable and
+	\[L(γ)=∫_a^b|z'(t)|\md t\]
+\end{theo}
+why? $F:[a,b]→ℂ$ is $\AC(a,b)$ \[⇒T_F(a,b)=∫_a^b|F'(t)|\md t.\]
+\[\sum_{j=1}^N|F(t_j)-F(t_{j-1})|=\sum_{j=1}^N|∫_{t_{j-1}}^{t_j}F'(t)\md t|\leq\sum_{j=1}^N∫_{t_{j-1}}^{t_j}|F'(t)|\md t=∫_a^b|F'(t)|\md t\]
+First inequality by FTC. For $\geq$, write $F'=g+h$, $g$ step function, $h$ small in $L^1$
+$G,H=$ def. integrals of $g,h$. Check $T_F\geq T_G,T_H$, $T_H$ small, $T_G\geq∫_a^b|g(t)|\md t$.
+
+\paragraph{Minkowski content of a curve}
+simple, simple closed, quasi-simple curves.
+
+trace of $γ$: $Γ=\{z(t)∈ℝ^2:t∈[a,b]\}$.
+
+Given $K⊂⊂ℝ^2$ and $δ>0$ define 
+\[K^δ=\{x∈ℝ^2:\dist(x,K)<δ\}\]
+where $\dist(x,K)=\inf_{k∈K}\dist(x,k)$
+\begin{defi} The set $K$ has (1D) Minkowski content if \[\lim_{δ→0}\frac{|K^δ|}{2δ}\] exists (in $ℝ$), denoted $M(K)$.
+\end{defi}
+\begin{theo} Let $Γ=\{z(t):a\leq t\leq b\}$ be (the trace of) a quasi-simple curve $γ$. Then $Γ$ has Minkowski content iff $γ$ is rectifiable (in which case $M(Γ)=L(γ)$).
+\end{theo}
+Upper Mink: content. 
+\[\limsup_{δ→0^+}\frac{|K^δ|}{2δ}=:M^*(K)\]
+lower
+\[\liminf_{δ→0^+}\frac{|K^δ|}{2δ}=:M_*(K).\]
+\begin{pro} $T=\{z(t):a\leq t\leq b\}$ quasi simple. If $M_*(Γ)<∞$, then $γ$ is rectifiable and $L(γ)\leq M_*(Γ)$.
+\end{pro}
+\begin{pro}
+	$Γ=\{z(t):a\leq t\leq b\}$ rectifiable $γ$. Then $M^*(Γ)\leq L(γ)$.
+\end{pro}
+\begin{proof}[Proof of Prop. 1, for simple curves.]
+	Obs: $Γ=\{z(t):a\leq t\leq b\}$ any curve. $Δ=|z(b)-z(a)|$. $|Γ^δ|\geq 2δΔ$.
+
+	Take any partition $P$ of $[a,b)$. $L_P=\sum_{j=1}^N|z(t_j)-z(t_{j-1})|$. Given $ε>0,∃N$ proper closed subintervals $I_j=[a_j,b_j]⊂(t_{j-1},t_j)$: 
+	\[\sum_{j=1}^N|z(b_j)-z(a_j)|\leq L_P-ε\]
+	$I_1,…,I_N$ disjoint $⇒Γ_1,…,Γ_N$ disjoint because $Γ$ is simple. $⇔Γ_1^δ,…,Γ_N^δ$ disjoint, provided $δ>0$ small enough.
+	\[\bigcup_{j=1}^NΓ_j^δ⊂Γ^δ\]
+	\[|Γ^δ|\geq\sum_{j=1}^N|Γ_j^δ|\geq2δ\sum_{j=1}^N|z(t_j)-z(t_{j-1})|\geq2δ(L_p-ε)\]
+\end{proof}
+\paragraph{Isoperimetric inequality (soft)}	
+$γ:[a,b]→ℝ^2,\ γ∈C^1(a,b):γ'(s)\neq 0∀s,\ γ(a)=γ(b)$. Arclength parametrization: $γ:[0,L]→ℝ^2,\ |γ'(s)|=1∀s$.
+\begin{theo} $Γ⊂ℝ^2$ simple colsed $C^2$ curve of length $L$. $A$ area of the region enclosed by $Γ$.
+	\[A=\frac12|∫_Γ>(x\md y-y\md x)|=\frac12|∫_0^L(x(s)y'(s)-x'(s)y(s))\md s.\]
+	Then $4πA\leq L^2$. Equality iff $Γ$ is a circle.
+\end{theo}
+\begin{proof} wlog (rescale) $L=2π$.: WTS $A\leq π$, equality iff $Γ$ is a circle of radius 1.
+
+	$γ:[0,2π]→ℝ^2,\ s\mapsto γ(s)=(x(s),y(s))$ arclength par. $x'(s)^2+y'(s)^2=1∀s$.:
+	\[\frac1{2π}∫_0^{2π}(x'(s)^2+y'(s)^2)\md s=1\]%*
+	$Γ$ closed $⇒x(s),y(s)$ $2η$-periodic.
+	\[x'(s)=\sum_na_nine^{ins}\]
+	\[y'(s)=\sum_nb_nine^{ins}\]
+	Parseval $⇒$
+	\[\sum_{n∈ℤ}n^2(|a_n|^2+|b_n|^2)=1\]%**
+	\[A=\frac12∫_0^{2π}(x(s)y'(s)-x'(s)y(s))\md s|=π|\sum_{n∈ℤ}n(a_n\bar b_n-b_n\bar a_n)|\]
+	by bilinear Parseval
+	\[|a_n\bar b_n-b_n\bar a_n|\leq 2|a_n||b_n|\leq|a_n|^2+|b_n|^2\]%***
+	\[A\leqπ\sum_{n∈ℤ}n^2(|a_n|^2+|b_n|^2)\leqπ\]
+\end{proof}
+\paragraph{Cases of equality:} $A=π$ $⇒$
+\[x(s)=a_{-1}e^{-is}+a_0+a_1e^{is}\]
+\[y(s)=b_{-1}e^{-is}+b_0+b_1e^{is}\]
+$x,y$ real-valued $⇒$ $a_1=\bar a_{-1},\ b_1=\bar b_{-1}$. (**) $⇒2(|a_1|^2+|b_1|^2)=1$.
+
+(***) $⇒$
+\[|a_1|=|b_1|=\frac12.:\quad a_1=\frac12e^{iα}\quad b_1=\frac12e^{iβ}\quad (α,β∈ℝ)\]
+\[1=2|a_1\bar b_1-\bar a_1b_1|=\sin(α-β)|.:\quad α-β=\frac{kπ}2\quad (\text{odd }k)\]
+\[x(s)=a_0+\cos(s+α)\]
+\[y(s)=b_0\pm\sin(s+α)\]
+$\pm$ dep. on parity of $\frac{k-1}2$.
+
+\paragraph{Isoperimetric inequality (hard)}
+$Ω⊂ℝ^2$ bounded, open, $∂Ω=\barΩ-Ω=:Γ$ rectifiable curve (not nec. simple) with length $l(Γ)$.
+\begin{theo}
+	\[4π|Ω|\leq l(Ω)^2\]
+\end{theo}
+
+\begin{proof}
+	inner:\[Ω^δ_-=\{x∈ℝ^2:\dist(x,ℝ^2\setminusΩ)\geqδ\}\]
+	outer: \[Ω^δ_+=\{x∈ℝ^2:\dist(x,\barΩ)<δ\}\]
+	\[Γ^δ=\{x:\dist(x,Γ)<δ\}\]
+	\[Ω^δ_+=Ω^δ_-\dot∪Γ>^δ\]
+	$A,B⊂ℝ^d,\ A+B=\{a+b:a∈A,b∈B\}$
+	Note: $Ω+B_δ⊂Ω^δ_+,\ Ω^δ_-+B_δ⊂Ω$.
+
+	Brunn-Minkowski: $A,B⊂ℝ^2$ meas., $A+B$ meas. \[|A+B|^{\frac12}\geq |A|^{\frac12}+|B|^{\frac12}\]
+
+	\[|Ω^δ_-|\geq(|Ω|^{\frac12}+|B_δ|^{\frac12})^2\geq|Ω|+2|Ω|^{\frac12}\underbrace{|B_δ|^{\frac12}}_{=(πδ^2)^{\frac12}}\]
+	\[|Ω|\geq(|Ω^δ_-|^{\frac12}+|B_δ|^{\frac12})^2\geq|Ω^δ_-|+2|Ω^δ_-|^{\frac12}|B_δ|^{\frac12}\]
+	\[|Γ^δ|\geq |Ω|+2|Ω|^{\frac12}\sqrtπ-|Ω|+|Ω^δ_-|^{\frac12}\sqrtπ\]
+	\[\limsup_{δ→0^+}\frac{|Γ^δ|}{2δ}\geq2|Ω|^{\frac12}\sqrtπ\]
+	\[4π|Ω|\leq M^*(Γ)^2\leq l(Γ)^2\]
+	Note, that only in the very last inequality did we use the rectifiability of $Γ$.
+\end{proof}
