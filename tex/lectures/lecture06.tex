@@ -70,7 +70,7 @@ ETS: $0<m_α(C)\leq 1$
 	\begin{lem} The Cantor-Lebesgue function $F:C→[0,1]$ is $γ=\frac{\log 2}{\log 3}$-Hölder.
 	\end{lem}%2
 	\begin{proof}
-		Goal: $|F(x)-F(y)|\leqc|x-y|^γ\ ∀x,y∈C$.
+		Goal: $|F(x)-F(y)|\leq c|x-y|^γ\ ∀x,y∈C$.
 
 		$F_n$ increases at most $2^{-n}$ on an interval of length $3^{-n}$. $\therefore$ slope $\leq(\frac32)^n$ $\therefore |F_n(x)-F_n(y)|\leq(\frac32)^n|x-y|$. $|F_n(x)-F(x)|\leq2^{-n}$.
 		Given $x,y$ chose $n$: $3^n|x-y|\sim1,\ 3^γ=2$.
@@ -89,5 +89,5 @@ ETS: $0<m_α(C)\leq 1$
 	Claim: $m_1(Γ_j)\geq l_j:=|γ(t_j)-γ(t_{j+1})|$
 	\begin{proof} $π:ℝ^2∞ℝ$ $(x,y)↦x$ Lipschitz, $π(Γ_j)⊂[0,l_j]$ Lemma 1 (i) implies the claim.
 	\end{proof}
-	$\therefore m_1(Γ)\geq\summ_1(Γ_j)\geq\sum l_j,\ L:=\sup_p\sum l_j\therefore m_1(Γ)\geq L$, done.
+	$\therefore m_1(Γ)\geq\sum m_1(Γ_j)\geq\sum l_j,\ L:=\sup_p\sum l_j\therefore m_1(Γ)\geq L$, done.
 \end{proof}

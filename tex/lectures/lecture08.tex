@@ -29,7 +29,7 @@
 	Let $F$ be a Kakeya set. Fix $0<α<2$. Lett $F⊂\bigcup_{i=1}^∞B_i$ be a covering with balls $B_i$ of diameter $\leqδ$. It is enough to show
 	\[\sum(\diam B_i)^α\geq c_α>0\]
 	Case 1: Assume $\diam B_1=δ\leq\frac12$ and let $N<∞$ be the number of balls in the covering. WTS $Nδ^α\geq c_α$. $B_i^*=$ doubel of $B_i$. $F^*=\bigcup_iB_i^*$. $|F^*|\leq\sum|B_i^*|=cNδ^2$. $F$ Kakeya $⇒∀γ∈S^1∃s_γ\perpγ$ unit lime segment: $s_γ⊂F$. $s_γ^δ⊂F^*$. $\therefore R_δ^*(χ_{F^*})(γ)\geq 1\ (∀γ∈S^1)$. Take $f=χ_{F^*}$ in (*). Since $L^2⊂L^1$,
-	\[\|χ_{F^*}\|_{L^1}\sim\liq\|χ_{F^*}\|_{L^2}=|F^*|^{\frac12}\sim\leq N^{\frac12}δ.\] (*) $⇒0<c\leq(\log\frac1δ)^{\frac12}N^{\frac12}δ$. This implies $Nδ^α\geq c_α>0$.
+	\[\|χ_{F^*}\|_{L^1}\sim\leq\|χ_{F^*}\|_{L^2}=|F^*|^{\frac12}\sim\leq N^{\frac12}δ.\] (*) $⇒0<c\leq(\log\frac1δ)^{\frac12}N^{\frac12}δ$. This implies $Nδ^α\geq c_α>0$.
 
 	Case 2: General case. $F⊂\bigcup_{i=1}^∞B_i$ with each ball $B_i$ of diameter $\leq 1$. For each $k∈ℕ$, let $N_k$ be the number of balls ön $\{B_i\}$ with diameter $B_k\sim 2^{-k}$, i.e.\ $∈[2^{-k-1},2^{-k}]$. WTS
 	\[\sum_{k=0}^∞N_k2^{-kα}\geq c_α>0.\]
@@ -41,11 +41,11 @@
 	
 	Key: For some $k$, a large proportion of $s_γ$ belongs to $F_k$. Pick $\{a_k\}_{k=0}^∞$ such that $0\leq a_k<1,\ \sum a_k=1,\ (a_k)$ dos not nend to 0 too quickly, e.g.\ $a_k=c_ε2^{-kε}$ (for sufficiently small $ε$.
 
-	Claim: \[∃k:m_1(s_γ∩F_k)\geq a_k.\] Otherwise $m_1(s_γ∩F)\leq\sum_km_1(s_γ∩F_k)<\sum_a_k=1$, contradicts (**)
+	Claim: \[∃k:m_1(s_γ∩F_k)\geq a_k.\] Otherwise $m_1(s_γ∩F)\leq\sum_km_1(s_γ∩F_k)<\sum a_k=1$, contradicts (**)
 
 	For this value of $k$, \[R_{2^{-k}}^*(χ_{F_k^*})(γ)\geq a_k.\]
 	Since this choice of $k$ depends on $γ$, let \[E_k=\{γ∈S^1:R_{2^{-k}}^*(χ_{F_k^*})(γ)\geq a_k\}.\] $S^1=\bigcup_{k_1}^∞E_k$. Therefore $∃k':|E_{k'}|\geq2πa_{k'}$. 
-	\[2πa_{k'}^2=2πa_{k'}a_{k'}\leg∫_{E_{k'}}a_{k'}\mdσ\leq_{S^1}R_{2^{-k'}}^*(χ_{F_{k'}^*})(γ)\mdσ_γ\]
+	\[2πa_{k'}^2=2πa_{k'}a_{k'}\leq∫_{E_{k'}}a_{k'}\mdσ\leq_{S^1}R_{2^{-k'}}^*(χ_{F_{k'}^*})(γ)\mdσ_γ\]
 	\[2^{-2k^ε}\sim a_{k'}^2\leq c(\log2^{k'})^{\frac12}|F_{k'}^*|^{\frac12}\leq c(\log 2^{k'})^{\frac12}N_{k'}^{\frac12}2^{-k'}\]
 	$⇒N_{k'}2^{-αk'}\geq c_α$, provided $4ε<2-α$.
 \end{proof}
@@ -79,6 +79,6 @@ Take two of them, $E_0,E_1$, where $E_1$ has twice the length. Put $E_0$ on $y=1
 	Then retranslate all $2^n$ original triangles to obtain figure $Ψ_2(ABC)$.
 	\[|\text{heart of }Ψ_2(ABC)=α^2α^2|T|\]
 	\[|\text{addition arms of }Ψ_2(ABC)|\leq2(1-α)^2α^2|T|\]
-	\[|Ψ_n(ABC)|\leq(α^{2n}+2(1-α)^2+2(1-α)^2α^2+…+2(1-α)^2α^{2n-2})\leqα^{2n}+2(1-α)^2+\underbrace{\sum_{n=0}^∞α^{2n}\leqα^{2n}+2(1-α)\]
+	\[|Ψ_n(ABC)|\leq(α^{2n}+2(1-α)^2+2(1-α)^2α^2+…+2(1-α)^2α^{2n-2})\leqα^{2n}+2(1-α)^2+\underbrace{\sum_{n=0}^∞α^{2n}}\leqα^{2n}+2(1-α)\]
 
 \end{proof}
