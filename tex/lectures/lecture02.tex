@@ -82,7 +82,7 @@ Can replace $ℝ$ by $[a,b]$, but then only get for $a_0=a$ that $G(a_0)\leq G(b
 \begin{cor}
 	$F$ increasing, continuous $⇒F'$ exists a.e., measurable, nonnegative and \[∫_a^bF'(x)\md x\leq F(b)-F(a).\]
 \end{cor}
-\begin{proof} Let \[G_h(x)=\frac{F(x+\frac1n)-F(x)}{\frac1h}\] By the theorem, $G_h(x)→F'(x)$ ($h→0$) pointwise a.e. By Fatou \[∫_{[a,b]}F'\leq\liminf_{n→∞}∫_a^bG_h(x)\md x=\liminf_{n→∞}\intbar_b^{b+\frac1n}F(x)\md x-\intbar_a^{a+\frac1n}F(x)\md x\]
+\begin{proof} Let \[G_h(x)=\frac{F(x+\frac1n)-F(x)}{\frac1h}\] By the theorem, $G_h(x)→F'(x)$ ($h→0$) pointwise a.e. By Fatou \[∫_{[a,b]}F'\leq\liminf_{n→∞}∫_a^bG_h(x)\md x=\liminf_{n→∞}\dashint_b^{b+\frac1n}F(x)\md x-\dashint_a^{a+\frac1n}F(x)\md x\]
 \end{proof}
 Cannot do better than $\leq$: For the Devil's staircase the left hand side is 0 while the rightn hand side is 1.
 

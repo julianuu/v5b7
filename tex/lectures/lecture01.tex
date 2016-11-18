@@ -27,7 +27,7 @@ $B⊂ℝ^d$ open ball
 
 \highl{Yes}, if $f$ continuous $∀ε∃δ|x-y|<δ⇒|f(x)-f(y)<ε$. $x∈B$
 \begin{equation}
-	|f(x)=\intbar_Bf|=|\intbar_B(f(y)-f(x))\md y|<ε
+	|f(x)=\dashint|=|\dashint_B(f(y)-f(x))\md y|<ε
 \end{equation}
 provided $B$ is an opeb ball of radius $<\fracδ2$ containing $x$
 
@@ -96,17 +96,17 @@ Can interpolate between weak type $L^1$-inequality and $L^∞→L^∞$ (very eas
 \begin{cor}[Lebesque differentiation theorem]
 Let $f∈L^1(ℝ^d)$ Then 
 \begin{equation}
-	\lim_{|B|,→0,x∈B}\intbar f=f(x)\quad \text{$x$-a.e.}\label{eq:lebeqdiff}
+	\lim_{|B|,→0,x∈B}\dashint f=f(x)\quad \text{$x$-a.e.}\label{eq:lebeqdiff}
 \end{equation}
 \end{cor}
 \begin{proof}
 	\begin{equation*}
-		E_α=\{x∈ℝ^d:\limsup_{|B|→0,x∈B}|\intbar_Bf-f(x)>2α\}
+		E_α=\{x∈ℝ^d:\limsup_{|B|→0,x∈B}|\dashint_Bf-f(x)>2α\}
 	\end{equation*}
 	ETS $|E_α|=0\ ∀α>0$. Then $E=\bigcup_{n∈ℕ}E_{\frac1n}=0$ and \eqref{eq:lebeqdiff} holds on $E^\complement$.
 
-	Fix $α>0$, given $ε>0$ choose $g∈C^0_0(ℝ^d)$ s.t. $\|f-g\|_{L^1}<ε$. Already seen \[\lim_{|B|⇒0,x∈B}\intbar g=g(x)\ ∀x\]
-	\[\intbar_Bf-f(x)=\intbar_B(f-g)+\intbar_Bg-g(x)+g(x)-f(x)\]
+	Fix $α>0$, given $ε>0$ choose $g∈C^0_0(ℝ^d)$ s.t. $\|f-g\|_{L^1}<ε$. Already seen \[\lim_{|B|⇒0,x∈B}\dashint g=g(x)\ ∀x\]
+	\[\dashint_Bf-f(x)=\dashint_B(f-g)+\dashint_Bg-g(x)+g(x)-f(x)\]
 	\begin{align*}
 		F_α=\{x:M(f-r)(x)>α\}\\
 		G_α=\{x:|f(x)-g(x)|>α\}
@@ -134,8 +134,8 @@ $x$ is a point of Lebesque density of $E$ if \[\lim_{|B|→0,x∈B}\frac{|B∩E|
 	\end{enumerate}
 \end{cor}
 \paragraph{Functions}
-$f∈L^1_\loc(ℝ^d)$. \[Leb(f):=\{x∈ℝ^d:f(x)<∞\text{ and }\lim_{|B|→0,x∈B}\intbar_B|f(y)-f(x)|\md y=0\}\]
-$f$ continuous at $\bar x⇒\bar x∈\Leb(f)⇒\intbar_Bf\underset{|B|→0,x∈B}→f(\bar x)$ (all the inverse implications are wrong)
+$f∈L^1_\loc(ℝ^d)$. \[Leb(f):=\{x∈ℝ^d:f(x)<∞\text{ and }\lim_{|B|→0,x∈B}\dashint_B|f(y)-f(x)|\md y=0\}\]
+$f$ continuous at $\bar x⇒\bar x∈\Leb(f)⇒\dashint_Bf\underset{|B|→0,x∈B}→f(\bar x)$ (all the inverse implications are wrong)
 \begin{cor}
 	$f∈L^1_\loc(ℝ^d)⇒$ Almost every point belongs to $\Leb(f)$.
 \end{cor}

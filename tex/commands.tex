@@ -15,3 +15,14 @@
 \newcommand\highl[1]{\textit{#1}}
 
 \DeclareMathOperator{\supp}{supp}
+
+% from http://tex.stackexchange.com/a/760
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\dashint{\Xint-}
