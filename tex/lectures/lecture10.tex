@@ -8,7 +8,7 @@ $d=1$: The second equality holds in $L^p$-norm ($1<p<∞$) $\impliedby L^p$ boun
 
 and also a.e.\ $(p=2$ Carleson '66 $1<p<∞$ Hunt '68)
 
-$d\qeq 2$ Let us only consider norm convergence
+$d\geq 2$ Let us only consider norm convergence
 \[f↦(S^δf)(x)=∫_{|ξ|\leq 1}\hat f(ξ)(1-|ξ|^2)^δe^{2πixξ}\md ξ\]
 \[Sf(x)=∫_{|ξ|\leq 1}\hat f(ξ)e^{2πixξ}\mdξ\]
 \[\hat{Sf}=1_{|ξ|\leq 1}\hat f\]
@@ -46,30 +46,31 @@ Fourier multiplier is bounded iff multiplier is bounded.
 		\[\langle x,y\rangle=\sum_{i=1}^Mx_j\bar y_j\]
 		\[S_ω(f)(x)=S_B(f_ω)(x)=S_B(\sum_{j=1}^M\barω_jf_j)(x)=\sum_{j=1}^M\barω_jS_B(f_j)(x)|=|\langle S_B(f)(x),ω\rangle|=|S_B(f)(x)||\langle\frac{S_B(f)(x)}{|S_B(f)(x)|},ω,\rangle|=(\sum_{j=1}^M|S_B(f_j)(x)|^2)^{\frac12}|φ(ω,S_B(f)(x))|\]
 		Integrate both sides of (**) with respect to $ω$ (before integrating in $x$).
-		\[\text{LHS}=∫_{ℝ^d}(∫_{|ω|=1}|S_ω(f)(x)|^p\mdω)\md x=∫_{ℝ^d}(\sum_{j=1}^M|S_B(f_j)(x)|^2)^{\frac p2}\underbrace{(∫_{|ω|=1}|Φ(ω,S_B(f)(x)|^p\mdω)\md x)}_{0\neq γ_p=∫_{|ω|=1}|Φ(ω,1)|^p\mdω}\md x\]
-	For fixed $ν∈S^{d-1}$ $∫_{S^{d-1}}|\langleω,ν\rangle|^p\mdσ_ω=ω_{d-2}∫_{-1}^1(1-t^2)^{\frac{d-3}2}\md t$.
+		\[\text{LHS}=∫_{ℝ^d}(∫_{|ω|=1}|S_ω(f)(x)|^p\mdω)\md x=∫_{ℝ^d}(\sum_{j=1}^M|S_B(f_j)(x)|^2)^{\frac p2}\underbrace{(∫_{|ω|=1}|Φ(ω,S_B(f)(x)|^p\mdω)\md x)}_{0\neq γ_p=∫_{|ω|=1}|Φ(ω,1)|^p\mdω})\md x\]
+		For fixed $ν∈S^{d-1}$ $∫_{S^{d-1}}|\langleω,ν\rangle|^p\mdσ_ω=ω_{d-2}∫_{-1}^1(1-t^2)^{\frac{d-3}2}\md t$.
 
-	Similarly,
-	\[\text{RHS}=∫_{ℝ^d}(\sum_{j=1}^M|f_j(x)^2)^{\frac p2}\md x)γ_p\]
-	\[(**)⇒\|(\sum_{j=1}^M|S_B(f_j)|^2)^{\frac12}\|_{L^p(ℝ^d)}\leq A_p\|(\sum_{j=1}^M|f_j|^2)^{\frac12}\|_{L^p(ℝ^d)}\]
+		Similarly,
+		\[\text{RHS}=∫_{ℝ^d}(\sum_{j=1}^M|f_j(x)^2)^{\frac p2}\md x)γ_p\]
+		\[(**)⇒\|(\sum_{j=1}^M|S_B(f_j)|^2)^{\frac12}\|_{L^p(ℝ^d)}\leq A_p\|(\sum_{j=1}^M|f_j|^2)^{\frac12}\|_{L^p(ℝ^d)}\]
 
-	Step 3: From balls to half-spaces
+		Step 3: From balls to half-spaces
 
-	$B_R^u=$ ball of radius $R$ centered at $Ru$. Upshot: $B_R^u→\{ξu>0\}$ as $R→∞$. 
+		$B_R^u=$ ball of radius $R$ centered at $Ru$. Upshot: $B_R^u→\{ξu>0\}$ as $R→∞$. 
 
-	Translation:
-	\[(TVjf)(x)=f(x-y)\]
-	\[\hat{T_jf}(ξ)=e^{iξy}\hat f(ξ)\]
-	\[S_{B_R^u}(f)(x)=e^{2πiuRx}S_{B_R}(fe^{-2πiuRx})\]
-	(***) implies
-	\[\|(\sum|S_{B_R^{u_j}}(f_j)|^2)^{\frac12}\|_{L^p}\leq A_p\|(\sum|f_j|^2)^{\frac 12}\|_{L^p}\]
-	Let $R→∞$ to finish:
-	\[\therefore S_{B_R^{u_j}}(f_j)→S^{u_j}(f_j)\quad R→∞(\text{ in }L^2)\]
-	$\therefore$ there exists an almost everywher converging subsequence, done.
+		Translation:
+		\[(TVjf)(x)=f(x-y)\]
+		\[\hat{T_jf}(ξ)=e^{iξy}\hat f(ξ)\]
+		\[S_{B_R^u}(f)(x)=e^{2πiuRx}S_{B_R}(fe^{-2πiuRx})\]
+		(***) implies
+		\[\|(\sum|S_{B_R^{u_j}}(f_j)|^2)^{\frac12}\|_{L^p}\leq A_p\|(\sum|f_j|^2)^{\frac 12}\|_{L^p}\]
+		Let $R→∞$ to finish:
+		\[\therefore S_{B_R^{u_j}}(f_j)→S^{u_j}(f_j)\quad R→∞(\text{ in }L^2)\]
+		$\therefore$ there exists an almost everywher converging subsequence, done.
+	\end{proof}
 
 	$\hat{Sf}=1_{B(0,1)}\hat f$. $S$ is not bounded in $L^p(ℝ^d)$ unless $d=1$ or $p=2$. Focus on multiplieer operator for the half-space ($S^u$), $d=1$.
 	\[(S^+f)(x)=∫_0^∞\hat f(ξ)e^{2πixξ}\mdξ\quad(f∈L^2)\]
-	\[|(S^+f)(x)|\geq\fracc{|x|}\quad\text{if }|x|\geq12\]
+	\[|(S^+f)(x)|\geq\frac c{|x|}\quad\text{if }|x|\geq12\]
 	\begin{proof}
 		\[(S^+f)(x)=\lim_{ε→0}∫_0^∞\hat f(ξ)e^{2πi(x+iε)ξ}\mdξ\quad\text{in }L^2\]
 		\[∫_{-∞}^∞(∫_0^∞e^{-2πiyξ}e^{2πi(x+iε)ξ}\mdξ)f(y)\md y=\frac1{2πi}∫_{-\frac12}^{\frac12}\frac1{y-x-iε}\md y\]
@@ -91,9 +92,9 @@ Fourier multiplier is bounded iff multiplier is bounded.
 	Key: $p<2$ and $d=2$.
 
 	Lemma with $f_j=1_{R_j}$ and $M=2^N$
-	\[c'\underbrace{\leq}_{\text{(3),since $\bigcup\tilde R_j|=1$}}\|(\sum_{j=1}^{2^N}|S^{u_j}(1_{R_j})|^2)^{\frac12}\|_{L^p(ℝ^2)}\leq A_p\|(\sum_{j=1}^{2^N}|1_{R_j}|^2)^{\frac12}\|_{L^p(ℝ^2)}=A_p(∫_E(\sum_{j=1}^{2^N}|1_{R_j}|^2)^{\frac12}\md x)^{\frac1p}\leq A_pε^{\frac1{pq}>0\text{ bc }p<2}$
-	
-	\text{smth}\leq|E|^{\frac1q}(∫(\sum|1_{R_j}|^2)^{\frac p2\frac2p}\md x)^{\frac1p\frac p2}=\sum_{j=1}^{2^N}|R_j|=1\]
+	\[c'\underbrace{\leq}_{\text{(3),since $\bigcup\tilde R_j|=1$}}\|(\sum_{j=1}^{2^N}|S^{u_j}(1_{R_j})|^2)^{\frac12}\|_{L^p(ℝ^2)}\leq A_p\|(\sum_{j=1}^{2^N}|1_{R_j}|^2)^{\frac12}\|_{L^p(ℝ^2)}=A_p(∫_E(\sum_{j=1}^{2^N}|1_{R_j}|^2)^{\frac12}\md x)^{\frac1p}\leq A_pε^{\frac1{pq}>0\text{ bc }p<2}\]
+
+	\[\text{smth}\leq|E|^{\frac1q}(∫(\sum|1_{R_j}|^2)^{\frac p2\frac2p}\md x)^{\frac1p\frac p2}=\sum_{j=1}^{2^N}|R_j|=1\]
 	\[E=\bigcup_{j=1}^{2^N}R_j\quad |E|<ε,\quad \frac1q+1{2/p}=1,\quad \frac1q=1-\frac p2,\quad\frac1{pq}=\frac1p(1-\frac p2)\]
 	Hölder somewhere
 
