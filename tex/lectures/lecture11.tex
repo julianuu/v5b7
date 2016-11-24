@@ -14,69 +14,70 @@ Smoothing properties:
 	\|\f∂{∂x_j}A(f)\|_{L^2(ℝ^3)}\lesssim\|f\|_{L^2(ℝ^3)}\quad(j=1,2,3)
 	\label{eq:smoothprop}
 \end{equation}
-$f∈L^2⇒\|f*σ\|_{L^2}\leq\|f\|_{L^2}\ub{|σ|(ℝ^3)}_{<∞}$ (Minkowski integral inequality) $\therefore f*σ∈L^2$ if $f∈L^2$.
+$f∈L^2⇒$
+\[\|f*σ\|_{L^2}\leq\|f\|_{L^2}\ub{|σ|(ℝ^3)}_{<∞}\] (use Minkowski integral inequality) $\therefore f*σ∈L^2$ if $f∈L^2$.
 
-Idea $(f*σ)^\hat=\hat f\hatσ$
-\[(\f∂{∂x_j}A(f))^\hat(ξ)=ξ_j\hat0f(ξ)\hatσ(ξ),\]
+Idea $\widehat{(f*σ)}=\hat f\hatσ$
+\[\widehat{(\f∂{∂x_j}A(f))}(ξ)=ξ_j\hat f(ξ)\hatσ(ξ),\]
 so we should study $\hatσ$.
 
 without loss of generality $ξ=(0,0,|ξ|)$ because the integral is spherically symmetric.
-\[\hatσ(ξ)&=∫_{S^2}e^{-2πiωξ}\mdσ_ω=2π∫_0^πe^{-2πi|ξ|\cosϑ}\sinϑ\md=2π∫_{-1}^1e^{2πi|ξ|t}\md t=\f{2\sin(2π|ξ|)}{|ξ|}\]
+\[\hatσ(ξ)=∫_{S^2}e^{-2πiωξ}\mdσ_ω=2π∫_0^πe^{-2πi|ξ|\cosθ}\sinθ\md=2π∫_{-1}^1e^{2πi|ξ|t}\md t=\f{2\sin(2π|ξ|)}{|ξ|}\]
+\[t=\cosθ\quad\md t=\sinθ\mdθ\]
 \[\therefore|\hatσ(ξ)|\lesssim(1+|ξ|)^{-1}\]
-\[t=\cosϑ\quad\md t=\sinϑ\mdϑ\]
 \eqref{eq:smoothprop} follows from this and Plancherel.
 
-This also generalizes to higher dimensions.
+This also generalizes to higher dimensions. There we get a factor $(1-t^2)^{\f{d-3}2}$ in the last integral.
 
-Oscillatory integrals
-\[I(λ)=∫_{ℝ^d}e^{iλφ(x)}ψ(x)\md x\]
-where $λ∈ℝ$ is th oscillatory parameter, $ϕ∈C^∞(ℝ,ℝ)$ the phase and $ψ(x)∈ℂ$ the amplitude.
+\paragraph{Oscillatory integrals}
+\[I(λ)=∫_{ℝ^d}e^{iλϕ(x)}ψ(x)\md x\]
+where $λ∈ℝ$ is the oscillatory parameter, $ϕ∈C^∞(ℝ^d,ℝ)$ the phase and $ψ(x)∈ℂ$ the amplitude.
 
-Q.: How does $I(λ)$ behave for large $|λ|$? General principle: Main contribution comes from the critical points of the phase, $x_0:\ ∇φ(x_0)=0$.
+Q.: How does $I(λ)$ behave for large $|λ|$? General principle: Main contribution comes from the critical points of the phase, $x_0:\ ∇ϕ(x_0)=0$.
 
 \paragraph{Principle of non-stationary phase}
-$φ∈C^∞,\ ψ∈C^∞_0:|∇φ(x)|\geq 0\ (∀x∈\suppψ)$. Then for any $N∈ℕ$
-\[|I(λ)|=c_N|λ|^{-N}\]
-\begin{proof} Integration by parts
+$ϕ∈C^∞,\ ψ∈C^∞_0:|∇ϕ(x)|> 0\ (∀x∈\suppψ)$. Then for any $N∈ℕ$
+\[|I(λ)|\leq c_N|λ|^{-N}\]
+\begin{proof} Integration by parts (in a more complicated version)
 \end{proof}
 $d=1$:
-\[I_1(λ)=∫_a^be^{iλφ(x)}\md x\]
+\[I_1(λ)=∫_a^be^{iλϕ(x)}\md x\]
 \[0<a<b<∞\quadψ(x)=χ_{[a,b]}(x)\quad\tx{which is rough!}\]
 This means we will not get such a fast decay
 \begin{lem}[van der Corput (I)]
-	$φ∈C^2,\ φ'$ monotonic, $|φ'(x)|\geq 1\ (∀x∈[a,b])$. Then
+	$ϕ∈C^2,\ ϕ'$ monotonic, $|ϕ'(x)|\geq 1\ (∀x∈[a,b])$. Then
 	\[|I_1(λ)|\leq\f3{|λ|}\quad(∀λ>0)\]
 \end{lem}
 \begin{rem}
 	\begin{enumerate}
-		\item $3$ is neither important nor sharp; independence of $a,b,φ$ is the key!
-		\item Order of decrease in $λ$ is sharp ($φ()=x\therefore I_1(λ)=\f{e^{iλb}-e^{iλa}}{iλ}$)
-		\item monotonicity of $φ'$ is essential
+		\item $3$ is neither important nor sharp; independence of $a,b,ϕ$ is the key!
+		\item Order of decrease in $λ$ is sharp ($ϕ()=x\therefore I_1(λ)=\f{e^{iλb}-e^{iλa}}{iλ}$)
+		\item monotonicity of $ϕ'$ is essential
 	\end{enumerate}
 \end{rem}
 \begin{proof} Integrate by parts(…)
 \end{proof}
 What if critical points are present? ($d=1$)
 
-$x_0:φ'(x_0)=0$ (critical point) and $φ''(x_0)\neq 0$ (non degenerate), e.g.\ $φ(x)=x^2,\ x_0=0$. In this case
+$x_0:ϕ'(x_0)=0$ (critical point) and $ϕ''(x_0)\neq 0$ (non degenerate), e.g.\ $ϕ(x)=x^2,\ x_0=0$. In this case
 \[∫_ℝe^{iλx^2}ψ(x)\md x=c_0λ^{\f{-1}2}+\ord(|λ|^{-\f32})=\sum_{k=0}^Na_xλ^{-\f12-k}+\ord(|λ|^{-\f32-N})\quad(∀N,\ λ→∞)\]
 \begin{lem}[van der Corput (II)]
-	$φ∈C^2[a,b],\ |φ''(x)|\geq 1\ (∀x∈[a,b])$. Then
+	$ϕ∈C^2[a,b],\ |ϕ''(x)|\geq 1\ (∀x∈[a,b])$. Then
 	\[|I_1(λ)|\leq\f8{λ^{\f12}}\quad(∀λ>0)\]
 \end{lem}
-\begin{rem} More generally: $\ord(|λ|^{\f1k})$ if $|φ^{(k)}|\geq 1$.
+\begin{rem} More generally: $\ord(|λ|^{\f1k})$ if $|ϕ^{(k)}|\geq 1$.
 \end{rem}
 \begin{proof} Integration by parts not needed. Instead split up region in small area around critical point with properly chosen size, and rest, and then use results from above.
 	%figure here?
 \end{proof}
 \begin{cor} Same assumptions as van der Corput (II). $ψ∈C^1[a,b]$.
-	\[|∫e^{iλφ(x)}ψ(x)\md x|\leq c_ψλ^{\f{-1}2}\]
+	\[|∫e^{iλϕ(x)}ψ(x)\md x|\leq c_ψλ^{\f{-1}2}\]
 \end{cor}
 Application: Asymptotics of Bessel functions
-\[J_m(r)=\f1{2π}∫_0^{2π}e^{ir\sin x}e^{-imx}\md x\quadφ(x)=\sin x,\quad ψ(x)=e^{-imx}\quad(m∈ℤ)\]
+\[J_m(r)=\f1{2π}∫_0^{2π}e^{ir\sin x}e^{-imx}\md x\quadϕ(x)=\sin x,\quad ψ(x)=e^{-imx}\quad(m∈ℤ)\]
 
 \begin{cor}
-	\[|J_m(r)|\leq cr^{-\f12}\quadr→∞\]
+	\[|J_m(r)|\leq cr^{-\f12}\quad r→∞\]
 \end{cor}
 Recall: Averaging operator in $ℝ^d\ (d>1)$ is 
 \[(Af)(x)=(f*σ)(x)\quadσ\tx{ surface measure on $S^{d-1}$}\]
@@ -90,11 +91,11 @@ Recall: Averaging operator in $ℝ^d\ (d>1)$ is
 
 "What is van der Corput's lemma in higher dimension?" (Carbery-Wright, 2000)
 
-\[I(λ)=∫_{ℝ^d}e^{iλφ(x)}ψ(x)\md x\]
-($φ$ smooth, $ψ$ smooth, compactly supported)
+\[I(λ)=∫_{ℝ^d}e^{iλϕ(x)}ψ(x)\md x\]
+($ϕ$ smooth, $ψ$ smooth, compactly supported)
 
 nondegeneracy hypothesis
-\[\det(∇^2φ)(x)\neq 0\quad∀x∈\supp(ψ)\]
+\[\det(∇^2ϕ)(x)\neq 0\quad∀x∈\supp(ψ)\]
 
 \begin{theo} Under above assumptions
 	\[|I(λ)|=\ord(|λ|^{-\f12})\quadλ→∞\]
@@ -103,7 +104,7 @@ nondegeneracy hypothesis
 	\begin{enumerate}
 		\item Decay rate is sharp
 		\item Proof uses $TT^*$ method: $|I(λ)|^2=I(λ)\overline{I(λ)}$
-		\item variant: $\rk(∇^2φ)\geq m$ for some $0<m\leq d$ on $\supp(ψ)$. Then
+		\item variant: $\rk(∇^2ϕ)\geq m$ for some $0<m\leq d$ on $\supp(ψ)$. Then
 			\[|I(λ)|=\ord(|λ|^{-\f m2})\]
 	\end{enumerate}
 \end{rem}
@@ -113,7 +114,6 @@ Recall: $(S^{d-1},σ)$
 \[|\hatσ(ξ)|\lessim(1+|ξ|)^{-f{d-1}2}\]
 (not a Bessel coincidence)
 
-%I used the wrong φ all the time. Should have used ϕ…
 (local) $C^∞$-hypersurface $M$. After translation and rotation $x_0=0$, $T_{x_0}M=\{x_d=0\}$. $M$ can be represented as
 \[M=\{(x',x_d)∈B⊂ℝ^d:x_d=φ(x')\}\]
 Can arrange $φ(0)=0=(∇_{x'}φ)(x')|_{x'=0}$.
