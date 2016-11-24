@@ -1,0 +1,141 @@
+\paragraph{Oscillatory integrals in harmonic analysis}
+Stein (VIII,IX), Stein-Shakarchi (Chapter 8), Sogge
+\begin{itemize}
+	\item averaging operators
+	\item restriction theory
+	\item Bochner-Riesz summability
+\end{itemize}
+\subparagraph{Motivation (in $ℝ^3$)}
+\[(Af)(x)=\dashint_{S^2}f(x-y)\mdσ_y=\f1{4π*σ}(x)\]
+$σ$ surface measure in $S^2$.
+
+Smoothing properties:
+\begin{equation}
+	\|\f∂{∂x_j}A(f)\|_{L^2(ℝ^3)}\lesssim\|f\|_{L^2(ℝ^3)}\quad(j=1,2,3)
+	\label{eq:smoothprop}
+\end{equation}
+$f∈L^2⇒\|f*σ\|_{L^2}\leq\|f\|_{L^2}\ub{|σ|(ℝ^3)}_{<∞}$ (Minkowski integral inequality) $\therefore f*σ∈L^2$ if $f∈L^2$.
+
+Idea $(f*σ)^\hat=\hat f\hatσ$
+\[(\f∂{∂x_j}A(f))^\hat(ξ)=ξ_j\hat0f(ξ)\hatσ(ξ),\]
+so we should study $\hatσ$.
+
+without loss of generality $ξ=(0,0,|ξ|)$ because the integral is spherically symmetric.
+\[\hatσ(ξ)&=∫_{S^2}e^{-2πiωξ}\mdσ_ω=2π∫_0^πe^{-2πi|ξ|\cosϑ}\sinϑ\md=2π∫_{-1}^1e^{2πi|ξ|t}\md t=\f{2\sin(2π|ξ|)}{|ξ|}\]
+\[\therefore|\hatσ(ξ)|\lesssim(1+|ξ|)^{-1}\]
+\[t=\cosϑ\quad\md t=\sinϑ\mdϑ\]
+\eqref{eq:smoothprop} follows from this and Plancherel.
+
+This also generalizes to higher dimensions.
+
+Oscillatory integrals
+\[I(λ)=∫_{ℝ^d}e^{iλφ(x)}ψ(x)\md x\]
+where $λ∈ℝ$ is th oscillatory parameter, $ϕ∈C^∞(ℝ,ℝ)$ the phase and $ψ(x)∈ℂ$ the amplitude.
+
+Q.: How does $I(λ)$ behave for large $|λ|$? General principle: Main contribution comes from the critical points of the phase, $x_0:\ ∇φ(x_0)=0$.
+
+\paragraph{Principle of non-stationary phase}
+$φ∈C^∞,\ ψ∈C^∞_0:|∇φ(x)|\geq 0\ (∀x∈\suppψ)$. Then for any $N∈ℕ$
+\[|I(λ)|=c_N|λ|^{-N}\]
+\begin{proof} Integration by parts
+\end{proof}
+$d=1$:
+\[I_1(λ)=∫_a^be^{iλφ(x)}\md x\]
+\[0<a<b<∞\quadψ(x)=χ_{[a,b]}(x)\quad\tx{which is rough!}\]
+This means we will not get such a fast decay
+\begin{lem}[van der Corput (I)]
+	$φ∈C^2,\ φ'$ monotonic, $|φ'(x)|\geq 1\ (∀x∈[a,b])$. Then
+	\[|I_1(λ)|\leq\f3{|λ|}\quad(∀λ>0)\]
+\end{lem}
+\begin{rem}
+	\begin{enumerate}
+		\item $3$ is neither important nor sharp; independence of $a,b,φ$ is the key!
+		\item Order of decrease in $λ$ is sharp ($φ()=x\therefore I_1(λ)=\f{e^{iλb}-e^{iλa}}{iλ}$)
+		\item monotonicity of $φ'$ is essential
+	\end{enumerate}
+\end{rem}
+\begin{proof} Integrate by parts(…)
+\end{proof}
+What if critical points are present? ($d=1$)
+
+$x_0:φ'(x_0)=0$ (critical point) and $φ''(x_0)\neq 0$ (non degenerate), e.g.\ $φ(x)=x^2,\ x_0=0$. In this case
+\[∫_ℝe^{iλx^2}ψ(x)\md x=c_0λ^{\f{-1}2}+\ord(|λ|^{-\f32})=\sum_{k=0}^Na_xλ^{-\f12-k}+\ord(|λ|^{-\f32-N})\quad(∀N,\ λ→∞)\]
+\begin{lem}[van der Corput (II)]
+	$φ∈C^2[a,b],\ |φ''(x)|\geq 1\ (∀x∈[a,b])$. Then
+	\[|I_1(λ)|\leq\f8{λ^{\f12}}\quad(∀λ>0)\]
+\end{lem}
+\begin{rem} More generally: $\ord(|λ|^{\f1k})$ if $|φ^{(k)}|\geq 1$.
+\end{rem}
+\begin{proof} Integration by parts not needed. Instead split up region in small area around critical point with properly chosen size, and rest, and then use results from above.
+	%figure here?
+\end{proof}
+\begin{cor} Same assumptions as van der Corput (II). $ψ∈C^1[a,b]$.
+	\[|∫e^{iλφ(x)}ψ(x)\md x|\leq c_ψλ^{\f{-1}2}\]
+\end{cor}
+Application: Asymptotics of Bessel functions
+\[J_m(r)=\f1{2π}∫_0^{2π}e^{ir\sin x}e^{-imx}\md x\quadφ(x)=\sin x,\quad ψ(x)=e^{-imx}\quad(m∈ℤ)\]
+
+\begin{cor}
+	\[|J_m(r)|\leq cr^{-\f12}\quadr→∞\]
+\end{cor}
+Recall: Averaging operator in $ℝ^d\ (d>1)$ is 
+\[(Af)(x)=(f*σ)(x)\quadσ\tx{ surface measure on $S^{d-1}$}\]
+\begin{theo}
+	$f⇒A(f)$ is bounded from $L^2(ℝ^d)$ to $L^2_k(ℝ^d)$ with $=\f{d-1}2$.
+\end{theo}
+\begin{proof}
+	\[\hatσ(ξ)=2π|ξ|^{-\f d2+1}\ub{J_{\f d2-1}(2π|ξ|)}_{=\ord(|ξ|^{-\f12}),\ |ξ|→∞}\]
+	\[\therefore|\hatσ(ξ)|=\ord(|ξ|^{-\f{d-1}2})\quad|ξ|→∞\]
+\end{proof}	
+
+"What is van der Corput's lemma in higher dimension?" (Carbery-Wright, 2000)
+
+\[I(λ)=∫_{ℝ^d}e^{iλφ(x)}ψ(x)\md x\]
+($φ$ smooth, $ψ$ smooth, compactly supported)
+
+nondegeneracy hypothesis
+\[\det(∇^2φ)(x)\neq 0\quad∀x∈\supp(ψ)\]
+
+\begin{theo} Under above assumptions
+	\[|I(λ)|=\ord(|λ|^{-\f12})\quadλ→∞\]
+\end{theo}	
+\begin{rem}
+	\begin{enumerate}
+		\item Decay rate is sharp
+		\item Proof uses $TT^*$ method: $|I(λ)|^2=I(λ)\overline{I(λ)}$
+		\item variant: $\rk(∇^2φ)\geq m$ for some $0<m\leq d$ on $\supp(ψ)$. Then
+			\[|I(λ)|=\ord(|λ|^{-\f m2})\]
+	\end{enumerate}
+\end{rem}
+\paragraph{Application:} Fourier transform of surface-carried measures
+
+Recall: $(S^{d-1},σ)$
+\[|\hatσ(ξ)|\lessim(1+|ξ|)^{-f{d-1}2}\]
+(not a Bessel coincidence)
+
+%I used the wrong φ all the time. Should have used ϕ…
+(local) $C^∞$-hypersurface $M$. After translation and rotation $x_0=0$, $T_{x_0}M=\{x_d=0\}$. $M$ can be represented as
+\[M=\{(x',x_d)∈B⊂ℝ^d:x_d=φ(x')\}\]
+Can arrange $φ(0)=0=(∇_{x'}φ)(x')|_{x'=0}$.
+\[φ(x')=\f12\sum_{k,j=1}^{d-1}\ub{\f{∂^2φ}{∂x_k∂x_j}}_{(a_{jk})}x_kx_j+\ord(|x'|^3)=\f12\sum_{j=0}^{d-1}kjx_j^2+\ord(|x'|^3)\]
+$(a_{jk})$ $(d-1)\times(d-1)$ $ℝ$-valued symmetric matrix $\therefore$ diagonizable. $k_j$ principal curvaturos of $M$ at $x_0$. $k:=\prod_{j=1}^{d-1}k_j$ is the Gaussian curvature of $M$ at $x_0$ ($k=\det(∇^2φ)$)
+
+E.g.\ 
+\begin{enumerate}
+	\item $S^{d-1}⊂ℝ^d$. $k_j=1\ (∀j)\therefore k=1$
+	\item $\{x_3=\ub{x_1^2-x_2^2}_{φ(x_1,x_2)}\}⊂ℝ^3$, $\f12∇^2φ(x)=
+	\begin{pmatrix}1&0\\0&-1\end{pmatrix}$
+	\item $\{x_1^2=|x'|^2:x\neq 0\},\ x'∈ℝ^{d-1}$. $d-2$ identical nonvanishing principal curvatures $x_d^{-2}$ +1 vanishing principal curvature.
+\end{enumerate}
+\paragraph{surface measure $σ$}
+\[∫_Mf\mdσ=∫_{ℝ^{d-1}}f(x',φ(x'))\ub{\sqrt{1+|∇_{x'}φ(x')|^2}\md x'}_{\mdσ\tx{ in our coordinate sys.}}\]
+\[\mdμ=ψ\mdσ,\quadψ∈C^∞_0(M,σ)\]
+is a surface carried measure.
+\[\hatμ(ξ)=∫_Me^{-2πixξ}\mdμ(x)=∫_Me^{-2πixξ}ψ(x)\mdσ_x\]
+is bounded on $ℝ^d$ because $|μ|(ℝ^d)<∞$.
+\begin{theo} Hypersurface $M⊂ℝ^d$ with nonvanishing Gaussion curvature at each point of $\supp(ψ)$. Then
+	\[|\hatμ(ξ)|=\ord(|ξ|^{-\f{d-1}2}),\quad|ξ|→∞\]
+\end{theo}
+\begin{cor} If $M$ has at last $m$ non vanishing principal curvatures (at each point of $\supp(ψ)$), then
+	\[|\hatμ(ξ))|=\ord(|ξ|^{-\f m2}),\quad |ξ|→∞\]
+\end{cor}
