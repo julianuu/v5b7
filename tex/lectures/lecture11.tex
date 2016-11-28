@@ -6,8 +6,8 @@ Stein (VIII,IX), Stein-Shakarchi (Chapter 8), Sogge
 	\item Bochner-Riesz summability
 \end{itemize}
 \subparagraph{Motivation (in $ℝ^3$)}
-\[(Af)(x)=\dashint_{S^2}f(x-y)\mdσ_y=\f1{4π*σ}(x)\]
-$σ$ surface measure in $S^2$.
+\[(Af)(x)=\dashint_{\se^2}f(x-y)\mdσ_y=\f1{4π}f*σ(x)\]
+$σ$ surface measure in $\se^2$.
 
 Smoothing properties:
 \begin{equation}
@@ -22,7 +22,7 @@ Idea $\widehat{(f*σ)}=\hat f\hatσ$
 so we should study $\hatσ$.
 
 without loss of generality $ξ=(0,0,|ξ|)$ because the integral is spherically symmetric.
-\[\hatσ(ξ)=∫_{S^2}e^{-2πiωξ}\mdσ_ω=2π∫_0^πe^{-2πi|ξ|\cosθ}\sinθ\md=2π∫_{-1}^1e^{2πi|ξ|t}\md t=\f{2\sin(2π|ξ|)}{|ξ|}\]
+\[\hatσ(ξ)=∫_{\se^2}e^{-2πiωξ}\mdσ_ω=2π∫_0^πe^{-2πi|ξ|\cosθ}\sinθ\md=2π∫_{-1}^1e^{2πi|ξ|t}\md t=\f{2\sin(2π|ξ|)}{|ξ|}\]
 \[t=\cosθ\quad\md t=\sinθ\mdθ\]
 \[\therefore|\hatσ(ξ)|\lesssim(1+|ξ|)^{-1}\]
 \eqref{eq:smoothprop} follows from this and Plancherel.
@@ -31,14 +31,14 @@ This also generalizes to higher dimensions. There we get a factor $(1-t^2)^{\f{d
 
 \paragraph{Oscillatory integrals}
 \[I(λ)=∫_{ℝ^d}e^{iλϕ(x)}ψ(x)\md x\]
-where $λ∈ℝ$ is the oscillatory parameter, $ϕ∈C^∞(ℝ^d,ℝ)$ the phase and $ψ(x)∈ℂ$ the amplitude.
+where $λ∈ℝ$ is the oscillatory parameter, $ϕ∈C^∞(ℝ^d,ℝ)$ the phase and $ψ(x)∈C$ the amplitude.
 
 Q.: How does $I(λ)$ behave for large $|λ|$? General principle: Main contribution comes from the critical points of the phase, $x_0:\ ∇ϕ(x_0)=0$.
 
 \paragraph{Principle of non-stationary phase}
 $ϕ∈C^∞,\ ψ∈C^∞_0:|∇ϕ(x)|> 0\ (∀x∈\suppψ)$. Then for any $N∈ℕ$
 \[|I(λ)|\leq c_N|λ|^{-N}\]
-\begin{proof} Integration by parts (in a more complicated version)
+\begin{proof} involves integration by parts
 \end{proof}
 $d=1$:
 \[I_1(λ)=∫_a^be^{iλϕ(x)}\md x\]
@@ -51,7 +51,7 @@ This means we will not get such a fast decay
 \begin{rem}
 	\begin{enumerate}
 		\item $3$ is neither important nor sharp; independence of $a,b,ϕ$ is the key!
-		\item Order of decrease in $λ$ is sharp ($ϕ()=x\therefore I_1(λ)=\f{e^{iλb}-e^{iλa}}{iλ}$)
+		\item Order of decrease in $λ$ is sharp ($ϕ(x)=x\therefore I_1(λ)=\f{e^{iλb}-e^{iλa}}{iλ}$)
 		\item monotonicity of $ϕ'$ is essential
 	\end{enumerate}
 \end{rem}
@@ -71,7 +71,7 @@ $x_0:ϕ'(x_0)=0$ (critical point) and $ϕ''(x_0)\neq 0$ (non degenerate), e.g.\ 
 	%figure here?
 \end{proof}
 \begin{cor} Same assumptions as van der Corput (II). $ψ∈C^1[a,b]$.
-	\[|∫e^{iλϕ(x)}ψ(x)\md x|\leq c_ψλ^{\f{-1}2}\]
+	\[|∫e^{iλϕ(x)}ψ(x)\md x|\leq c_ψλ^{-\f{1}2}\]
 \end{cor}
 Application: Asymptotics of Bessel functions
 \[J_m(r)=\f1{2π}∫_0^{2π}e^{ir\sin x}e^{-imx}\md x\quadϕ(x)=\sin x,\quad ψ(x)=e^{-imx}\quad(m∈ℤ)\]
@@ -80,9 +80,9 @@ Application: Asymptotics of Bessel functions
 	\[|J_m(r)|\leq cr^{-\f12}\quad r→∞\]
 \end{cor}
 Recall: Averaging operator in $ℝ^d\ (d>1)$ is 
-\[(Af)(x)=(f*σ)(x)\quadσ\tx{ surface measure on $S^{d-1}$}\]
+\[(Af)(x)=(f*σ)(x)\quadσ\tx{ surface measure on $\se^{d-1}$}\]
 \begin{theo}
-	$f⇒A(f)$ is bounded from $L^2(ℝ^d)$ to $L^2_k(ℝ^d)$ with $=\f{d-1}2$.
+	$f↦A(f)$ is bounded from $L^2(ℝ^d)$ to $L^2_k(ℝ^d)$ with $=\f{d-1}2$.
 \end{theo}
 \begin{proof}
 	\[\hatσ(ξ)=2π|ξ|^{-\f d2+1}\ub{J_{\f d2-1}(2π|ξ|)}_{=\ord(|ξ|^{-\f12}),\ |ξ|→∞}\]
@@ -110,19 +110,19 @@ nondegeneracy hypothesis
 \end{rem}
 \paragraph{Application:} Fourier transform of surface-carried measures
 
-Recall: $(S^{d-1},σ)$
-\[|\hatσ(ξ)|\lessim(1+|ξ|)^{-f{d-1}2}\]
+Recall: $(\se^{d-1},σ)$
+\[|\hatσ(ξ)|\lesssim(1+|ξ|)^{-\f{d-1}2}\]
 (not a Bessel coincidence)
 
 (local) $C^∞$-hypersurface $M$. After translation and rotation $x_0=0$, $T_{x_0}M=\{x_d=0\}$. $M$ can be represented as
 \[M=\{(x',x_d)∈B⊂ℝ^d:x_d=φ(x')\}\]
 Can arrange $φ(0)=0=(∇_{x'}φ)(x')|_{x'=0}$.
-\[φ(x')=\f12\sum_{k,j=1}^{d-1}\ub{\f{∂^2φ}{∂x_k∂x_j}}_{(a_{jk})}x_kx_j+\ord(|x'|^3)=\f12\sum_{j=0}^{d-1}kjx_j^2+\ord(|x'|^3)\]
-$(a_{jk})$ $(d-1)\times(d-1)$ $ℝ$-valued symmetric matrix $\therefore$ diagonizable. $k_j$ principal curvaturos of $M$ at $x_0$. $k:=\prod_{j=1}^{d-1}k_j$ is the Gaussian curvature of $M$ at $x_0$ ($k=\det(∇^2φ)$)
+\[φ(x')=\f12\sum_{k,j=1}^{d-1}\ub{\f{∂^2φ}{∂x_k∂x_j}}_{(a_{jk})}x_kx_j+\ord(|x'|^3)=\f12\sum_{j=0}^{d-1}k_jx_j^2+\ord(|x'|^3)\]
+$(a_{jk})$ $(d-1)\times(d-1)$ $ℝ$-valued symmetric matrix $\therefore$ diagonizable. $k_j$ principal curvatures of $M$ at $x_0$. $k:=\prod_{j=1}^{d-1}k_j$ is the Gaussian curvature of $M$ at $x_0$ ($k=\det(∇^2φ)$)
 
 E.g.\ 
 \begin{enumerate}
-	\item $S^{d-1}⊂ℝ^d$. $k_j=1\ (∀j)\therefore k=1$
+	\item $\se^{d-1}⊂ℝ^d$. $k_j=1\ (∀j)\therefore k=1$
 	\item $\{x_3=\ub{x_1^2-x_2^2}_{φ(x_1,x_2)}\}⊂ℝ^3$, $\f12∇^2φ(x)=
 	\begin{pmatrix}1&0\\0&-1\end{pmatrix}$
 	\item $\{x_1^2=|x'|^2:x\neq 0\},\ x'∈ℝ^{d-1}$. $d-2$ identical nonvanishing principal curvatures $x_d^{-2}$ +1 vanishing principal curvature.
