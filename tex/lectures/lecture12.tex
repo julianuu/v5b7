@@ -1,0 +1,121 @@
+Last time: oscillatory integrals and averaging operators
+\[(Af)(x)=(F*σ)(x)=\dashint_{\se^{d-1}}f(x-y)\mdσ_y\quad(d>1)\]
+Smoothin property: $f\mapsto A(f)$ is bounded from $L^2(ℝ^d)$ to $L^2_k(ℝ^d)$ with $k=\f{d-1}2$. Here we used
+\[|\hatσ(ξ)|\lesssim|ξ|^{-\f{d-1}2}.\]
+
+A few weeks ago:
+\[R(f)(t.γ)=∫_{P_{t,γ}}f\]
+where $P_{t,γ}=\{x∈ℝ^d:xγ=t\}$.
+\[R^*(f)(γ)=\sup_{t∈ℝ}|R(f)(t,γ)|\]
+if $d\geq 3$ then
+\[∫_{\se^{d-1}}R^*(f)(γ)\mdσ_γ\lesssim\|f\|_{L^2}+\|f\|_{L^2}\]
+This estimate was based on
+\[∫_{\se^{d-1}}∫_{-∞}^∞|\hat R(f)(λ,γ)|^2|λ|^{d-1}\mdλ\mdσ_γ=2∫_{ℝ^d}|f(x)|^2\md x\]
+due to $\hat R(f)(λ,γ)=\hat f(λγ)$. Consider $d=3$ then this becomes
+\begin{equation}
+	∫_{\se^2}∫_ℝ|\f\md{\md t}R(f)(t,γ)|^2\md t\mdσ_γ=8π^2∫_{ℝ^3}|f(x)|^2\md x
+	\label{eq:dradonr3bound}
+\end{equation}
+by Plancherel $t\leftrightarrowλ$. Note, that something like this also holds for higher dimensions.
+
+Now consider the following "linearized" version of the Radon transform:
+\[R_B(f)=∫_{ℝ^{d-1}}f(y',x_d-B(x',y'))\md y'=∫_{M_x}f\]
+where $x=(x',x_d)∈ℝ^{d-1}\timesℝ,\ y=(y',y_d)$ and $B:ℝ^{d-1}\timesℝ^{d-1}→ℝ$ is a nondegenerate bilinear form, and 
+\[M_x=\{(y',y_d)\ |\ y_d=x_d-B(x',y')\}.\]
+E.g.\ $B(x',y')=\langle x',y'\rangle$ (usual inner product on $ℝ^d$). $y_d=x_d-\langle x',y'\rangle\iff\langle x',y'\rangle+y_d=x_d\iff\langle (x',1),(y',y_d)\rangle=x_d$. The map
+\begin{align*}
+	ℝ^d&→\{\tx{affine hyperplanes on $ℝ^d$}\}\\
+	x&↦M_x
+\end{align*}
+is injective and surjective onto $\{\tx{hyperplanes not orthogonal to $M_0=\{x_d=0\}$}\}$. The excerpted collection of hyperplanes is lower dimensional, so we can think of $R_B$ as a substitute for $R$.
+
+An analogue of \eqref{eq:dradonr3bound} is
+\[∫_{ℝ^d}|\f∂{∂x_3}R_B(f)(x)|^2\md x=c_B∫_{ℝ^3}|f(x)|^2\md x\]
+for $f∈C^0_0(ℝ)$
+\begin{proof}
+
+	\begin{align*}
+		∫_{ℝ^3}|\f∂{∂x_3}R_B(f)(x)|^2\md x&=∫_ℝ∫_{ℝ^2}|\ub{(\f∂{∂x_3}R_B(f))^∧(x',ξ_3)}_{=2πξ_3∫_{ℝ^2}e^{-2πiξ_3B(x',y')}\hat f(y',ξ_3)\md y'}|^2\md x'\mdξ_3&x=(x',x_3)
+	\end{align*}
+	The last equality follows from
+\begin{align*}
+\hat R_B(f)(x',ξ_3)&=∫_ℝe^{-2πiξ_3x_3}R_B(f)(x',x_3)\md x_3\\
+		    &=∫e^{-2πiξ_3x_3}∫_{ℝ^2}f(y',\ub{x_3-B(x',y')}_{y_3})\md y'\md x_3\\
+				  &=∫∫_{ℝ^{2+1}}e^{-2πiξ_3(y_3+B(x',y'))}f(y'y_3)\md y'\md y_3\\
+							      &=∫_{ℝ^2}e^{-2πiξ_3B(x',y')}\ub{(∫_ℝe^{-2πiξ_3y_3}f(y',y_3)\md y_3)}_{\hat f(y',ξ_3)}\md y'
+\end{align*}
+	Since $B$ is nondegenetare $∃C:ℝ^2→ℝ^2$ linear, invertible such that $B(x',y')=\langle C(x'),y'\rangle$. Changle variables $ξ_3C(x')=u∈ℝ^2$ is well defined since $C$ is invertible. $\thereforeξ_3B(x',y')=\langleξ_3C(x'),y'\rangle=\langle u,y'\rangle\thereforeξ_3^2|\det C|\md x'=\md u$. Then the first integral becomes
+	\[∫_ℝ∫_{ℝ^2}|∫_{ℝ^2}e^{-2πiuy'}\hat f(y',ξ_3)\md y'|^2\f{\md u}{|\det C|}\md ξ_3\simeq∫∫|\hat f(y',ξ_3)|^2\md y'\md ξ_3\simeq∫_{ℝ^3}|f(y)|^2\md y\]
+	by 2D-Plancherel $y'\leftrightarrow u$ and 1D-Plancherel $ξ_3\leftrightarrow y_3$.
+\end{proof}
+\paragraph{Rotational curvature}
+Both the averaging operator $A$ and the Radon transform $R_B$ are of the form $f↦∫_{M_x}f(y)\md_x(y)$, where for each $x∈ℝ^d$ we have a manifold $M_x$ (depending smoothly on $x$) over which we integrate.
+
+\begin{align*}
+	A:\quad M_x&=x+M_0\quad M_0\tx{ curved}\\
+	R_B:\quad M_x&=\{y=(y',y_d)\ |\ y'∈ℝ^{d-1},\ y_d=x_d-B(x',y')\}\quad\tx{flat but $M_x$ rotates as $x$ varies.}
+\end{align*}
+Start with a smooth "double defining" function $ρ=ρ(x,y)$ given in a ball in $ℝ^d\times ℝ^d$. Its rotational matrix is
+\[M=M(ρ)=
+	\begin{pmatrix}
+		ρ&\f{∂ρ}{∂y_1}&…&\f{∂ρ}{∂y_d}\\
+		\f{∂ρ}{∂x_1}\\
+		\vdots&(\f{∂^2ρ}{∂x_j∂y_k})_{j,k=1}^d\\
+		\f{∂ρ}{∂x_d}
+	\end{pmatrix}
+\]
+containing the mixed Hessian. The rotational curvature of $ρ$ is
+\[\rotcurv(ρ):=\det(M(ρ))\]
+We want $ρ=0⇒\rotcurv(ρ)\neq 0$. $M_x=\{y:ρ(x,y)=0\}$. The fact that $∇_yρ\neq0$ if $ρ=0$ implies that $M_x$ is a smooth surface (or something like that).
+
+Examples/Properties:
+\begin{enumerate}
+	\item Translatior invariant case: $ρ(x,y)=ρ(x-y)$. $M_x=M_0+x$ and $\rotcurv(ρ)\neq 0$ iff $M_0$ has nonvanishing Gaussian curvature.
+	\item Case of $R_B$: $ρ(x,y)=y_d-x_d+B(x',y')$. $\rotcurv(ρ)\neq 0$ iff $B$ is nondegenerate.
+	\item $\tildeρ(x,y)=a(x,y)ρ(x,y)$ with $a(x,y)\neq 0$. Then $\tildeρ$ is another defining function for $\{M_x\}$, and $\rotcurv(\tildeρ)=a^{d+1}\rotcurv(ρ)$
+	\item $x↦ψ_1(x),\ y↦ψ_2(y)$ local diffeomorphisms of $ℝ^d$. For $\tildeρ(x,y)=ρ(ψ_1(x),ψ_2(y))$ then $\rotcurv(\tildeρ)=J_1(x)J_2(y)\rotcurv(ρ)$ with $J_k=\det\jac(ψ_k),\ k=1,2$
+\end{enumerate}
+
+Define the general averaging operator $A$ by
+\[A(f)(x)=∫_{M_x}f(y)ψ_0(x,y)\mdσ_x(y)\]
+initially for $f∈C^0_0(ℝ^d)$. $M_x=\{y\ |\ ρ(x,y)=0\}$ with induced Lebesgue measure $\mdσ_x$. $ρ$ is a double defining function with $\rotcurv(ρ)\neq 0$. $ψ_0∈C^∞_0(ℝ^d\timesℝ^d)$.
+
+\begin{theo} The operator $A$ extends to a bounded linear map from $L^2(ℝ^d)$ to $L^2_k(ℝ^d)$ where $k=\f{d-1}2$.
+\end{theo}
+\begin{proof}
+	Step 1: Oscillatory integral operators (FIOs)
+
+	Step 2: $L^2$ estimate via dyadic decomposition of "almost-orthogonal" parts.
+
+	Step 1: Define
+	\[T_λ(f)(x)=∫_{ℝ^d}e^{iλφ(x,y)}ψ(x,y)f(y)\md y\]
+	where $φ∈C^∞(ℝ^d\timesℝ^d)$ and $ψ∈C^∞_0(ℝ^d\times ℝ^d)$ with
+	\[\det(∇^2_{x,y}φ)=\det(\f{∂^2φ}{∂x_k∂y_j})_{k,j=1}^d\neq 0\quad\tx{on }\supp(ψ)\]
+
+	last week: \[I(λ)=∫_{ℝ^d}e^{iλφ(y)}ψ(y)\md y⇒|I(λ)|\lesssim|λ|^{-\f d2}\]
+	if $\det∇^2φ\neq 0$ on $\supp(ψ)$. We used $|I(λ)|^2=I(λ)\overline{I(λ)}$ where then appeared the term $φ(u+y)-φ(y)$.
+	\begin{pro} Under the above assumptions, 
+		\[\|T_λ\|_{L^2→L^2}\leq cλ^{-\f d2}\quad∀λ>0\]
+	\end{pro}
+	\begin{proof} Similar to its scalar version, omitted.
+	\end{proof}
+	Consequence: For the corresponding oscillatory integral operator involving $ρ$
+	\[S_λ(f)(x)=∫_{ℝ\timesℝ^d}e^{iλy_0ρ(x,y)}ψ(x,y_0,y)f(y)\md y_0\md y\]
+	with $(y_0,y)∈ℝ\timesℝ^d$ and $ψ∈C^∞_0$ is supported away from $y_0=0$.
+	\begin{cor} If $ρ=0⇒\rotcurv(ρ)\neq 0$ then 
+		\[\|S_λ\|_{L^2→L^2}\leq cλ^{-\f{d+1}2}
+		\]
+	\end{cor}
+	\begin{proof}[Proof of Corollary]
+		$\bar x=(x_0,x),\bar y=(y_0,y)∈ℝ\timesℝ^d$. Set $φ(\bar x,\bar y)=x_0y_0ρ(x,y)$ then $\det(∇^2_{x,y}φ)=(x_0y_0)^{d+1}\rotcurv(ρ)$. Define
+		\[F_λ(x_0,x)=F_λ(\bar x)=∫_{ℝ^{d+1}}e^{iλφ(\bar x,\bar y)}ψ_1(x_0,x,y_0,y)f(y)\md y_0\md y\]
+		with $ψ_1(1,λ,y_0,y)=ψ(x,y_0,y)$ (from $S_λ$). Then $S_λ(f)(x)=F_λ(1,x)$.
+
+		Observation: If $I⊂ℝ$ interval of length 1, $g∈C^1(I),\ x_0∈I$ then
+		\[|g(u_0)|^2\leq2(∫_I|g(u)|^2\md u+∫_I|g'(u)|^2\md u)\]
+		Apply this observation with $I=[1,2],\ u_0=1,\ g(u)=F_λ(u,x)$ to get:
+		\[∫_{ℝ^d}|S_λ(f)(x)|^2\md x\leq 2(∫|F_λ(x_0,x)|^2\md x+∫|\f∂{∂x_0}F_λ(x_0,x)|^2\md x_0\md x)\]
+		The first integral is $\lesssimλ^{-(d+1)}\|f\|_{L^2}^2$ by Proposition with $ℝ^{d+1}$ instead of $ℝ^d$).
+		\[\f∂{∂x_0}(e^{iλx_0y_0ρ(x,y)})=\f∂{∂y_0}(e^{iλx_0y_0ρ(x_0,y_0)})\f{y_0}{x_0}\]
+		we integrate by parts somewhere and use our form of $φ$. Therefore the second summand also satisfies the desired estimate.
+	\end{proof}
