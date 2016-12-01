@@ -1,1 +1,76 @@
+Step 2: Dyadic decomposition of $A$.
+
+Co-area formua (see Evans-Cariery (?), Stein-Shakarchi IV, Exercise 8 ,Ch. 8): Fix $h∈S(ℝ)$ sucht that $∫h=1,\ M=\{x∈ℝ^d\ |\ ρ(x)=0\}$. Then
+\[∫_Mf\f{\mdσ}{|∇ρ|}=\lim_{ε→0^+}\f1ε∫_{ℝ^d}h(\f{ρ(x)}ε)f(x)\md x.\]
+E.g.\ $ρ(x)=|x|-1\therefore M=\se^{d-1},\ \f ∇ρ(x)=x{|x|},\therefore|∇ρ|=1$
+\[∫_{\se^{d-1}f\mdε=\lim_{ε→*^+}\f1ε∫_{ℝ^d}h(\f{|x|-1}ε)F(x)\md x\]
+where $f=F|_{\se^{d-1}}$.%figure of ball here
+\[A(f)(x)=\lim_{ε→0}\f1ε∫_{ℝ^d}h({ρ(x,y)}ε)ψ(x,y)f(y)\md y\]
+where $ψ(x,y)=ψ_0(x,y)|∇_yρ|∈C^∞_0(ℝ^d\timesℝ^d)$. Let $γ∈C^∞_0(ℝ)$ such that $γ=1$ on $[-\f12,\f12]$ and $0$ on $[-1,1]^\complement$. Let $h=\hatγ$. Then
+\[h(ρ)=∫_ℝe^{2πiξu}γ(u)\md u.\]
+Then
+\[∫h=∫\hatγ=γ(0)=1\]
+and
+\[∫_ℝe^{2πiuρ}γ(εu)\md u=(δ_εγ)^∨(ρ)=ε^{-1}γ^∨(ε^{-1}ρ)=ε^{-1}h(ε^{-1}ρ)\]
+where $δ_εγ)(u)=γ(εu)$. Choose $ε=2^{-r},\ r∈ℕ$. Note 
+\[γ(2^{-r}u)=γ(u)+\sum_{k=1}^r(γ(\f u{2^k}-γ(\f u{2^{k-1}}))\]
+Let $r→∞$ to get
+\[1=γ(u)+\sum_{k=1}^→η(\f u{2^k})\]
+wher $η(\cdot)=γ(\cdot)-γ(2\cdot)$ because $γ$ is continuous. Then $η∈C^∞_0(ℝ),\ \supp(η)⊂\{\f14\leq|u|\leq 1\}$. Whenever $f$ is continuous we get by Fourier inversion that
+\[A(f)(x)=\lim_{ε→0}\f1ε∫_{ℝ^d}∫_ℝe^{2πiu\f{ρ(x,y)}ε}γ(u)ψ(x,y)f(y)\md u\md y\]
+\[A(f)(x)=\lim_{ε→0}∫_{ℝ^d}∫_ℝe^{2πiuρ(x,y)γ(εu)}ψ(x,y)f(y)\md u\md y=∫_{ℝ^d}∫_ℝe^{2πiuρ(x,y)}γ(u)ψ(x,y)f(y)\md u\md y+\sum_{k=1}^∞∫_{ℝ^d}∫_ℝe^{2πiuρ(x,y)}η(\f u{2^k})ψ(x,y)f(y)\md u\md y\]
+since $γ(εu)→γ(0)=1\ ε→0$. Call the summands $A_k(f)(x)$. Properties of $A_k$:
+\begin{enumerate}
+	\item $f∈L^2(ℝ^d)⇒$
+		\[A_k(f)∈C^∞_0(ℝ^d)\]
+	\item \[\|A_k(f)\|_{L^2}\leq c2^{-k(\f{d-1}2)}\|f\|_{L^2}.\] Recall $\|S_λ\|_{L^2→L^2}\lesssimλ^{-\f{d+1}2i}$ and change variables is the definition of $A_k(f)$.
+	\item $∃m:|j-k|\geq m\ ∀N$
+		\[\|(A_k^*A_j)(f)\|_{L^1}\lesssim_N 2^{-N\max(k,j)}\|f\|_{L^2}.\] Similarly for $A_kA_j^*$. For the proof, invoke nonstationary phase. Also, recall $|I(λ)|^2=I(λ)\overline{I(λ)}$.
+	\item $A_k^{(α)}=(\f∂{∂x})^αA_k$. Then \[\|A_k^{(α)}\|_{L^2→L^2}\lesssim2^{k|α|}2^{-k(\f{d-1}2)}\] and \[\|A_k^{(α)}(A_j^{(α)})^*\|_{L^2→L^2}\lesssim_{α,N}2^{-N\max(k,j)}.\]
+\end{enumerate}
+
+Step 3: Almost-orthogonality
+
+Assume that $\{T_k\}_{k=1}^∞$ is a sequence of bounded operators on $L^2(ℝ^d)$ and that $\{a(k)\}_{k∈ℤ}$ are positive constants with
+\[A=\sum_{k∈ℤ}a(k)<∞.\]
+\begin{lem}[Cotlar-Knapp-Stein]
+	Assume for $\|T_kT_j^*\|_{L^2→L^2}$ that $\|T_k^*T_j\|\leq a(k-j)^2$. Then, for eveny $r$,
+	\[\|\sum_{k=0}^rT_k\|\leq A.\]
+	Note, that the bound $A$ is independent of $r$.
+\end{lem}
+Write $T=\sum_{k=0}^rT_k$. Recall $\|T\|^2=\|T^*T\|$ since $\|AB\|\leq\|A\|\|B\|$ and $\|Tx\|^2=\langle Tx,Tx\rangle=\langle x,T^*Tx\rangle\leq\|T^*T\|\|x\|^2$ and plug in an extremizing sequence of $\|Tx\|$ for $x$. Then $\|T\|^4=(\|T\|^2)^2=\|T^*T\|^2=\|(T^*T)^2\|$ since $T^*T$ is self adjoint. By induction we get
+\[\|T\|^{2n}=\|(T^*T)^n\|.\]
+\[(T^*T)^n=\sum_{i_1,i_2,…,i_{2n}}(T_{i_1}T_{i_2}^*…T_{i_{2n-1}}T_{i_{2n}}^*)\]
+
+\begin{enumerate}
+	\item \[\|(T_{i_1}T_{i_2}^*)…(T_{i_{2n-1}}T_{2_{2n}}^*)\|\leq a(i_1-i_2)^2a(i_3-i_4)^2…a(2_{2n-1})^2\]
+	\item \[\|T_{i_1}(T_{i_2}T_{i_3})…(T_{i_{2n-2}}T_{i_{2n-1}})T_{i_{2n}}\|\leq Aa(i_2-i_3)^2a(i_4-i_5)^2…a(i_{2n-2}-i_{2n-1})^2A\]
+\end{enumerate}
+Take geometric mean of (i) and (ii) and get
+\[\|T_{i_1}T_{i_2}…T_{i_{2n-1}}T_{i_{2n}}^*\|\leq Aa(i_1-a_2)a(i_2-i_3)…a(i_{2n-1}-i_{2n})\]
+Now sum the whole thing in $i_1,i_2,…,i_{2n-1}$. Then sum by sum, each of the factors turns into an $A$. In the end the sum in $i_{2n}$ gives a factor $r+1$. So,
+\[\sum_{i_1,i_2,…i_{2n}}\|T_{i_1}T_{i_2}^*…T_{i_{2n-1}}T_{i_{2n}}^*\|\leq A^{2n}(r+1)\]
+\[\therefore\|T\|\leq A(1+r)^{\f1n}→A\quad n→∞\]
+(Tensor power trick)
+
+Putting everything together:
+Case 1: $d$ odd ($\therefore\f{d-1}2∈ℤ$). ETS
+$∀|α|\leq\f{d-1}2\quad∀f∈L^2(ℝ^d)$
+\begin{itemize}
+	\item $∂_x^αA(f)$ exists (in the sense of distributions) and is an $L^2$ function
+	\item $f↦∂_x^αA(f)$ is bounded on $L^2$.
+\end{itemize}
+For each $r$, set
+\[∂_x^α\sum_{k=0}^r=:\sum_{k=0}^rT_k\quad (T_k=A_k^{(α)})\]
+The estimates 1 and 2 impl that the hypotheses of CKS ar satisfied with $a(k)=c_n2^{-|k|N}$ ($∀N\therefore$ can choose $N=1$).
+\[\therefore\|∂_x^α\sum_{k=0}^rA_k(f)\|_{L^2}\leq A\|f\|_{L^2}\]
+wher $A=\sum_{k∈ℤ}$, provided $|α|\leq\f{d-1}2$.
+\begin{enumerate}
+	\item with $α=0$ we get
+		\[\lim_{r→∞}\sum_{k=0}^rA_k(f)=A(f)\]
+		in $L^2$ and therefore in the weak sense.
+		\[\lim_{r→∞}∂_x^α\sum_{k=1}^rA_k(f)=∂_x^αA(f)\]
+		in the weak sense and therefore in $L^2$.
+\end{enumerate}
+Conclusion \[\|∂_x^αA(f)\|_{L^2}\leq A\|f\|_{L^2}\] whenever $f∈C^0_0(ℝ^d),\ |α|\leq\f{d-1}2$ (and $d$ is odd)
 \end{proof}
