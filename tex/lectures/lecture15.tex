@@ -1,0 +1,119 @@
+\paragraph{Maximal operator along a parabola}
+$f:ℝ^2→ℂ$
+\[\tilde Af(x)=\f1{2t}∫_{-t}^tf(x-γ(s))\md s\]
+Maximal operator $\sup_{t>0}\tilde A_tf(x)$.
+
+$2^k<t\leq 2^{k+1}$.
+\[\f1{2t}∫_{-t}^tf(x-γ(s))\md s\leq\f1{22^k}∫_{-2^{k+1}}^{2^{k+1}}|f(x-γ(s))|\md s\leq 4\ub{\f1{2^{k~1}}∫|f(x-γ(s)|η(2^{-k-1}s)\md s}_{A_{-k-1}f(x)}\]
+where $η:ℝ→ℝ_+$ smooth such that
+\[η(s)=\left\{
+		\begin{cases}
+			1&|s|\leq 1\\ 0&|s|\geq 2
+		\end{cases}
+	\right.
+\]
+Then the maximal operator we consider equal to
+\[\sup_{k∈ℤ}|A_kf(x)|\]
+up to a factor (right?)
+
+Now we consider $γ(s)=(s,s^2)$. Then
+\[A_jf(x)=2^j∫f(x_1-s,x_2-s^2)η(2^js)\md s=2^{j+k}∫f(x_1-2^k\tilde s,x_2-2^{2k}\tilde s^2)η(2^{jk}\tilde s)\md \tilde s
+=2^{j+k}∫f(2^h(2^{-k}x_1-\tilde s),2^{2k}(2^{-2k}x_2-\tilde s^2))η(2^{j+k}\tilde s)\md \tilde s=P_{-k}A_{j+k}P_kf(x)\]
+where $s=2^{-k}\tilde s$ and 
+\[P_kf(x)=f(2^kx_1,2^{2k}x_2)\]
+\[⇒M=P_{-k}MP_k\]
+Compare $A_j$ with
+\[B_jf(x)=2^{2j}∫f(x-y)ψ(2^jy_1,2^{2j}y_2)\md y\]
+where $ψ$ is compactly supported and smooth and
+\[∫_{ℝ^2}ψ=∫_ℝη\]
+\[ψ_j(x)=2^{3j}ψ(2^jx,2^{2j}x_2)\]
+is uspportd in a ball of radius $2^{-j}$ with respect to the metric
+\[ρ(x,y)=\max(|x_1-y_2|,|x_2-y_2|^{\f12})\]
+\[B_jf(x)\lesssim M_ρf(x)\]
+where $M$ is the maximal function with respect to $(ℝ^2,ρ,\tx{Leb. measure})$, doubling metric measure space. $M_ρ$ is $L^p$-bounded for some reason. Therefore \[f↦\sup_j|B_j|\] is bounded on $L^p(ℝ^2),\ 1<p\leq∞$. Need to estimate
+\[\sup_j|(A_j-B_j)f(x)|\leq(\sum_j|(A_j-B_j)f(x)|^2)^{\f12}\]
+\[∫f\mdμ_j=2^j∫f(s,s^2)η(2^js)\md s\]
+\[A_jf=μ_j*f,\quad B_jf=ψ_j*f\]
+Define
+\[σ_j:=μ_j-ψ_j\]
+Goal: Shw that
+\[\|(\sum_j|σ_j*f|^2)^{\f12}\|_p\lesssim\|f\|_p\]
+By interpolation it suffices to show this for $1<p\leq 2$. $p=2$:
+Let $f∈S$. Then by Plancherel
+\[\|(\sum_j|σ_j*f|^2)^{\f12}\|_2^2=∫_sum_jσ_j*f|^2=\sum_j∫|σ_j*f|^2=\sum_j∫|\hatσ_j|^2|\hat f|^2\leq∫|\hat f(ξ)|^2\sum_j|\hatσ_j(ξ)|^2\lesssim∫|\hat f|^2=\|f\|_2^2\]
+if we show that $\sum_j|\hatσ_j(ξ)|^2$ is bounded by a constant. Since the parabola has nonvanishing curvature we have
+\[|\hatμ_0(ξ)|\lesssim|ξ|^{-\f12}\]
+Since $ψ_0$ is smooth we have for all $N$
+\[|\hatψ_0(ξ)|\lesssim|ξ|^{-N}.\]
+That implies
+\[|\hatσ_0(ξ)|=|\hatμ_0(ξ)-\hatψ_0(ξ)|\lesssim|ξ|^{-\f12}.\]
+Also,
+\[∫_{ℝ^2}\md(μ_0-ψ_0)=0⇒\hatσ_0(0)=0\]
+and since $σ_0$ has compact support and
+\[∫_{ℝ^2}\md|σ_0|<∞\]
+$\hatσ_0(ξ)$ is differentiable in zero and therefore
+\[|\hatσ_0(ξ)|\lesssim|ξ|.\]
+Now
+\[\hatμ_j(ξ)=2^j∫e^{-2πi(ξ_1s+ξ_2s^2)}η(2^2s)\md s=∫e^{-2πi(2^{-j}ξ\tilde s+2^{-2j}ξ_2\tilde s^2)}η(\tilde s)\md\tilde s=\hatμ_0(2^{-j}ξ_1,2^{-2j}ξ_2)\]
+Also,
+\[|\hatσ_0(ξ)|\leq\min(ρ(ξ),ρ(ξ)^{-\f12})\]
+\[|\hatσ_j(ξ)|=|\hatσ_0(2^{-j}ξ_2,2^{-2j}ξ_2)|\lesssim\min(2^{-j}ρ(ξ),(2^{-j}ρ(ξ))^{-\f12})\]
+Now we sum
+\[\sum_j|σ_j(ξ)|^2\lesssim\sum_{j∈ℤ}\min((2^{-j}ρ(ξ))^2,(2^{-j}ρ(ξ))^{-1})\lesssim1\]
+
+$1<p<2$.
+\begin{lem} Let $1<q,p_0<∞$ with $\f1{1q}=|\f12-\f1{p_0}|$. Assume
+	\[σ^*f:=\sup_k|σ_k|*|f|\]
+	is bounded on $L^q$. Let $(g_k)∈L^{p_0}(l^2)$. Then
+	\[\|(\sum_k|σ_k*g_k|^2)^{\f12}\|_{p_0}\lesssim\|(\sum_k|g_k|^2)^{\f12}\|_{p_0}\]
+\end{lem}
+Something with an operator
+\begin{rem} For fixed $q$ there are two $p_0$s. If $p_0<2$ then
+	\[\f1{2q}=\f1{p_0}-\f12⇒p_0=\f1{\f1{2q}+\f12}=\f{2q}{1+q}<q\]
+	If $p_0>2$, then
+	\[\f1{2q}=\f12-\f1{p_0}⇒\f1{p_0}=\f12-\f1{2q}⇒\f2{p_0}=1-\f1q⇒q=(\f{p_0}2)'\]
+\end{rem}
+\begin{proof} Result for $p_0<2$ follows from $p_0>2$ by duality because for $L^{p_0}(l^2)→L^{p_0}(l^2)$ the adjoint maps on $(L^{p_0}(l^2))'=L^{p_0'}(l^2)$. For $g∈L^{p_0}(l^2),\ f∈L^{p_0'}(l^2)$ we use that
+	\[\langle(Tg)_k,f\rangle=∫\sum_k(Tg)_kf_k=∫(σ_k*g)f_k=∫g_k(\tildeσ_k*f_k)\]
+	where $\tildeσ_k$ is $σ_k$ reflected at 0.
+
+	$p_0>2$.
+	\[\|(\sum_k|σ_k*g_k|^2)^{\f12}\|_{p_0}^2=\|\sum_k|σ_k*g_k|^2\|_{\f{p_0}2}=∫f\sum_kσ_k*g_k|^2\]
+	for some $f$ with $1=\|f\|_{(\f{p_0}2)'}=\|f\|_q$.
+	\[|σ_k*g_k(x)|^2=|∫g_k(x-y)\mdσ_k|^2\leq(∫|g_k(x-y)|\md|σ_k|)^2\leq(∫|g_k(x-y)|^2\md|σ_k|)\ub{(∫\md|σ_k|)}_{\lesssim1}\lesssim∫|f|\sum_k|σ_k|*|g_k|^2=∫\sum_k(|\tildeσ_k|*|f|)|g_k|^2\leq∫(\tildeσ^*f)\sum_k|g_k|^2\leq\ub{\|σ^*f\|_q}_{\lesssim1}\|\sum_k|g_k|^2\|_{\f{p_0}2}\lesssim\|(\sum_k|g_k|^2)^{\f12}\|_{p_0}^2\]
+\end{proof}
+\begin{theo} Let $1<q<∞,\ \f{2q}{1+q}<p\leq 2$. Assume $σ^*$ is bounded on $L^q(ℝ^2)$, and $σ_j$ are measures with
+	\[\hatσ_j(ξ)\lesssim\min(2^jρ(ξ),(2^jρ(ξ))^{-1})^ε\]
+	for some $ε>0$ and
+	\[∫\md|\hatσ_j|\lesssim1.\]
+	Then
+	\[\|(\sum_j|σ_j*f|^2)^{\f12}\|_p\lesssim\|f\|_p.\]
+\end{theo}
+
+By construction $q$s and ranges for $p$ iteratively we can cover the whole interval.
+
+This theorem can actually be applied to different situations, e.g.\ dyadic spheres. One might not get optimal results though. Something with maximal functions for general spheres or so…
+
+Let $S_k$ be Littlewood-Paley projections, i.e.\ 
+\[\hat{S_kf}=\hat φ_kf\]
+where $φ_k$ is a smooth and bounded function with
+\[\supp\hatφ_k⊂\{ξ:2^{-k-1}\leqρ(ξ)\leq2^{-k+1}\}\]
+and
+\[\sum_k\hatϕ_k(ξ)=1\]
+for $ξ\neq 0$, so that
+\[f=\sum_kS_kf\]
+for $f∈L^p,\ 1<p<∞$. Then (or: and?) we have for the square function
+\[\|(\sum_k|S_kf|^2)^{\f12}\|_p\lesssim\|f\|_p\]
+for $1<p<∞$.
+\begin{proof}[Proof of Theorem]
+	By the lemma
+	\[\|(\sum_j|σ_j*\sum_kS_{j+k}f|^2)^{\f12}\|_p\leq\sum_k\|(\sum_j|σ_j*S_{j+k}f|^2)^{\f12}\|_p\]
+	Now the summands are
+	\[\lesssim\|(\sum_j|S_{j+k}f|^2)^{\f12}\|_p\lesssim\|f\|_p\]
+	where $p=\f{2q}{1+q}$. Also,
+	\[\|(\sum_j|σ_j*S_{j+k}f|^2)^{\f12}\|_2^2=\sum_j\|σ_j*S_{j+k}f\|_2^2=\sum_j\|\hatσ_j\hatφ_{j+k}\hat f\|_2^2\lesssim2^{-2ε|k|}\sum_j\|\hatφ_{j+k}\hat f\|_2^2\lesssim2^{-2ε|k|}\|\hat f\|_2^2\]
+	since $\hatφ_{j+k}$ is supported where $ρ(ξ)\sim2^{-j-k}$ and $\hatσ_j\lesssim2^{-ε|k|}$ on $\supp\hatφ_{j+k}$. Now we use Marcinkiewic interpolation:
+	\[\f{1-θ}{\f{2q}{1+q}}+\fθ2=\f1{p_θ}\]
+	\[⇒I_k\lesssim1^{1-θ}(2^{-2ε|k|})^θ\|f\|_{p_θ}\] which is summable in $k$.
+	For the missing part see Duoandikoetxea and Rubio de Francia 1986
+\end{proof}
