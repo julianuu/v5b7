@@ -27,7 +27,7 @@ Compare $A_j$ with
 where $ψ$ is compactly supported and smooth and
 \[∫_{ℝ^2}ψ=∫_ℝη\]
 \[ψ_j(x)=2^{3j}ψ(2^jx,2^{2j}x_2)\]
-is uspportd in a ball of radius $2^{-j}$ with respect to the metric
+is supported in a ball of radius $2^{-j}$ with respect to the metric
 \[ρ(x,y)=\max(|x_1-y_2|,|x_2-y_2|^{\f12})\]
 \[B_jf(x)\lesssim M_ρf(x)\]
 where $M$ is the maximal function with respect to $(ℝ^2,ρ,\tx{Leb. measure})$, doubling metric measure space. $M_ρ$ is $L^p$-bounded for some reason. Therefore \[f↦\sup_j|B_j|\] is bounded on $L^p(ℝ^2),\ 1<p\leq∞$. Need to estimate
@@ -36,11 +36,11 @@ where $M$ is the maximal function with respect to $(ℝ^2,ρ,\tx{Leb. measure})$
 \[A_jf=μ_j*f,\quad B_jf=ψ_j*f\]
 Define
 \[σ_j:=μ_j-ψ_j\]
-Goal: Shw that
+Goal: Show that
 \[\|(\sum_j|σ_j*f|^2)^{\f12}\|_p\lesssim\|f\|_p\]
 By interpolation it suffices to show this for $1<p\leq 2$. $p=2$:
 Let $f∈S$. Then by Plancherel
-\[\|(\sum_j|σ_j*f|^2)^{\f12}\|_2^2=∫_sum_jσ_j*f|^2=\sum_j∫|σ_j*f|^2=\sum_j∫|\hatσ_j|^2|\hat f|^2\leq∫|\hat f(ξ)|^2\sum_j|\hatσ_j(ξ)|^2\lesssim∫|\hat f|^2=\|f\|_2^2\]
+\[\|(\sum_j|σ_j*f|^2)^{\f12}\|_2^2=∫\sum_jσ_j*f|^2=\sum_j∫|σ_j*f|^2=\sum_j∫|\hatσ_j|^2|\hat f|^2\leq∫|\hat f(ξ)|^2\sum_j|\hatσ_j(ξ)|^2\lesssim∫|\hat f|^2=\|f\|_2^2\]
 if we show that $\sum_j|\hatσ_j(ξ)|^2$ is bounded by a constant. Since the parabola has nonvanishing curvature we have
 \[|\hatμ_0(ξ)|\lesssim|ξ|^{-\f12}\]
 Since $ψ_0$ is smooth we have for all $N$
@@ -78,9 +78,16 @@ Something with an operator
 	where $\tildeσ_k$ is $σ_k$ reflected at 0.
 
 	$p_0>2$.
-	\[\|(\sum_k|σ_k*g_k|^2)^{\f12}\|_{p_0}^2=\|\sum_k|σ_k*g_k|^2\|_{\f{p_0}2}=∫f\sum_kσ_k*g_k|^2\]
+	\[\|(\sum_k|σ_k*g_k|^2)^{\f12}\|_{p_0}^2=\|\sum_k|σ_k*g_k|^2\|_{\f{p_0}2}=∫f\sum_k|σ_k*g_k|^2\]
 	for some $f$ with $1=\|f\|_{(\f{p_0}2)'}=\|f\|_q$.
-	\[|σ_k*g_k(x)|^2=|∫g_k(x-y)\mdσ_k|^2\leq(∫|g_k(x-y)|\md|σ_k|)^2\leq(∫|g_k(x-y)|^2\md|σ_k|)\ub{(∫\md|σ_k|)}_{\lesssim1}\lesssim∫|f|\sum_k|σ_k|*|g_k|^2=∫\sum_k(|\tildeσ_k|*|f|)|g_k|^2\leq∫(\tildeσ^*f)\sum_k|g_k|^2\leq\ub{\|σ^*f\|_q}_{\lesssim1}\|\sum_k|g_k|^2\|_{\f{p_0}2}\lesssim\|(\sum_k|g_k|^2)^{\f12}\|_{p_0}^2\]
+	\[
+		(|σ_k|*|g_k(x)|)^2=(∫|g_k(x-y)|\md|σ_k|)^2\leq(∫|g_k(x-y)|^2\md|σ_k|)\ub{(∫\md|σ_k|)}_{\lesssim1}
+	\]
+	Now the whole sum becomes
+	\begin{align*}
+		&\lesssim∫|f|\sum_k|σ_k|*|g_k|^2=∫\sum_k(|\tildeσ_k|*|f|)|g_k|^2\leq∫(\tildeσ^*f)\sum_k|g_k|^2\\
+			       &\leq\ub{\|σ^*f\|_q}_{\lesssim1}\|\sum_k|g_k|^2\|_{\f{p_0}2}\lesssim\|(\sum_k|g_k|^2)^{\f12}\|_{p_0}^2
+	\end{align*}
 \end{proof}
 \begin{theo} Let $1<q<∞,\ \f{2q}{1+q}<p\leq 2$. Assume $σ^*$ is bounded on $L^q(ℝ^2)$, and $σ_j$ are measures with
 	\[\hatσ_j(ξ)\lesssim\min(2^jρ(ξ),(2^jρ(ξ))^{-1})^ε\]
@@ -110,7 +117,7 @@ for $1<p<∞$.
 	\[\|(\sum_j|σ_j*\sum_kS_{j+k}f|^2)^{\f12}\|_p\leq\sum_k\|(\sum_j|σ_j*S_{j+k}f|^2)^{\f12}\|_p\]
 	Now the summands are
 	\[\lesssim\|(\sum_j|S_{j+k}f|^2)^{\f12}\|_p\lesssim\|f\|_p\]
-	where $p=\f{2q}{1+q}$. Also,
+	where $p=\f{2q}{1+q}$. But this is not enough. So we do
 	\[\|(\sum_j|σ_j*S_{j+k}f|^2)^{\f12}\|_2^2=\sum_j\|σ_j*S_{j+k}f\|_2^2=\sum_j\|\hatσ_j\hatφ_{j+k}\hat f\|_2^2\lesssim2^{-2ε|k|}\sum_j\|\hatφ_{j+k}\hat f\|_2^2\lesssim2^{-2ε|k|}\|\hat f\|_2^2\]
 	since $\hatφ_{j+k}$ is supported where $ρ(ξ)\sim2^{-j-k}$ and $\hatσ_j\lesssim2^{-ε|k|}$ on $\supp\hatφ_{j+k}$. Now we use Marcinkiewic interpolation:
 	\[\f{1-θ}{\f{2q}{1+q}}+\fθ2=\f1{p_θ}\]
