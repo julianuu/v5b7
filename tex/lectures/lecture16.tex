@@ -1,60 +1,58 @@
 \paragraph{Fourier restriction theory}
-Gilen $f:\se^{d-1}→ℂ$, constider the Fourier transform $\hat{Fσ}(ξ)=∫_{\se^{d-1}}f(x)e^{/2πixξ}\mdσ(x)$ for $ξ∈ℝ^d$ (temdered distribution which turs out to be a function)
+Given $f:\se^{d-1}→ℂ$, consider the Fourier transform $\hat{Fσ}(ξ)=∫_{\se^{d-1}}f(x)e^{-2πixξ}\mdσ(x)$ for $ξ∈ℝ^d$ (tempered distribution which turns out to be a function)
 \begin{itemize}
 	\item $f$ smooth $⇒\hat{fσ}$ decays at $∞$, e.g.
-		\[|\hat{fσ}nξ)|\leq c\|f\|_{C^2}(1+|υξ|)^{-\f{d-1}2}\]
+		\[|\hat{fσ}(ξ)|\leq c\|f\|_{C^2}(1+|ξ|)^{-\f{d-1}2}\]
 		via stationary phase
 	\item $f$ bounded then no pointwise decay holds in general. E.g.\ \[f_k(x)=e^{2πikx}\]
-		Consider $ξ=k$ then $|\hat{f_kσ}(ξ)|=σ(\se^{d-1})\sim 1$, no decay here. Now take
-		\[f=\sum_{j\leq 0}\f{f_{k_j}}{j^2}\]
-		where $|k_j|→∞$ sufficiently fast, e.g.\ $k_j=j!$. Eay to check: $f$ is continuous but $|\hat{fσ}(ξ)|\leq c(1+|ξ|)^{-ε}$ does not hold for any $c<∞,\ ε>0$. (uniformly in $ξ$).
-	\item Problem of distinguished origin disappears if we take $L^q$ norms
-
+		Consider $ξ=k$ then $|\hat{f_kσ}(ξ)|=σ(\se^{d-1})\simeq 1$, no decay here. Now take
+		\[f=\sum_{j\geq 0}\f{f_{k_j}}{j^2}\]
+		where $|k_j|→∞$ sufficiently fast, e.g.\ $k_j=j!$. Easy to check: $f$ is continuous but $|\hat{fσ}(ξ)|\leq c(1+|ξ|)^{-ε}$ does not hold for any $c<∞,\ ε>0$. (uniformly in $ξ$).
+	\item Problem of distinguished origin disappears if we take $L^q$ norms (There was some discussion on the wording going on which I did not understand)
 \end{itemize}
-Restriction conjecture (Stein): rove that öf $f∈L^∞(\se^{d-1})$, then
-\[\|\hat{fσ}\|_{L^1(ℝ^d)}\leq c_{q,d}\|f\|_{L^∞(\se^{d-1},σ)}\]
-fore very $q>\f{2d}{d-1}$.
+Restriction conjecture (Stein): Prove, that if $f∈L^∞(\se^{d-1})$, then
+\[\|\hat{fσ}\|_{L^q(ℝ^d)}\leq c_{q,d}\|f\|_{L^∞(\se^{d-1},σ)}\]
+for very $q>\f{2d}{d-1}$.
 \begin{itemize}
-	\item Range of exponents would besharp: take $f\equiv 1∈L^ ‚(\se^{d-1})$
-		\[\|\hatσ\|_{L^q(ℝ^d)}^q=∫_{ℝ^d}|\hatσ(ξ)|^q\md ξ\lesssim∫_{ℝ^d}(1+|ξ|)r^{-\f{d-1}2q}\mdξ=_d\ub{∫_0^∞(1+r)^{-\f{d-1}2q}r^{d-1}\md r}_{<∞}\]
+	\item Range of exponents would be sharp: take $f\equiv 1∈L^ ‚(\se^{d-1})$
+		\[\|\hatσ\|_{L^q(ℝ^d)}^q=∫_{ℝ^d}|\hatσ(ξ)|^q\md ξ\lesssim∫_{ℝ^d}(1+|ξ|)r^{-\f{d-1}2q}\mdξ\simeq_d\ub{∫_0^∞(1+r)^{-\f{d-1}2q}r^{d-1}\md r}_{<∞}\]
 		iff $-\f{d-1}2q+(d-1)<-1$ iff $q>\f{2d}{d-1}$.
 
 \end{itemize}
-Corresponding problem for $Lw2$ densities was solved by Tomas-Stein inequality ($\sim 1975$). If $f∈L^2(se^{d-1})$, then
+Corresponding problem for $L^2$ densities was solved by Tomas-Stein inequality ($\sim 1975$). If $f∈L^2(\se^{d-1})$, then
 \[\|\hat{fσ}\|_{L^q(ℝ^d)}\lesssim_{q,d}\|f\|_{L^2(\se^{d-1})}\]
-if $q\geq\f{2d+2}{d-1}$, and this range is the best possible. Note, that this was already proven last term, can be found in Stein/Shakarchi
+if $q\geq\f{2d+2}{d-1}$, and this range is the best possible. Note, that this was already proven last term and can be found in Stein/Shakarchi
 
 \begin{itemize}
-	\item Assumptions are fo the form $q>q_0$ or $g\geq q_0$. Why?
-		\[\|\hat{fσ}\|_{L^∞ℝ^d)}=\sup_{ξ∈ℝ^d}|∫_{\se^{d-1}}f(x)e^{-2ηixξ}\md σ_x|\leq∫_{\se^{d-1}}|f(x)|\mdσ_x=\|f\|_{L^1(\se^{d-1})}\lesssim\|f\|_{L^2(\se^{d-1})}\]
+	\item Assumptions are of the form $q>q_0$ or $g\geq q_0$. Why?
+		\[\|\hat{fσ}\|_{L^∞(ℝ^d)}=\sup_{ξ∈ℝ^d}|∫_{\se^{d-1}}f(x)e^{-2ηixξ}\md σ_x|\leq∫_{\se^{d-1}}|f(x)|\mdσ_x=\|f\|_{L^1(\se^{d-1})}\lesssim\|f\|_{L^2(\se^{d-1})}\]
 		+ Riesz-Thorin because the sphere is compact
-	\item $q\geq\f{2d+2}{d-1}$ is the best possible for $L^2$ densities: Hnapp counterexample.
-		\[C_δ=\{x∈\se^{d-1}:1-xe_d\leqδ^2\}\] wher $e_d=(0,…,0,1)$. Since $|x-e_d|^2=2(1-xe_d)$, \[|x-e_d|\leq cδ⇒x∈C_δ⇒|x-e_d|\leq Cd\]
+	\item $q\geq\f{2d+2}{d-1}$ is the best possible for $L^2$ densities: Knapp counterexample.
+		\[C_δ=\{x∈\se^{d-1}:1-xe_d\leqδ^2\}\] where $e_d=(0,…,0,1)$. Since $|x-e_d|^2=2(1-xe_d)$, \[|x-e_d|\leq cδ⇒x∈C_δ⇒|x-e_d|\leq Cd\]
 		for appropriate constants $0<c<C<∞$. Let $f=1_{C_δ}$. Right hand side is easy:
-		\[\|f\|_{L^2(\se^{d-1})}=|C_δ|^{\f12}\cong_dδ^{\f{d-1}2}\]
-		Left hand is trickier. Note: the upport of $fσ$ is contained in a cylindrical box $B_δ$ centered at $e_d$ with length $\simδ^2$ in the $_d$ irection and $\simδ$ in the $(d-1)$ orthogonal direction.
+		\[\|f\|_{L^2(\se^{d-1})}=|C_δ|^{\f12}\simeq_dδq^{\f{d-1}2}\]
+		Left hand is trickier. Note: the support of $fσ$ is contained in a cylindrical box $B_δ$ centered at $e_d$ with length $\simδ^2$ in the $_d$ direction and $\simδ$ in the $(d-1)$ orthogonal direction.
 		\[\|\hat{fσ}\|_{L^q(ℝ^d)}\]
-		Uncertainty principle: If a function is supported it a box, then its fourier transform is more or less constant on the dual box, which is the same but with inverse lengths. Idea: look at $\hat{fσ}$ on the dual box $B_δ^*$ (centered at $0$), u.e.\ suppose $|ξ_d|\leqc_1^{-1}δ^{-1}$ and $|ξ_j|\leq c_1^{-1}δ^{-1}$ if $j<d$, $c_1$ is a large constant to be chosen. If $ξ∈B_δ^*$, then
-		\[|\hat{fσ}(ξ)|\f|∫_{C_δ}e^{2πixξ}\mdσ_x|=∫e^{2πi(x-e_d)ξ}\mdσ_x|\geq∫_{C_δ}\cos(2π(x-e_d)ξ)\mdσ_x|\] Conditions on $ξ$ imply thät 
+		Uncertainty principle: If a function is supported it a box, then its fourier transform is more or less constant on the dual box, which is the same but with inverse lengths. Idea: look at $\hat{fσ}$ on the dual box $B_δ^*$ (centered at $0$), u.e.\ suppose $|ξ_d|\leq c_1^{-1}δ^{-1}$ and $|ξ_j|\leq c_1^{-1}δ^{-1}$ if $j<d$, $c_1$ is a large constant to be chosen. If $ξ∈B_δ^*$, then
+		\[|\hat{fσ}(ξ)|=|∫_{C_δ}e^{2πixξ}\mdσ_x|=∫e^{2πi(x-e_d)ξ}\mdσ_x|\geq∫_{C_δ}\cos(2π(x-e_d)ξ)\mdσ_x|\] Conditions on $ξ$ imply that 
 		\[2π(x-e_d)ξ|\leq\fπ3\]
-		if $C_1$ langle enough. Therefore
-		\[|\hat{fσ}(ξ)|\geq\f12|C_d|\congδ^{d-1}\]
-		How lanv,gle is $B_^*$?
-		\[|B_δ^*|\congδ^{-2}(δ^{-1})^{d-1}=δ^{-(d+1)}\]
+		if $C_1$ large enough. Therefore
+		\[|\hat{fσ}(ξ)|\geq\f12|C_d|\simeqδ^{d-1}\]
+		How large is $B_δ^*$?
+		\[|B_δ^*|\simeqδ^{-2}(δ^{-1})^{d-1}=δ^{-(d+1)}\]
 		Conclusion:
-		\[\|\hat{fσ}\|_{L^1(ℝ^d)}\gegsim(∫_{B_δ^*}|\hat{fσ}(ξ)|^q\mdξ)^{\f1q}\geqsimδw{d-1}δ^{-\f{d+1}q}\]
-		\[δ^{d-1}δ^{-\f{d+1}q}\leq\|\hat{fσ}\|_{L^q(ℝ^d)}\lesssim\|f\|_{L^2(\se^{d-1})}\congδ^{\f{d-1}2}\]
+		\[\|\hat{fσ}\|_{L^1(ℝ^d)}\gtrsim(∫_{B_δ^*}|\hat{fσ}(ξ)|^q\mdξ)^{\f1q}\gtrsimδw{d-1}δ^{-\f{d+1}q}\]
+		\[δ^{d-1}δ^{-\f{d+1}q}\leq\|\hat{fσ}\|_{L^q(ℝ^d)}\lesssim\|f\|_{L^2(\se^{d-1})}\simeqδ^{\f{d-1}2}\]
 		\[\therefore d-1-\f{d+1}q\geq\f{d-1}2⇔\f{d-1}2\geq\f{d+1}q⇔q\geq{2d+2}{d-1}\]
 \end{itemize}
-So, if you violate both of the two obstructions, then the inequality should hold (which obstructions?)
+So, if you violate both of the two obstructions, then the inequality should hold (which obstructions? Maybe $∞$-bound on the domain and on the range?))
 
 Technical tool: convolution of Schwartz function with a (compacty supported) measure. $ϕ∈S(ℝ^d),\ μ∈M(ℝ^d)$ then
 \[(φ*μ)(x)=∫φ(x-y)\mdμ(y)\]
-Notation
-\[\check μ=\hatμ(-\cdot)\]
+Notation $\check μ=\hatμ(-\cdot)$
 \begin{lem}
 	\begin{enumerate}
-		\item \[\hat{\check ϕμ^∨}=\hatϕ*μ\]
+		\item \[\hat{\check ϕμ}=\hatϕ*μ\]
 		\item \[\hat{ϕμ}=φ*\hatμ\]
 	\end{enumerate}
 \end{lem}
@@ -76,45 +74,51 @@ Notation
 \end{proof}
 \begin{lem} $μ$ finite positive measure. Then the following are equivalent
 	\begin{enumerate}
-		\item $\|\hat{fμ}\|_{L^q}\leq c\|f\|_{L^2(⇔)}\quad∀f∈L^2(μ)$
-		\item $\|\hat g\|_{L^2(⇔)}\leq c\|g\|_{L^{q'}}\quad∀g∈S$
+		\item $\|\hat{fμ}\|_{L^q}\leq c\|f\|_{L^2(μ)}\quad∀f∈L^2(μ)$
+		\item $\|\hat g\|_{L^2(μ)}\leq c\|g\|_{L^{q'}}\quad∀g∈S$
 		\item $\|f*\hatμ\|_{L^q}\leq c^2\|f\|_{L^{q'}}\quad∀f∈S$
 	\end{enumerate}
 \end{lem}
-Note, that $T:L^2→L^q,\ f↦\hat{fμ}$ (extension) iff $T^*:L^{q'}→L^2,\ g↦\hat g|_{\suppμ}$ (restriction) iff $TT*:L^{q'}→L^q,\ f↦f*\hatμ$
+Note, that 
+\begin{itemize}
+	\item $T:L^2→L^q,\ f↦\hat{fμ}$ (extension) iff 
+	\item $T^*:L^{q'}→L^2,\ g↦\hat g|_{\suppμ}$ (restriction) iff 
+	\item $TT*:L^{q'}→L^q,\ f↦f*\hatμ$
+\end{itemize}
+Again, there were some words about the expression 'extension', which I did not understand.
 
 \begin{proof}[Proof of Tomas-Stein, up to endpoint]
-Will show \[q>\f{2d+2}{d-1}⇒\|f*\hatμ\|_{L^q:ℝ^d)}\lesssim_{q,d}\|f\|_{L^{q'}(ℝ^d)}\]
-Relevant properties of $σ$:
-\begin{enumerate}
-	\item $|\hatσ(ξ)|\lesssim(1+|ξ|)^{-\f{d-1}2}$
-	\item $σ(D(x,r))\cong r^{d-1}$
-\end{enumerate}
-Note, that every measure satisfying this will have a Tomas-Stein, because these are the only properties we need.
+	Will show \[q>\f{2d+2}{d-1}⇒\|f*\hatμ\|_{L^q(ℝ^d)}\lesssim_{q,d}\|f\|_{L^{q'}(ℝ^d)}\]
+	Relevant properties of $σ$:
+	\begin{enumerate}
+		\item $|\hatσ(ξ)|\lesssim(1+|ξ|)^{-\f{d-1}2}$
+		\item $σ(D(x,r))\simeq r^{d-1}$
+	\end{enumerate}
+	Note, that every measure satisfying this will have a Tomas-Stein, because these are the only properties we need.
 
-Let $ϕ∈C^∞_0(ℝ^d),\ \supp(Φ)⊂\{x:\f14\leq|x|\leq 1\},\ \sum_{j\geq 0}φ(\f x{2^j})=1$ if $|x|\geq 1$.
+	Let $ϕ∈C^∞_0(ℝ^d),\ \supp(Φ)⊂\{x:\f14\leq|x|\leq 1\},\ \sum_{j\geq 0}φ(\f x{2^j})=1$ if $|x|\geq 1$.
 
-Cur up $\hatσ$ as follows:
-\[\hatσ=k_{-⟨}+\sum_{j=0}^∞k_j\]
-with \[k_j(x)=ϕ(\f x{2^j})\hatσ(x)\]
-and \[k_{-∞}(x)=(1-\sum_{j\geq 0}ϕ(\f x{2^j}))\hatσ(x)\]
-Easy: $k_{-∞}∈C^∞_0$: \[\|f*k_{-∞}\|_{L^q}\lesssim\|f\|_{L^p}\quad∀p\leq q\]
-Since $q>2$ we can take $p=q'$.
+	Cut up $\hatσ$ as follows:
+	\[\hatσ=k_{-∞}+\sum_{j=0}^∞k_j\]
+	with \[k_j(x)=ϕ(\f x{2^j})\hatσ(x)\]
+	and \[k_{-∞}(x)=(1-\sum_{j\geq 0}ϕ(\f x{2^j}))\hatσ(x)\]
+	Easy: $k_{-∞}∈C^∞_0$: \[\|f*k_{-∞}\|_{L^q}\lesssim\|f\|_{L^p}\quad∀p\leq q\]
+	Since $q>2$ we can take $p=q'$ (Why does it hold for $q'$, then? And don't we want to show it only for $q'$ anyways?).
 
-Trickier: $(k_j)_{j=0}^∞$. Upshot: Estimate the convolution with $k_j$ $L^1→L^∞,\ L^2→L^2$
+	Trickier: $(k_j)_{j=0}^∞$. Upshot: Estimate the convolution with $k_j$ $L^1→L^∞,\ L^2→L^2$.
 
-$L^1→L^∞$.
-\[\|f*k_j\|_{L^∞}\leq\|k_j\|_{L^∞}\|f\|_{L^1}\] where
-\[\|k_j\|_{L^∞}\sim 2^{-j\f{d-1}2}\] as a consequence of property (i).
+	First $L^1→L^∞$.
+	\[\|f*k_j\|_{L^∞}\leq\|k_j\|_{L^∞}\|f\|_{L^1}\] where
+	\[\|k_j\|_{L^∞}\sim 2^{-j\f{d-1}2}\] as a consequence of property (i).
 
-$L^2→L^2$
-\[\|f*k_j\|_{L^2}=\|\hat f\hat k_j\|_{L^2}\leq\|\hat k_j\|_{L^∞}\|f\|_{L^2}\]
-Claim :$\|\hat k_j\|_{L^∞}\sim 2^j$ (Next lecture)
+	$L^2→L^2$
+	\[\|f*k_j\|_{L^2}=\|\hat f\hat k_j\|_{L^2}\leq\|\hat k_j\|_{L^∞}\|f\|_{L^2}\]
+	Claim :$\|\hat k_j\|_{L^∞}\sim 2^j$ (Next lecture)
 
-Interpolate (Riesz-Thorin)
-\[f*k_j\|_{L^q}\lesssim2^{-j\f{d-1}2(1-θ)}2^{jθ}\|f\|_{L^{q'}}\]
-\[\f1q=\f{1-θ}∞+\fθ2\therefore q=\f2θ\]
-which is equivalent to
-\[\|f*k_j\|_{L^q}\lesssim 2^{j(\f{d+1}q-\f{d-1}2)}\|f\|_{L^{q'}}\]
-for any $q∈[2,∞]$. The exponent is less than 0 iff $q>\f{2d+2}{d-1}$
+	Interpolate (Riesz-Thorin)
+	\[\|f*k_j\|_{L^q}\lesssim2^{-j\f{d-1}2(1-θ)}2^{jθ}\|f\|_{L^{q'}}\]
+	\[\f1q=\f{1-θ}∞+\fθ2\therefore q=\f2θ\]
+	which is equivalent to
+	\[\|f*k_j\|_{L^q}\lesssim 2^{j(\f{d+1}q-\f{d-1}2)}\|f\|_{L^{q'}}\]
+	for any $q∈[2,∞]$. The exponent is less than 0 iff $q>\f{2d+2}{d-1}$
 \end{proof}
