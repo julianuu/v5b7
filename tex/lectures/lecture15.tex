@@ -4,13 +4,11 @@ $f:ℝ^2→ℂ$
 Maximal operator $\sup_{t>0}\tilde A_tf(x)$.
 
 $2^k<t\leq 2^{k+1}$.
-\[\f1{2t}∫_{-t}^tf(x-γ(s))\md s\leq\f1{22^k}∫_{-2^{k+1}}^{2^{k+1}}|f(x-γ(s))|\md s\leq 4\ub{\f1{2^{k~1}}∫|f(x-γ(s)|η(2^{-k-1}s)\md s}_{A_{-k-1}f(x)}\]
+\[\f1{2t}∫_{-t}^tf(x-γ(s))\md s\leq\f1{22^k}∫_{-2^{k+1}}^{2^{k+1}}|f(x-γ(s))|\md s\leq 4\ub{\f1{2^{k-1}}∫|f(x-γ(s)|η(2^{-k-1}s)\md s}_{A_{-k-1}f(x)}\]
 where $η:ℝ→ℝ_+$ smooth such that
-\[η(s)=\left\{
-		\begin{cases}
-			1&|s|\leq 1\\ 0&|s|\geq 2
-		\end{cases}
-	\right.
+\[η(s)= \begin{cases}
+		1&|s|\leq 1\\ 0&|s|\geq 2
+	\end{cases}
 \]
 Then the maximal operator we consider equal to
 \[\sup_{k∈ℤ}|A_kf(x)|\]
@@ -86,7 +84,7 @@ Something with an operator
 	Now the whole sum becomes
 	\begin{align*}
 		&\lesssim∫|f|\sum_k|σ_k|*|g_k|^2=∫\sum_k(|\tildeσ_k|*|f|)|g_k|^2\leq∫(\tildeσ^*f)\sum_k|g_k|^2\\
-			       &\leq\ub{\|σ^*f\|_q}_{\lesssim1}\|\sum_k|g_k|^2\|_{\f{p_0}2}\lesssim\|(\sum_k|g_k|^2)^{\f12}\|_{p_0}^2
+		&\leq\ub{\|σ^*f\|_q}_{\lesssim1}\|\sum_k|g_k|^2\|_{\f{p_0}2}\lesssim\|(\sum_k|g_k|^2)^{\f12}\|_{p_0}^2
 	\end{align*}
 \end{proof}
 \begin{theo} Let $1<q<∞,\ \f{2q}{1+q}<p\leq 2$. Assume $σ^*$ is bounded on $L^q(ℝ^2)$, and $σ_j$ are measures with
