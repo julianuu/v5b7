@@ -1,9 +1,10 @@
-Recall, that a Kakeya set is a compact set $E⊂ℝ^d$ which contains a unit line segment in every possible direction. We have seen, that if $d\geq 2$, then there are Kakeya sets in $ℝ^d$ of zero (Lebesque) measure. The Kakeya (set) conjecture is: If $E⊂ℝ^d$ is a Kakeya set, then $E$ has Hausdorff dimension $d$. We have seen it for $d=2$, but remains an open problem in general $d$. However if
+Recall, that a Kakeya set is a compact set $E⊂ℝ^d$ which contains a unit line segment in every possible direction. We have seen, that if $d\geq 2$, then there are Kakeya sets in $ℝ^d$ of zero (Lebesque) measure. The Kakeya (set) conjecture is: If $E⊂ℝ^d$ is a Kakeya set, then $E$ has Hausdorff dimension $d$. We have seen it for $d=2$, but remains an open problem in general $d$. However
 \[\dim E\geq\max\{\f{d+2}2,(2-\sqrt 2)(d-4)+3\}\]
-it is also done, when the first constant is due to Wolff '95 and the second due to Katz-Tao '02.
+is already shown, where the first constant is due to Wolff '95 and the second due to Katz-Tao '02.
 
 \paragraph{Kakeya maximal function} Let $δ>0,\ e∈\se^{d-1},\ a∈ℝ^d$. Let $T_e^δ(a)$ be the cylinder centered at $a$, base diameter $δ$, oriented along $e$ with length $2|e|$. Let $f∈L^1_\loc(ℝ^d)$. Then we define
 \[f_δ^*(e)=\sup_{a∈ℝ^d}\f1{|T^δ|}∫_{T_e^δ(a)}|f|\]
+Note, that $|T_e^δ(a)|$ only depends on $δ$.
 \begin{rem}
 	\begin{enumerate}
 		\item trivially \[\|f^*_δ\|_{L^∞(\se^{d-1})}\leq\|f\|_{L^∞(ℝ^d)},\]
@@ -12,7 +13,7 @@ it is also done, when the first constant is due to Wolff '95 and the second due 
 			\[\|f^*_δ\|_{L^q(\se^{d-1})}\leq c\|f\|_{L^p(ℝ^d)}\]
 			with $c$ independent of $δ$. Why: Let $E$ be a Kakeya set with zero measure and $E_δ$ a $δ$ neighborhood of $E$, $f=1_{E_δ}$. Then
 			\begin{itemize}
-				\item $∀e∈\se^{d-1}\ f^*_δ(e)=1\therefore\|f^*_δ\|_{L^ϕ(\se^{d-1})}\sim 1$
+				\item $∀e∈\se^{d-1}\ f^*_δ(e)=1\therefore\|f^*_δ\|_{L^q(\se^{d-1})}\sim 1$
 				\item $\|f\|_{L^p}=|E_δ|^{\f1p}$ which goes to $0$ as $δ→0^+$ if $p<∞$.
 			\end{itemize}
 			Goal: $δ^{-ε}$ estimate for $f_δ^*$, i.e.\ $∀ε>0\ ∃C_ε<∞$
@@ -22,7 +23,7 @@ it is also done, when the first constant is due to Wolff '95 and the second due 
 			\[\|f\|_{L^p}=|B(δ)|^{\f1p}=δ^{\f dp}\]
 			So we must have $p\geq d$ for the inequality to hold for all $δ$. Kakeya maximal function conjecture: It holds for $p=d$. 
 			\begin{itemize}
-				\item $d=2$: Cordoba '77, Bourgain '91 (seen: $R_δ^*$, $\|f^*_δ\|_{L^2(\se^1)}\lesssim\sqtr{\log\f1δ}\|f\|_{L^2(ℝ^2)}$)
+				\item $d=2$: Cordoba '77, Bourgain '91 (seen: $R_δ^*$, $\|f^*_δ\|_{L^2(\se^1)}\lesssim\sqrt{\log\f1δ}\|f\|_{L^2(ℝ^2)}$)
 				\item $d\geq 3$ open,…
 				\item If the inequality holds for some finite $p<∞$, then Kakeya sets in $ℝ^d$ have Hausdorff dimension $d$.
 			\end{itemize}
@@ -41,44 +42,44 @@ Upshot: The restriction conjecture implies the Kakeya maximal function conjectur
 	is also true.
 \end{theo}
 \begin{lem}[Duality]
-	Let $1<p<∞,\ p'=\f p{p-1}$, $\{e_k\}⊂\se^{d-1}$. Assume maximal $D$-separated set and $δ^{d-1}\sum_kd_k^{p-}\leq 1$ implies
+	Let $1<p<∞,\ p'=\f p{p-1}$, $\{e_k\}⊂\se^{d-1}$. Assume, that if $\{e_k\}$ is maximal $δ$-separated set and $δ^{d-1}\sum_ky_k^{p'}\leq 1$, then
 	\[\|\sum_ky_k1_{T_{e_k}^δ(a_k)}\|_{L^{p'}(ℝ^d)}\leq A.\]
 	Then there is a bound 
 	\[\|f^*_δ\|_{L^p(\se^{d-1})}\lesssim A\|f\|_{L^p(ℝ^d)}\]
 \end{lem}
+(why is it called 'Duality Lemma'?)
 \begin{proof}[Proof of lemma]
 	$|e-e'|<δ⇒f^*_δ(e)\lesssim_d f^*_δ(e')$ because any $T_e^δ(a)$ can be covered by finitely many tubes $T_{e'}^δ(a')$. Therefore
-	\[\|f^*_δ\|_{L^p(\se^{d-1})}\leq(\sum_k∫_{D(e_k,δ)}|F^*_δ(e)|^p\mdσ_e)^{\f1p}\lessim(δ^{d-1}\sum_k\sum_k|f^o_δ(e_k)|^p)^{\f1p}=δ^{d-1}\sum_ky_k|f^*_δ(e_k)|\]
-	for somee sequence $(y_k)$ such that $\sum_ky_k^{p'}δ^{d-1}=1$, by duality of $l^p-l^{p'}$: \[\|a\|_{l^p}=\sup_{\|b\|_{l^p}=1}|\sum a_n\bar b_n|\]
-	THerefore
-	\[\|f^*_δ\|_{L^p(\se^{d-1})}\lesssimδ^{d-1}\sum y_k\f1{|T^δ|}∫_{T_{e_k}^δ(a_k)}|f|\]
+	\[\|f^*_δ\|_{L^p(\se^{d-1})}\leq(\sum_k∫_{D(e_k,δ)}|F^*_δ(e)|^p\mdσ_e)^{\f1p}\lesssim(δ^{d-1}\sum_k|f^*_δ(e_k)|^p)^{\f1p}=δ^{d-1}\sum_ky_k|f^*_δ(e_k)|\]
+	for some sequence $(y_k)$ such that $\sum_ky_k^{p'}δ^{d-1}=1$, by duality of $l^p-l^{p'}$. Therefore
+	\[\|f^*_δ\|_{L^p(\se^{d-1})}\lesssimδ^{d-1}\sum_k y_k\f1{|T^δ|}∫_{T_{e_k}^δ(a_k)}|f|\]
 	for some choice of $(a_k)$ that realizes the sup. This equals
-	\[∫_{ℝ^d}(\sum_ky_k1_{T_{e_k}^δ(a_k)})|f|\leq\|\sum y_k1_{T_{e_k}^δ(a_k)}\|_{L^{p'}(ℝ^d)}\|f\|_{L^p(ℝ^d)}\lesssim A\|f\|_{L^p(ℝ^d)}\]
+	\[∫_{ℝ^d}(\sum_ky_k1_{T_{e_k}^δ(a_k)})|f|\leq\|\sum_k y_k1_{T_{e_k}^δ(a_k)}\|_{L^{p'}(ℝ^d)}\|f\|_{L^p(ℝ^d)}\lesssim A\|f\|_{L^p(ℝ^d)}\]
 \end{proof}
 \begin{proof}[Proof of theorem]
-	Choose maximl $δ$-seperated set $\{e_j\}⊂\se^{d-1}$ (of cardinality $\simδ^{-(d-1)}$). Take a cap of size $δ$. Encapsulate it by a cylinder $C_{j,δ}$ of size $δ,δ^2$. Recall Knapp: functions $f_j∈L^∞(\se^{d-1}):\supp(f_j)⊂c_j$ such that $\|f_j\|_{L^∞(\se^{d-1})}=1$ and
+	Choose maximal $δ$-seperated set $\{e_j\}⊂\se^{d-1}$ (of cardinality $\simδ^{-(d-1)}$). Take a cap of size $δ$. Encapsulate it by a cylinder $C_{j,δ}$ of size $δ,δ^2$ and let $c_j=\se^{d-1}∩C_{j,δ}$. Recall Knapp: functions $f_j∈L^∞(\se^{d-1}):\supp(f_j)⊂c_j$ such that $\|f_j\|_{L^∞(\se^{d-1})}=1$ and
 	\[|\wh{f_jσ}(x)|\gtrsim|c_j|\simδ^{d-1}\]
 	if $x∈τ_j$. Idea: take functions of the form
 	\[f_ω=\sum_jω_jy_jf_j\]
-	where $j_j\geq 0,\ ω_j\pm 1$ iid.
+	where $y_j\geq 0,\ ω_j\pm 1$ iid.
 
 	Khinchine's inequality:
-	$(ω_n)_{n=1}^N$ iid variables taking valuas $\pm1$ with equal probability. Then
-	\[\E(|\sum_{n=1}^Na_nω_n|^p)\simeq_p(\sum_{n=1}^N|a_n|^2)^{\f12}\]
+	$(ω_n)_{n=1}^N$ iid variables taking values $\pm1$ with equal probability. Then
+	\[\E(|\sum_{n=1}^Na_nω_n|^p)^{\f1p}\simeq_p(\sum_{n=1}^N|a_n|^2)^{\f12}\]
 	where $(a_n)⊂ℂ$.
 	(We now write $q$ instead of $p$)
 	\[\|f_ω\|_{L^q(\se^{d-1})}^q=\sum_j\|y_jf_j\|_{L^q(\se^{d-1})}^q=a\sum_jy_j^q|c_j|\sim\sum_jy_j^qδ^{d-1}\]
 	\[\E_ω(\|\wh{f_ωσ}\|_{L^q(ℝ^d)}^q)=∫_{ℝ^d}E_ω(|\wh{f_ωσ}(x)|^q)\md x\simeq∫_{ℝ^d}(\sum y_j^2|\wh{f_jσ}(x)|^2)^{\f q2}\md x\gtrsimδ^{q(d-1)}∫_{ℝ^d}|\sum_jy_j^21_{τ_j}(x)|^{\f q2}\md x\]
-	Now by the restriction inequality the last term is up to a constant bounded by 
-	\[\sum y_j^qδ^{d-1}\] for every $q>\f{2d}{d-1}$. Now we rewrite. Set $ϕ_j=y_j^2, p'=\f q2$. Then it is equivalent to
-	\[\|\sumjξ_j1_{τ_j}\|_{L^{\f q2}(ℝ^d)}\lesssimδ^{-2(d-1)}\]
+	By the restriction inequality the first term is up to a constant bounded by 
+	\[\sum y_j^qδ^{d-1}\] for every $q>\f{2d}{d-1}$. Now we rewrite. Set $ξ_j=y_j^2, p'=\f q2$. Then it is equivalent to
+	\[\|\sum_jξ_j1_{τ_j}\|_{L^{\f q2}(ℝ^d)}\lesssimδ^{-2(d-1)}\]
 	provided
-	\[\sum_jξ_j^{p-}δ^{d-11}\leq 1\]
+	\[\sum_jξ_j^{p'}δ^{d-1}\leq 1\]
 	for all $p'>\f d{d-1}$. Now dilate by $δ^2$
 	\[\|\sumξ_j1_{T_j}\|_{L^{p'}(ℝ^d)}\lesssimδ^{2(\f d{p'}-(d-1))}\]
-	if $\sum_jξ_j^{p'}δ^{d-1}\leq 1$ for all $p'>\f d{d-1}$. As $p'\downarrow\f d{d-1},\ \f d{p'}-(t:1)\uparrow 0$. Therefore
-	\[∀ε>0\|\sum ξ_j1_{T_j}\|_{L^{p'}(ℝ^d)}\lesssim_εδ^{-ε}\]
-	if $δ^{d-1}\sumξ_j^{p'}\leq 1$ provided $p'$ is close enough to $\f d{d-1}$. Now by the duality lemm
-	\[∀ε>0\|f^*_δ\|_{L^p(\se^{d-1})}\lessim_εδ^{-ε}\äf\|_{L^p(ℝ^d)},\]
-	provided $p(<d)$ is close enough to $d$. Now with trivial $\|f^*_δ\|_{L^∞}\lesssim\|f\|_{L^∞}$ to finish the argument.
+	if $\sum_jξ_j^{p'}δ^{d-1}\leq 1$ for all $p'>\f d{d-1}$. As $p'\downarrow\f d{d-1},\ \f d{p'}-(d-1)\uparrow 0$. Therefore
+	\[∀ε>0\quad\|\sum ξ_j1_{T_j}\|_{L^{p'}(ℝ^d)}\lesssim_εδ^{-ε}\]
+	if $δ^{d-1}\sumξ_j^{p'}\leq 1$ provided $p'$ is close enough to $\f d{d-1}$. Now by the duality lemma
+	\[∀ε>0\quad\|f^*_δ\|_{L^p(\se^{d-1})}\lesssim_εδ^{-ε}\|f\|_{L^p(ℝ^d)},\]
+	provided $p(<d)$ is close enough to $d$. Now interpolate with trivial $\|f^*_δ\|_{L^∞}\lesssim\|f\|_{L^∞}$ to finish the argument.
 \end{proof}
