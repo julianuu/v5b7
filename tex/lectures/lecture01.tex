@@ -29,7 +29,7 @@ $B⊂ℝ^d$ open ball
 \begin{equation}
 	|f(x)=\dashint|=|\dashint_B(f(y)-f(x))\md y|<ε
 \end{equation}
-provided $B$ is an opeb ball of radius $<\fracδ2$ containing $x$
+provided $B$ is an open ball of radius $<\fracδ2$ containing $x$
 
 \highl{Yes}, if $f$ is integrable (not so easy). Hardy, Littlewood (1D, rearrangements; later Wiener for $d>1$). $f∈L^1(ℝ^d)$
 \begin{equation*}
@@ -63,9 +63,9 @@ $f\neq f∈L^1 ⇒Mf(x)\sim|x|^{-d}$ for large radius of $x$. So then $Mf\not\in
 	\end{enumerate}
 \end{proof}%not end proof
 \begin{lem}
-	Let $B=\{B_1,B_2,\ldots, B_N\}$ be a finite collection of open balls on $ℝ^d$. Then there exists a disjoint subcolletcino $B_{i_1},B_{i_2},\ldots,B_{i_k}$ of $B$ such that
+	Let $B=\{B_1,B_2,\ldots, B_N\}$ be a finite collection of open balls on $ℝ^d$. Then there exists a disjoint subcollection $B_{i_1},B_{i_2},\ldots,B_{i_k}$ of $B$ such that
 	\begin{equation*}
-		|\bigcup_{j=1}^nB_j|\leq3^d\sum_{j=1}^k|B_{ij}
+		|\bigcup_{j=1}^nB_j|\leq3^d\sum_{j=1}^k|B_{ij}|
 	\end{equation*}
 \end{lem}
 \begin{proof}
@@ -139,6 +139,6 @@ $f$ continuous at $\bar x⇒\bar x∈\Leb(f)⇒\dashint_Bf\underset{|B|→0,x∈
 \begin{cor}
 	$f∈L^1_\loc(ℝ^d)⇒$ Almost every point belongs to $\Leb(f)$.
 \end{cor}
-(By checking the proof again?)
+(By checking the proof again? I see no other way)
 
 These things also works with other sets that "shrink regularly to $x$ than balls". It gets worse however when one takes all parallel rectangles and even worse when arbitrarily oriented rectangles are allowed.
