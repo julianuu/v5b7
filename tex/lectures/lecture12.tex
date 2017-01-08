@@ -8,7 +8,7 @@ A few weeks ago:
 where $P_{t,γ}=\{x∈ℝ^d:xγ=t\}$.
 \[R^*(f)(γ)=\sup_{t∈ℝ}|R(f)(t,γ)|\]
 if $d\geq 3$ then
-\[∫_{\se^{d-1}}R^*(f)(γ)\mdσ_γ\lesssim\|f\|_{L^2}+\|f\|_{L^2}\]
+\[∫_{\se^{d-1}}R^*(f)(γ)\mdσ_γ\lesssim\|f\|_{L^1}+\|f\|_{L^2}\]
 This estimate was based on
 \[∫_{\se^{d-1}}∫_{-∞}^∞|\hat R(f)(λ,γ)|^2|λ|^{d-1}\mdλ\mdσ_γ=2∫_{ℝ^d}|f(x)|^2\md x\]
 due to $\hat R(f)(λ,γ)=\hat f(λγ)$. Consider $d=3$ then this becomes
@@ -20,7 +20,7 @@ by Plancherel $t\leftrightarrowλ$. Note, that something like this also holds fo
 
 Now consider the following "linearized" version of the Radon transform:
 \[R_B(f)=∫_{ℝ^{d-1}}f(y',x_d-B(x',y'))\md y'=∫_{M_x}f\]
-where $x=(x',x_d)∈ℝ^{d-1}\timesℝ,\ y=(y',y_d)$ and $B:ℝ^{d-1}\timesℝ^{d-1}→ℝ$ is a nondegenerate bilinear form, and 
+(is the second equality true? Don't we have only $\simeq$?) where $x=(x',x_d)∈ℝ^{d-1}\timesℝ,\ y=(y',y_d)$ and $B:ℝ^{d-1}\timesℝ^{d-1}→ℝ$ is a nondegenerate bilinear form, and 
 \[M_x=\{(y',y_d)\ |\ y_d=x_d-B(x',y')\}.\]
 E.g.\ $B(x',y')=\langle x',y'\rangle$ (usual inner product on $ℝ^d$). $y_d=x_d-\langle x',y'\rangle\iff\langle x',y'\rangle+y_d=x_d\iff\langle (x',1),(y',y_d)\rangle=x_d$. The map
 \begin{align*}
@@ -44,7 +44,7 @@ for $f∈C^0_0(ℝ)$
 				  &=∫∫_{ℝ^{2+1}}e^{-2πiξ_3(y_3+B(x',y'))}f(y'y_3)\md y'\md y_3\\
 							      &=∫_{ℝ^2}e^{-2πiξ_3B(x',y')}\ub{(∫_ℝe^{-2πiξ_3y_3}f(y',y_3)\md y_3)}_{\hat f(y',ξ_3)}\md y'
 \end{align*}
-	Since $B$ is nondegenetare $∃C:ℝ^2→ℝ^2$ linear, invertible such that $B(x',y')=\langle C(x'),y'\rangle$. Changle variables $ξ_3C(x')=u∈ℝ^2$ is well defined since $C$ is invertible. $\thereforeξ_3B(x',y')=\langleξ_3C(x'),y'\rangle=\langle u,y'\rangle\thereforeξ_3^2|\det C|\md x'=\md u$. Then the first integral becomes
+	Since $B$ is nondegenerate $∃C:ℝ^2→ℝ^2$ linear, invertible such that $B(x',y')=\langle C(x'),y'\rangle$. Change variables $ξ_3C(x')=u∈ℝ^2$ is well defined since $C$ is invertible. $\thereforeξ_3B(x',y')=\langleξ_3C(x'),y'\rangle=\langle u,y'\rangle\thereforeξ_3^2|\det C|\md x'=\md u$. Then the first integral becomes
 	\[∫_ℝ∫_{ℝ^2}|∫_{ℝ^2}e^{-2πiuy'}\hat f(y',ξ_3)\md y'|^2\f{\md u}{|\det C|}\md ξ_3\simeq∫∫|\hat f(y',ξ_3)|^2\md y'\md ξ_3\simeq∫_{ℝ^3}|f(y)|^2\md y\]
 	by 2D-Plancherel $y'\leftrightarrow u$ and 1D-Plancherel $ξ_3\leftrightarrow y_3$.
 \end{proof}
@@ -60,7 +60,7 @@ Start with a smooth "double defining" function $ρ=ρ(x,y)$ given in a ball in $
 	\begin{pmatrix}
 		ρ&\f{∂ρ}{∂y_1}&…&\f{∂ρ}{∂y_d}\\
 		\f{∂ρ}{∂x_1}\\
-		\vdots&(\f{∂^2ρ}{∂x_j∂y_k})_{j,k=1}^d\\
+		\vdots&&(\f{∂^2ρ}{∂x_j∂y_k})_{j,k=1}^d\\
 		\f{∂ρ}{∂x_d}
 	\end{pmatrix}
 \]
@@ -70,7 +70,7 @@ We want $ρ=0⇒\rotcurv(ρ)\neq 0$. $M_x=\{y:ρ(x,y)=0\}$. The fact that $∇_y
 
 Examples/Properties:
 \begin{enumerate}
-	\item Translatior invariant case: $ρ(x,y)=ρ(x-y)$. $M_x=M_0+x$ and $\rotcurv(ρ)\neq 0$ iff $M_0$ has nonvanishing Gaussian curvature.
+	\item Translation invariant case: $ρ(x,y)=ρ(x-y)$. $M_x=M_0+x$ and $\rotcurv(ρ)\neq 0$ iff $M_0$ has nonvanishing Gaussian curvature.
 	\item Case of $R_B$: $ρ(x,y)=y_d-x_d+B(x',y')$. $\rotcurv(ρ)\neq 0$ iff $B$ is nondegenerate.
 	\item $\tildeρ(x,y)=a(x,y)ρ(x,y)$ with $a(x,y)\neq 0$. Then $\tildeρ$ is another defining function for $\{M_x\}$, and $\rotcurv(\tildeρ)=a^{d+1}\rotcurv(ρ)$
 	\item $x↦ψ_1(x),\ y↦ψ_2(y)$ local diffeomorphisms of $ℝ^d$. For $\tildeρ(x,y)=ρ(ψ_1(x),ψ_2(y))$ then $\rotcurv(\tildeρ)=J_1(x)J_2(y)\rotcurv(ρ)$ with $J_k=\det\jac(ψ_k),\ k=1,2$
@@ -114,8 +114,8 @@ initially for $f∈C^0_0(ℝ^d)$. $M_x=\{y\ |\ ρ(x,y)=0\}$ with induced Lebesgu
 		Observation: If $I⊂ℝ$ interval of length 1, $g∈C^1(I),\ x_0∈I$ then
 		\[|g(u_0)|^2\leq2(∫_I|g(u)|^2\md u+∫_I|g'(u)|^2\md u)\]
 		Apply this observation with $I=[1,2],\ u_0=1,\ g(u)=F_λ(u,x)$ to get:
-		\[∫_{ℝ^d}|S_λ(f)(x)|^2\md x\leq 2(∫|F_λ(x_0,x)|^2\md x+∫|\f∂{∂x_0}F_λ(x_0,x)|^2\md x_0\md x)\]
+		\[∫_{ℝ^d}|S_λ(f)(x)|^2\md x\leq 2(∫|F_λ(x_0,x)|^2\md x_0\md x+∫|\f∂{∂x_0}F_λ(x_0,x)|^2\md x_0\md x)\]
 		The first integral is $\lesssimλ^{-(d+1)}\|f\|_{L^2}^2$ by Proposition with $ℝ^{d+1}$ instead of $ℝ^d$).
-		\[\f∂{∂x_0}(e^{iλx_0y_0ρ(x,y)})=\f∂{∂y_0}(e^{iλx_0y_0ρ(x_0,y_0)})\f{y_0}{x_0}\]
+		\[\f∂{∂x_0}(e^{iλx_0y_0ρ(x,y)})=\f∂{∂y_0}(e^{iλx_0y_0ρ(x,y)})\f{y_0}{x_0}\]
 		we integrate by parts somewhere and use our form of $φ$. Therefore the second summand also satisfies the desired estimate.
 	\end{proof}

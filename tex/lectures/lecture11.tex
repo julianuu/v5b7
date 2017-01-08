@@ -15,7 +15,7 @@ Smoothing properties:
 	\label{eq:smoothprop}
 \end{equation}
 $f∈L^2⇒$
-\[\|f*σ\|_{L^2}\leq\|f\|_{L^2}\ub{|σ|(ℝ^3)}_{<∞}\] (use Minkowski integral inequality) $\therefore f*σ∈L^2$ if $f∈L^2$.
+\[\|f*σ\|_{L^2}\leq\|f\|_{L^2}\ub{|σ|(ℝ^3)}_{<∞}\] (use Minkowski integral inequality, actually, Fubini+Hölder should be enough?) $\therefore f*σ∈L^2$ if $f∈L^2$.
 
 Idea $\widehat{(f*σ)}=\hat f\hatσ$
 \[\widehat{(\f∂{∂x_j}A(f))}(ξ)=ξ_j\hat f(ξ)\hatσ(ξ),\]
@@ -82,14 +82,14 @@ Application: Asymptotics of Bessel functions
 Recall: Averaging operator in $ℝ^d\ (d>1)$ is 
 \[(Af)(x)=(f*σ)(x)\quadσ\tx{ surface measure on $\se^{d-1}$}\]
 \begin{theo}
-	$f↦A(f)$ is bounded from $L^2(ℝ^d)$ to $L^2_k(ℝ^d)$ with $=\f{d-1}2$.
+	$f↦A(f)$ is bounded from $L^2(ℝ^d)$ to $L^2_k(ℝ^d)$ with $k=\f{d-1}2$.
 \end{theo}
 \begin{proof}
 	\[\hatσ(ξ)=2π|ξ|^{-\f d2+1}\ub{J_{\f d2-1}(2π|ξ|)}_{=\ord(|ξ|^{-\f12}),\ |ξ|→∞}\]
 	\[\therefore|\hatσ(ξ)|=\ord(|ξ|^{-\f{d-1}2})\quad|ξ|→∞\]
 \end{proof}	
 
-"What is van der Corput's lemma in higher dimension?" (Carbery-Wright, 2000)
+"What is van der Corput's lemma in higher dimensions?" (Carbery-Wright, 2000)
 
 \[I(λ)=∫_{ℝ^d}e^{iλϕ(x)}ψ(x)\md x\]
 ($ϕ$ smooth, $ψ$ smooth, compactly supported)
@@ -98,7 +98,7 @@ nondegeneracy hypothesis
 \[\det(∇^2ϕ)(x)\neq 0\quad∀x∈\supp(ψ)\]
 
 \begin{theo} Under above assumptions
-	\[|I(λ)|=\ord(|λ|^{-\f12})\quadλ→∞\]
+	\[|I(λ)|=\ord(|λ|^{-\f d2})\quadλ→∞\]
 \end{theo}	
 \begin{rem}
 	\begin{enumerate}
