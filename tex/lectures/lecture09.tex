@@ -1,12 +1,14 @@
 \paragraph{Application} Maximal functions and counterexamples. Q: Given a collection $\C=\{C\}$ of sets, for which class of functions do we have
 \[\lim_{\diam(C)→0,\ c∈\C}\frac1{|C|}∫_Cf(x-y)\md y=f(x)\quad x-\text{a.e.}?\]
 Seen:\[(M_\C f)(x)=\sup_{c∈\C}\frac1{|C|}∫_C|f(x)-y)|\md y\]
-$\C=\{\text{balls}\}$, weak-type (1,1) inequality for $M_\C⇒$ a.e.\ convergence of averages. A converse also holds!
+where $\C=\{\text{balls}\}$, weak-type (1,1) inequality for $M_\C⇒$ a.e.\ convergence of averages. A converse also holds!
 
-$\{\mdμ_j\}_{j=1}^∞$ collection of finite, nonnegative measures on $ℝ^d:\supp(μ_j)⊂K\Subsetℝ^d$. Define the maximal operator \[(Mf)(x)=\sup_j|f*μ_j|(x).\]
+Let $\{\mdμ_j\}_{j=1}^∞$ be collection of finite, nonnegative measures on $ℝ^d:$ such that $\supp(μ_j)⊂K\Subsetℝ^d$. Define the maximal operator \[(Mf)(x)=\sup_j|f*μ_j|(x).\]
 
-\begin{pro}$1\leq p<∞$. Assume for each $f∈L^p(ℝ^d)$ that $(Mf)(x)<∞$ for some set of $x$ having positive measure. Then $f↦Mf$ is of weak-type $(p,p)$, i.e.\ 
-	\[∃A<∞:|\{x∈ℝ^d:(Mf)(x)>α\}|\leq\frac A{α^p}\|f\|_{L^p} \quad(∀α>0)\]
+\begin{pro}$1\leq p<∞$. Assume for each $f∈L^p(ℝ^d)$ that $(Mf)(x)<∞$ for some set of $x$ having positive measure. Then $f↦Mf$ is of weak-type $(p,p)$, i.e.\ $∃A<∞:$
+	\begin{equation}\label{eq:Mweakpp}
+		|\{x∈ℝ^d:(Mf)(x)>α\}|\leq\frac A{α^p}\|f\|_{L^p}^p \quad(∀α>0)
+	\end{equation}
 \end{pro}
 
 \begin{lem}
@@ -25,9 +27,7 @@ is a subset.
 	\end{figure}
 	Why?
 	\[η(x)=∫_{ℝ^d}χ_{A_1}(y)χ_{A_2}(x+y)\md y\simχ_{A_1}*χ_{A_1}(x)\]
-	\[∫_{ℝ^d}|A_1||A_1|\]
-	\[\supp(η)⊂Q^*\]
-	$|Q^*|=2^d$. 
+	$|Q^*|=2^d,\ \supp(η)⊂Q^*$
 	\[∃h∈Q^*:η(h)\geq\avg_{Q^*}(η)=\frac1{|Q^*|}∫_{ℝ^d}η=\frac{|A_1||A_2|}{2^d}\]
 	Wlog $\supp(E_j)⊂Q$.
 
@@ -36,18 +36,21 @@ is a subset.
 	Why? $F_1=E_1$. Suppose (inductively) that $F_1,…,F_{j-1}$ have been constructed. Let $A_1=Q∩(F_1∪…∪F_{j-1})^\complement$ and $A_2=E_j$. Step 1 $⇒∃h:|A_1∩(A_2-h)|\geq 2^{-d}|A_1||A_2|$. Set $F_j=A_2-h=E_j-h$. Let $p_j=|Q∩(F_1∪…∪F_j)|$. Then 
 	\begin{align*}
 		p_j&=p_{j-1}+|\underbrace{Q∩(F_1∪…∪F_{j-1})^\complement}_{A_1}∩\underbrace{F_j}_{A_2-h}|=p_{j-1}+|A_1∩(A_2-h)|\\
-		     &\geq p_{j-1}+2^{-d}|A_1||E_j|=p_{j-1}+2^{-d}(1-p_{j-1})|E_j|
+		   &\geq p_{j-1}+2^{-d}|A_1||E_j|=p_{j-1}+2^{-d}(1-p_{j-1})|E_j|
 	\end{align*}
 	\[\therefore p_j-p_{j-1}\geq2^{-d}(1-p_{j-1})|E_j|\]
 	\[\sum_{j=2}^∞(p_j-p_{j-1})=\lim_{j→∞}p_j-p_1\therefore\lim_jp_j=1\]
 	Step 3: Decompose (twice) $\{E_j\}$ into a countable infinite number of subcollections so that on each subcollection the sum of the measures diverges.
 \end{proof}
 \begin{proof}[Proof of Proposition]
-	Take a ball $B$ such that $B\supset Q+K$. $\supp(F)⊂Q⇒\supp(F*μ_j)⊂⇒\supp(Mf)⊂B$. Key: Estimate (*) (the violation of the weak type estimate) holds if $\supp(f)⊂Q$. For each $k,∃α_k>0∃g_k⊂L^p:\supp(g_k)⊂Q$ such that \[|\{x∈B:Mg_k(x)>α_k\}|\geq\frac{2^k}{α_k^p}\|g_k\|_{L^p}^p\]
-	Replace $g_k$ by $\tilde g_k=\frac k{α_k}g_k$.
-	\[\frac{2^k}{k^p}\leq\frac{|\{x∈B:M\tilde g_k(x)>k\}|}{\|\tilde g_k\|_{L^p}^p}→∞\quad\text{as} k→∞\]
+	Take a ball $B$ such that $B\supset Q+K$. $\supp(F)⊂Q⇒\supp(F*μ_j)⊂B⇒\supp(Mf)⊂B$. 
+
+	Key: Estimate \eqref{eq:Mweakpp} holds if $\supp(f)⊂Q$. Proof by contradiction. For each $k,∃α_k>0\ ∃g_k⊂L^p:\supp(g_k)⊂Q$ such that \[|\{x∈B:Mg_k(x)>α_k\}|\geq\frac{2^k}{α_k^p}\|g_k\|_{L^p}^p\]
+	Writing $\tilde g_k=\frac k{α_k}g_k$ we get
+	\[\frac{2^k}{k^p}\leq\frac{|\{x∈B:M\tilde g_k(x)>k\}|}{\|\tilde g_k\|_{L^p}^p}→∞\quad\text{as } k→∞\]
 	$\therefore$ There exists a sequence $\{f_k\}⊂L^p$ and a sequence of constants $R_k→∞$ such that with $E_k=\{x∈B:M f_k(x)>R_k\}$ we get
 	\[\sum_k|E_k|=∞\qquad\sum_k\|f_k\|_{L^p}^p<∞.\]
+	That is, because $\|\tilde g_k\|$ goes to $0$ since the denominator is bounded, and so we can first pass to a subsequence such that the second condition is satisfied, and then find times that we can wait for on each step such that the first condition is satisfied without violating the second, for which we can use the bound from below.
 	\begin{rem} 
 		$\mdμ_j\geq 0$ wlog $f_k\geq 0$. 
 	\end{rem}
@@ -55,10 +58,11 @@ is a subset.
 	\[\tilde f_k(x)=f_k(x+x_k),\qquad F(x)=\sup_k\tilde f_k(x)\]
 	Then \[M(F)=\sup_j|F*μ_j|=\sup_j|(\sup_k\tilde f_k)*μ_j|\geq\sup_k\sup_j|\tilde f_k*μ_j|=\sup_kM(\tilde f_k)\]
 	Also $M(\tilde f_k)>R_k$ on $F_k\therefore M(F)=∞$ a.e. Check $f∈L^p$: \[|F|^p=|\sup_k\tilde f_k|^p\leq\sum_p|\tilde f_k|^p\]
-	\[\|F\|_{L^p}^p\leq\sum_k\|f_ku|_{L^p}^p<∞\]
+	\[\|F\|_{L^p}^p\leq\sum_k\|f_k\|_{L^p}^p<∞\]
 	Full conclusion
 	\[f=\sum fχ_{Q_j}=:\sum f_j\]
 	\[M(f)\leq\sum_jM(f_j)\]
+	where for every $x$, only the $f_j$ such that $Q_j$ is in a $B$-neighborhood of $x$ contribute to the sum. This gives a bound for general $f$, raised by $\sim(\f{|B|}{|Q|})^p$ or so, (I think).
 \end{proof}
 
 \begin{exa}%1
@@ -70,7 +74,7 @@ is a subset.
 	\end{figure}
 \end{exa}
 \begin{cor}
-	Given $1\leq p<∞,∃f∈L^p(ℝ^n)$ such that \[\limsup_{\diam(R)→0R∈\R}\frac1{|R|}∫_Rf(x-y)\md y=∞\quad (x-\text{a.e.})\]
+	Given $1\leq p<∞,\ ∃f∈L^p(ℝ^n)$ such that \[\limsup_{\diam(R)→0\ R∈\R}\frac1{|R|}∫_Rf(x-y)\md y=∞\quad (x-\text{a.e.})\]
 \end{cor}
 Idea: Use the $ε$-Kakeya set to show that $M$ is not weak $(p,p)$
 \[(Mf)(x)=\sup_{\diam(R)<8}\frac1{|R|}|∫_Rf(x-y)\md y|\]

@@ -13,51 +13,55 @@ $|A+B|^α\geq |A|^α+|B|^α$ iff $(1+λ)^{dα}\geq 1+λ^{dα}$ $⇒α\geq\frac1d
 
 $(a+b)^γ\geq a^γ+b^γ∀a,b\geq 0,\ γ\geq 1$.
 
-Candidate inequality: \[|A+B|^{\frac1d}\geq|A|^{\frac1d}+|B|^{\frac1d}\](BM)
+Candidate inequality: 
+\begin{equation}
+	|A+B|^{\frac1d}\geq|A|^{\frac1d}+|B|^{\frac1d}
+	\tag{\text{BM}}
+	\label{eq:bm}
+\end{equation}
 
-$A,B$ measurable $\not\implies A+B$ measurable. Take $[0,1]\times\text{nonmeasurable}$.
+$A,B$ measurable $\not\implies A+B$ measurable ($6=$'not'; weird bug in \texttt{unicode-math}). Take $[0,1]\times\text{nonmeasurable}$.
 
 \begin{enumerate}
 	\item $A,B$ closed $⇒$ $A+B$ measurable
 	\item $A,B$ compact $⇒$ $A+B$ compact
 	\item $A,B$ open $⇒$ $A+B$ open
 \end{enumerate}
-\begin{theo} (BM) holds if $A,B,A+B$ measurable.
+\begin{theo} \eqref{eq:bm} holds if $A,B,A+B$ measurable.
 \end{theo}
-\begin{enumerate}
-	\item $A,B$ rectangles with sidelengths $\{a_j\}_{j=1}^∞,\ \{b_j\}_{j=1}^∞$
-	\item $A,B$ unions of fifinely many rectangles with disjoint interiors.
-	\item $A,B$ open sets of finite measure
-	\item $A,B$ compact
-	\item $A,B,A+B$ measurable.
-\end{enumerate}
 \begin{proof}
-
 	\begin{enumerate}
-		\item (BM) becomes \[\prod_{j=1}^d(a_j+b_j)^{\frac1d}\geq\prod_{j=1}^da_j^{\frac1d}+\prod_{j=1}^db_j^{\frac1d}\]
-			$a_j\toλ_la_j,\ b_j\toλ_jb_j$. Both sides are multiplied by $(λ_1λ_2…λ_d)^{\frac1d}$: wglog can assume $a_j+b_j=1∀j$ (Choose $λ_j=a_j+b_j$)
+		\item $A,B$ rectangles with sidelengths $\{a_j\}_{j=1}^∞,\ \{b_j\}_{j=1}^∞$ which are parallel to the axes\label{it:rect}
+		\item $A,B$ unions of finitely many such rectangles with disjoint interiors.\label{it:manyrect}
+		\item $A,B$ open sets of finite measure\label{it:open}
+		\item $A,B$ compact\label{it:cpt}
+		\item $A,B,A+B$ measurable.\label{it:meas}
+	\end{enumerate}
+	\begin{itemize}
+		\item[\ref{it:rect}] \eqref{eq:bm} becomes \[\prod_{j=1}^d(a_j+b_j)^{\frac1d}\geq\prod_{j=1}^da_j^{\frac1d}+\prod_{j=1}^db_j^{\frac1d}\]
+			$a_j\toλ_la_j,\ b_j\toλ_jb_j$. Both sides are multiplied by $(λ_1λ_2…λ_d)^{\frac1d}$: wglog can assume $a_j+b_j=1\ ∀j$ (Choose $λ_j=a_j+b_j$)
 
-			AMGM:\[\prod_{j=1}^da_j^{\frac1d}\leq\frac1d\sum_{j_1}^da_j\]
-			\[\prod_{j=1}^db_j^{\frac1d}\leq\frac1d\sum_{j_1}^db_j\]
+			geometric mean $\leq$ arithmetic mean:\[\prod_{j=1}^da_j^{\frac1d}\leq\frac1d\sum_{j=1}^da_j\]
+			\[\prod_{j=1}^db_j^{\frac1d}\leq\frac1d\sum_{j=1}^db_j\]
 			\[\prod a_j^{\frac1d}+\prod b_j^{\frac1d}\leq\frac1d\sum_{j=1}^d(a_j+b_j)=1\]
-		\item Induction on $n=$ numeber of rectangles in $A$ and $B$. Choose pair of disjoint rectangles $R_1,R_2$ in $A$. Can rotate s.t. $R_1$ and $R_2$ are separated by hyperplane $\{x_j=0\}$. $R_1$ lies in $A_+=A∩\{x_j\geq 0\},\ A_I=A∩\{x_j\leq 0\}$.
+		\item[\ref{it:manyrect}] Induction on $n=$ number of rectangles in $A$ and $B$. Choose pair of disjoint rectangles $R_1,R_2$ in $A$. Can rotate s.t. $R_1$ and $R_2$ are separated by hyperplane $\{x_j=0\}$. $R_1$ lies in $A_+=A∩\{x_j\geq 0\},\ A_I=A∩\{x_j\leq 0\}$.
 
-			Rem.: Both $A_+,A_-$ contain at leas one less rectangle than $A$, $A=A_+⊂A_-$ and $A_B∩A_-$ has measure zero.
+			Rem.: Both $A_+,A_-$ contain at least one less rectangle than $A$, $A=A_+⊂A_-$ and $A_+∩A_-$ has measure zero.
 
 			Now: translate $B$ s.t. $B_-$ and $B_+$ satisfy \[\frac{|B_\pm|}{|B|}=\frac{|A_\pm|}{|A|}\]
 			$(A_++B_+)∪(A_-+B_-)⊂A+B$ Number of rectangles in $A_+$ and $B_+$, number of rectangles in $A_-$ and $B_-$ is $<n$.
 
 			\begin{align*}
-				|A+B|&\geq|A_++B_-|+|A_-B+_-|\geq(|A_+|^{\frac1d}+|B_+|^{\frac1d})^d+(|A_-|^{\frac1d}+|B_-|^{\frac1d})^d\\
+				|A+B|&\geq|A_++B_+|+|A_-+B_-|\geq(|A_+|^{\frac1d}+|B_+|^{\frac1d})^d+(|A_-|^{\frac1d}+|B_-|^{\frac1d})^d\\
 				     &=(|A_+|(1+(\frac{|B_+|}{|A_+|})^{\frac1d})^d+|A_-|(1+(\frac{|B_-|}{|A_-|})^{\frac1d})^d=(|A_+|+|A_-|)(1+(\frac{|B|}{|A|})^{\frac1d})^d\\
 				     &=(|A|^{\frac1d}+|B|^{\frac1d})^d.
 			\end{align*}
-		\item Open sets of finite measure $A,B$. $∀ε>0∃A_ε,B_ε$ finet unions of parallel rectangles with disjoint interiors. $A_ε⊂A,B_α⊂B$, $|A|\leq|A_ε|+ε,\ |B|\leq|B_ε|+ε$.
+		\item[\ref{it:open}] Open sets of finite measure $A,B$. $∀ε>0∃A_ε,B_ε$ finet unions of parallel rectangles with disjoint interiors. $A_ε⊂A,B_α⊂B$, $|A|\leq|A_ε|+ε,\ |B|\leq|B_ε|+ε$.
 
 			$|A+B|\geq |A_ε+B_ε|\geq(|A_ε|^{\frac1d}+|B_ε|^{\frac1d})^d\geq((|A|-ε)^{\frac1d}+(|B|-ε)^{\frac1d})^d$. Let $ε→0^+$, done.
-		\item $A,B$ compact. Let $A^ε=\{x:d(x,A)<ε\}$. $A+B⊂A^ε+B^ε⊂(A+B)^{2ε}$
-		\item $A,B,A+B$ measurable: usi inner regularity of Lebesque measure.
-	\end{enumerate}
+		\item[\ref{it:cpt}] $A,B$ compact. Let $A^ε=\{x:d(x,A)<ε\}$. $A+B⊂A^ε+B^ε⊂(A+B)^{2ε}$. Then use that for compact sets $|C^ε|\to|C|$.
+		\item[\ref{it:meas}] $A,B,A+B$ measurable: use inner regularity of Lebesque measure.
+	\end{itemize}
 \end{proof}
 
 \begin{rem} $A,B$ open sets of finite positive measure. Equality in (BM) iff $A,B$ convex and similar. $∃δ>0∃h∈ℝ^d:A=δB+h$ ($A$ convex iff $λ_iA+λ_2A=(λ_1+λ_2)A$)

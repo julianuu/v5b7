@@ -25,7 +25,7 @@ Warning: $[0,1]\ni t\mapsto(F(t),F(t))$, $F$ Cantor. $F$ cont. incr. $F(0)=0,\ F
 \begin{theo} $z:[a,b]→ℝ^2,t\mapsto(x(t),y(t))$ $\sim$ curve $γ$. $x,y∈\AC(a,b)$. $⇒$ $γ$ rectifiable and
 	\[L(γ)=∫_a^b|z'(t)|\md t\]
 \end{theo}
-why? $F:[a,b]→ℂ$ is $\AC(a,b)$ \[⇒T_F(a,b)=∫_a^b|F'(t)|\md t.\]
+why? If $F:[a,b]→ℂ$ is $\AC(a,b)$ then \[T_F(a,b)=∫_a^b|F'(t)|\md t.\]
 \[\sum_{j=1}^N|F(t_j)-F(t_{j-1})|=\sum_{j=1}^N|∫_{t_{j-1}}^{t_j}F'(t)\md t|\leq\sum_{j=1}^N∫_{t_{j-1}}^{t_j}|F'(t)|\md t=∫_a^b|F'(t)|\md t\]
 First inequality by FTC. For $\geq$, write $F'=g+h$, $g$ step function, $h$ small in $L^1$
 $G,H=$ def. integrals of $g,h$. Check $T_F\geq T_G,T_H$, $T_H$ small, $T_G\geq∫_a^b|g(t)|\md t$.
@@ -42,16 +42,18 @@ where $\dist(x,K)=\inf_{k∈K}\dist(x,k)$
 \end{defi}
 \begin{theo} Let $Γ=\{z(t):a\leq t\leq b\}$ be (the trace of) a quasi-simple curve $γ$. Then $Γ$ has Minkowski content iff $γ$ is rectifiable (in which case $M(Γ)=L(γ)$).
 \end{theo}
-Upper Mink: content. 
-\[\limsup_{δ→0^+}\frac{|K^δ|}{2δ}=:M^*(K)\]
-lower
-\[\liminf_{δ→0^+}\frac{|K^δ|}{2δ}=:M_*(K).\]
+Upper Minkowski content:
+\begin{align*}
+	\limsup_{δ→0^+}\frac{|K^δ|}{2δ}&=:M^*(K)\
+	\shortintertext{lower:}
+	\liminf_{δ→0^+}\frac{|K^δ|}{2δ}&=:M_*(K).
+\end{align*}
 \begin{pro} $T=\{z(t):a\leq t\leq b\}$ quasi simple. If $M_*(Γ)<∞$, then $γ$ is rectifiable and $L(γ)\leq M_*(Γ)$.
 \end{pro}
 \begin{pro}
 	$Γ=\{z(t):a\leq t\leq b\}$ rectifiable $γ$. Then $M^*(Γ)\leq L(γ)$.
 \end{pro}
-\begin{proof}[Proof of Prop. 1, for simple curves.]
+\begin{proof}[Proof of first proposition, for simple curves.]
 	Obs: $Γ=\{z(t):a\leq t\leq b\}$ any curve. $Δ=|z(b)-z(a)|$. $|Γ^δ|\geq 2δΔ$.
 
 	Take any partition $P$ of $[a,b)$. $L_P=\sum_{j=1}^N|z(t_j)-z(t_{j-1})|$. Given $ε>0,∃N$ proper closed subintervals $I_j=[a_j,b_j]⊂(t_{j-1},t_j)$: 
@@ -60,9 +62,10 @@ lower
 	\[\bigcup_{j=1}^NΓ_j^δ⊂Γ^δ\]
 	\[|Γ^δ|\geq\sum_{j=1}^N|Γ_j^δ|\geq2δ\sum_{j=1}^N|z(t_j)-z(t_{j-1})|\geq2δ(L_p-ε)\]
 \end{proof}
+
 \paragraph{Isoperimetric inequality (soft)}	
 $γ:[a,b]→ℝ^2,\ γ∈C^1(a,b):γ'(s)\neq 0∀s,\ γ(a)=γ(b)$. Arclength parametrization: $γ:[0,L]→ℝ^2,\ |γ'(s)|=1∀s$.
-\begin{theo} $Γ⊂ℝ^2$ simple colsed $C^2$ curve of length $L$. $A$ area of the region enclosed by $Γ$.
+\begin{theo} $Γ⊂ℝ^2$ simple closed $C^2$-curve of length $L$. $A$ area of the region enclosed by $Γ$.
 	\[A=\frac12|∫_Γ>(x\md y-y\md x)|=\frac12|∫_0^L(x(s)y'(s)-x'(s)y(s))\md s.\]
 	Then $4πA\leq L^2$. Equality iff $Γ$ is a circle.
 \end{theo}
@@ -99,18 +102,18 @@ $Ω⊂ℝ^2$ bounded, open, $∂Ω=\barΩ-Ω=:Γ$ rectifiable curve (not nec. si
 \end{theo}
 
 \begin{proof}
-	inner:\[Ω^δ_-=\{x∈ℝ^2:\dist(x,ℝ^2\setminusΩ)\geqδ\}\]
+	inner:\[Ω^δ_-=\{x∈ℝ^2:\dist(x,ℝ^2\smΩ)\geqδ\}\]
 	outer: \[Ω^δ_+=\{x∈ℝ^2:\dist(x,\barΩ)<δ\}\]
 	\[Γ^δ=\{x:\dist(x,Γ)<δ\}\]
-	\[Ω^δ_+=Ω^δ_-\dot∪Γ>^δ\]
+	\[Ω^δ_+=Ω^δ_-\mathop{\dot∪}Γ^δ\]
 	$A,B⊂ℝ^d,\ A+B=\{a+b:a∈A,b∈B\}$
 	Note: $Ω+B_δ⊂Ω^δ_+,\ Ω^δ_-+B_δ⊂Ω$.
 
 	Brunn-Minkowski: $A,B⊂ℝ^2$ meas., $A+B$ meas. \[|A+B|^{\frac12}\geq |A|^{\frac12}+|B|^{\frac12}\]
 
-	\[|Ω^δ_-|\geq(|Ω|^{\frac12}+|B_δ|^{\frac12})^2\geq|Ω|+2|Ω|^{\frac12}\underbrace{|B_δ|^{\frac12}}_{=(πδ^2)^{\frac12}}\]
+	\[|Ω^δ_+|\geq(|Ω|^{\frac12}+|B_δ|^{\frac12})^2\geq|Ω|+2|Ω|^{\frac12}\underbrace{|B_δ|^{\frac12}}_{=(πδ^2)^{\frac12}}\]
 	\[|Ω|\geq(|Ω^δ_-|^{\frac12}+|B_δ|^{\frac12})^2\geq|Ω^δ_-|+2|Ω^δ_-|^{\frac12}|B_δ|^{\frac12}\]
-	\[|Γ^δ|\geq |Ω|+2|Ω|^{\frac12}\sqrtπ-|Ω|+|Ω^δ_-|^{\frac12}\sqrtπ\]
+	\[|Γ^δ|\geq |Ω|+2|Ω|^{\frac12}\sqrtπδ-|Ω|+2|Ω^δ_-|^{\frac12}\sqrtπδ\]
 	\[\limsup_{δ→0^+}\frac{|Γ^δ|}{2δ}\geq2|Ω|^{\frac12}\sqrtπ\]
 	\[4π|Ω|\leq M^*(Γ)^2\leq l(Γ)^2\]
 	Note, that only in the very last inequality did we use the rectifiability of $Γ$.

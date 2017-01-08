@@ -1,5 +1,6 @@
 \begin{defi}
-	$F:[a,b]→ℝ$ is \highl{absolutely continuous} if \[∀ε>0∃δ>0:\sum_{k’1}^N(B_k-a_k)<s\] intervals $(a_kb_k)$ disjoint ($k=1,...,N$) $⇒$ \[\sum_{k=1}^N|F(b_k)-F(a_h)|<ε\]
+	$F:[a,b]→ℝ$ is \highl{absolutely continuous} if $∀ε>0\ ∃δ>0$ such that for every disjoint collection of intervals $(a_k,b_k)$
+	\[\sum_{k=1}^N(b_k-a_k)<δ \quad⇒\quad\sum_{k=1}^N|F(b_k)-F(a_h)|<ε.\]
 \end{defi}
 \begin{rem}%s
 	\begin{enumerate}
@@ -12,52 +13,58 @@
 \begin{theo} $F∈AC(a,b)⇒$ $F'$ exists a.e., $F'=0$ a.e. $⇒F$ constant
 \end{theo}
 \begin{itemize}
-	\item Existence of $F'$ clear $√$
+	\item Existence of $F'$ clear
 	\item $F'=0$ a.e. $⇒F$ constant: refinement of Vitali
 \end{itemize}
-\begin{defi} A collection $\Ba=\{B\}$ of (open) balls ön $ℝ^d$. is a \highl{Vitali covering} of a set $E$ if \[∀x∈E∀\eta>0∃B∈\Ba:x∈B,|B|<η\]
+\begin{defi} A collection $\Ba=\{B\}$ of (open) balls in $ℝ^d$. is a \highl{Vitali covering} of a set $E$ if 
+	\[∀x∈E\ ∀\eta>0\ ∃B∈\Ba:\quad x∈B,\ |B|<η\]
 \end{defi}
-\begin{lem} $E⊂ℝ^d$ meas. $|E|<∞$, $\Ba$ Vitali covering of $E$, $δ>0$. Then there exist finitely many disjoint balls $B_1,…,bvB_N∈\Ba$ \[\sum_{j=1}^N|B_j|\geq|E|-δ\]
+\begin{lem} $E⊂ℝ^d$ meas. $|E|<∞$, $\Ba$ Vitali covering of $E$, $δ>0$. Then there exist finitely many disjoint balls $B_1,…,B_N∈\Ba$ \[\sum_{j=1}^N|B_j|\geq|E|-δ\]
 \end{lem}
-Recall elementary Vitali: $\Ba=\{B_1,…,B_N\}$ finite collection of pen balls in $ℝ^d$ $⇒∃$ disjoint subcollection $B_{i_1},…,B_{i_k}$ with \[|\bigcup_{j=1}^BB_j|\leq3^d\sum_{j=1}^k|B_{i_j}|\]
+Recall elementary Vitali: $\Ba=\{B_1,…,B_N\}$ finite collection of open balls in $ℝ^d$ $⇒∃$ disjoint subcollection $B_{i_1},…,B_{i_k}$ with \[|\bigcup_{j=1}^BB_j|\leq3^d\sum_{j=1}^k|B_{i_j}|\]
 \begin{proof}[Proof of Lemma]
 	wlog $δ>|E|$. Vitali $⇒$ $∃$ disjoint subcollection $B_1,…,B_N∈\Ba$ \[\sum_{i=1}^{N_1}|B_i|\geq 3^{-d}δ\] Sequence of balls $B_1,…,B_N$. question: Is $\sum_{j=1}|B_j|\geq|E|-δ$? Yes: done with $N=N_1$. No: work harder.
 	\[\sum_{j=1}^{N_1}|B_j|<|E|-δ\]
-	\[E_2=E\setminus\bigcup_{j=1}^{N_1}\bar B_j\]
+	\[E_2=E\sm\bigcup_{j=1}^{N_1}\bar B_j\]
 	\[|E_2|\geq|E|-\sum_{j=1}^{N_1}|B_j|>|E|-(|E|-δ)=δ\]
 	$\Ba$ Vitali covering $⇒$ balls in $\Ba$ disjoint frm $\bigcup_{i=1}^{N_1}\bar B_i$ still covers $E_2$. Vitali $⇒∃$ finite disjoint subcollection of these balls $B_{N_1+1},…,B_{N_2}$ \[\sum_{N_1<j<N_2}|B_j|\geq 3^{-d}δ.\]
 	After $k$ steps, $B_1,…,B_{N_1},…B_{N_1},…,B_{N_k}$ with \[\sum_{j=1}^{N_k}\geq h3^{-d}δ\geq|E|-δ\] iff $k\geq 3^d\frac{|E|-δ}δ$, stop.
 \end{proof}
-need to approximate with compact from inside somewhere and with open from outside somewhere else
-\begin{cor} The balls can be arranged in such a way that \[E\setminus\bigcup_{i=1}^NB_i|<2δ\]
+
+\begin{cor} 
+	The balls can be arranged in such a way that \[|E\sm\bigcup_{i=1}^NB_i|<2δ\]
 \end{cor}
 \begin{proof}
-Choose open $O\supset E:|O\setminus E|<δ$. $\Ba$ Vitali covering $⇒$ wlog all balls in $\Ba$ are contained in $O$. \[(E\setminus\bigcup_{i=1}^NB_i)∪\bigcup_{i=1}]NB_i⊂O.:|E\setminus\bigcup_{i=1}^NB_i|\leq|O|-\sum_{i=1}^N|B_i|\leq|E|+δ-(|E|-δ)=2δ\]
+Choose open $O\supset E:|O\sm E|<δ$. $\Ba$ Vitali covering $⇒$ wlog all balls in $\Ba$ are contained in $O$. \[(E\sm\bigcup_{i=1}^NB_i)∪\bigcup_{i=1}^NB_i⊂O.:|E\sm\bigcup_{i=1}^NB_i|\leq|O|-\sum_{i=1}^N|B_i|\leq|E|+δ-(|E|-δ)=2δ\]
 \end{proof}
-\begin{proof}[$F∈AC$ Back to the real lin:]
-Goal: $F'=0$ a.e. $⇒F$ constant. ETS $F(a)=F(b)$ \[E=\{x∈(a,b):F'(x)\text{ exists and }=0\}\quad|E|=b-a\}\]
-Fix $ε>0$. For $x∈E,\ \lim_{h→0}|\frac{F(x+h)-F(x)}h|=0$. $∀η>0∃$ open interval $I=(a_x,b_x)⊂[a,b]$ containing $x$. $F(b_x)-F(a_x)|\leqε(b_x-a_x)$ and $b_x-a_x<η$. The collection of these intervals (over all $η>0$) forms a Vitali covering of $E$. Lemma $⇒$ Given $δ>0$ can select finitely many, disjoint $I_j=(a_j,b_j)_{j=1}^N$ such that \[\sum_{j=1}^N|I_j|\geq|E|-δ=b-a-δ\] But \[\sum_{j=1}^N|F(b_j)TF(a_j)|\leq ε\sum_{j=1}^N(b_j-a_j)\leq ε(b-a)\]
-\[[a,b]\setminus\bigcup_{j=1}^NI_j=\bigcup_{k=1}^M[α_k,β_k]\] with total length $\leqδ$. .:$F∈AC$ \[\sum_{k=1}^M|F(β_k)-F(α_k)|<ε\]
-\[|F(b)-F(a)|\leq\sum|F(b_j)-F(a_j)|+\sum|F(β_k)-F(α_k)|\leqε(b-a)+ε,\] done.
+\begin{proof}[$F∈AC$ Back to the real line:]
+Goal: $F'=0$ a.e. $⇒F$ constant. ETS $F(a)=F(b)$ \[E=\{x∈(a,b):F'(x)\text{ exists and }=0\}\quad|E|=b-a\]
+Fix $ε>0$. For $x∈E,\ \lim_{h→0}|\frac{F(x+h)-F(x)}h|=0$. $∀η>0\ ∃$ open interval $I=(a_x,b_x)⊂[a,b]$ containing $x$. $|:F(b_x)-F(a_x)|\leqε(b_x-a_x)$ and $b_x-a_x<η$. The collection of these intervals (over all $η>0$) forms a Vitali covering of $E$. Lemma $⇒$ Given $δ>0$ can select finitely many, disjoint $I_j=(a_j,b_j)_{j=1}^N$ such that \[\sum_{j=1}^N|I_j|\geq|E|-δ=b-a-δ\] But \[\sum_{j=1}^N|F(b_j)-F(a_j)|\leq ε\sum_{j=1}^N(b_j-a_j)\leq ε(b-a)\]
+\[[a,b]\sm\bigcup_{j=1}^NI_j=\bigcup_{k=1}^M[α_k,β_k]\] with total length $\leqδ$. .:$F∈AC$ \[\sum_{k=1}^M|F(β_k)-F(α_k)|<ε\]
+\[|F(b)-F(a)|\leq\sum|F(b_j)-F(a_j)|+\sum|F(β_k)-F(α_k)|\leqε(b-a)+ε.\]
 \end{proof}
 \begin{theo}
 	$F∈AC(a,b)$. Then
 	\begin{enumerate}
-		\item $F'$ exists a.e. and is integrable
-		\item \[F(x)-F(a)=∫_a^xF'(t)\md t\quad(∀a\leq x\leq b)\]%(*)
+		\item \label{it:difflone}
+			$F'$ exists a.e. and is integrable
+		\item \label{it:ftoc}
+			\begin{equation}
+				F(x)-F(a)=∫_a^xF'(t)\md t\quad(∀a\leq x\leq b)
+				\label{eq:ftoc}
+			\end{equation}
 	\end{enumerate}
-	Conversely, if $f∈L^1(,b)$, then there exists $F∈AC(a,b):F'=f$ a.e..
+	Conversely, if $f∈L^1(a,b)$, then there exists $F∈AC(a,b):F'=f$ a.e..
 \end{theo}
 \begin{proof}
-	$⇒$
 	\begin{enumerate}
-		\item seen last lecture.
-		\item \[G(x):=∫_a^xF'(t)\md t\] .:$G∈AC$ .:$F-G∈AC$. Lebesque diff. $⇒G'(x)=F'(x)$ (a.e. $x$) .: $(F-G)'=0$ a.e.. Therefore $(F-G)(x)=(F-G)(a),\ F(x)-G(x)=F(a)$, equivalent to (*)
+		\item[\ref{it:difflone}] seen last lecture.
+		\item[\ref{it:ftoc}] \[G(x):=∫_a^xF'(t)\md t\] .:$G∈AC$ .:$F-G∈AC$. Lebesque diff. $⇒G'(x)=F'(x)$ (a.e. $x$) .: $(F-G)'=0$ a.e.. Therefore $(F-G)(x)=(F-G)(a),\ F(x)-G(x)=F(a)$, equivalent to \eqref{eq:ftoc}.
 	\end{enumerate}
-	$⇐$ \[F(x)=∫_a^xf(t)\md t\] AC $√$. Leb. diff $⇒F'=f$ a.e.
+	$⇐$ \[F(x)=∫_a^xf(t)\md t\] AC $\checkmark$. Leb. diff $⇒F'=f$ a.e.
 \end{proof}
 \highl{Next:} Monotone functions which are not nec. continuous. Wlog. $F$ increasing, bounded on $[a,b]$.
-\[F(x^-)F\lim_{y→x,y<x}F(y)\quad F(x^+):=…\]
+\[F(x^-):=\lim_{y→x,y<x}F(y)\quad F(x^+):=…\]
 $F(x^-)\leq F(x)\leq F(x^+)$, $F$ cont. at $x$ if $F(x^-)=F(x^+)$. Otherwise $F$ has a jump discontinuity at $x$. 
 
 \highl{Obs:} A (bounded) increasing finction $F$ on $[a,b]$ has at most countable many jumps. There exists an injective map $\Disc(F)→\mathbb Q$ 
@@ -73,10 +80,11 @@ $F(x^-)\leq F(x)\leq F(x^+)$, $F$ cont. at $x$ if $F(x^-)=F(x^+)$. Otherwise $F$
 Jump function associated to $F$ is \[J_F(x)=\sum_{n=1}^∞j_n(x)\] 
 \[\sum_{n=1}^∞α_n=\sum_{n=1}^∞F(x_n^+)-F(x_n^-)\leq F(b)-F(a)<∞\] because $F$ incr, and $F$ bounded.
 \begin{lem}
+	\label{lem:inctocont}
 	$F$ increasing, bounded on $[a,b]$, $\Disc(F)=\{x_n\}_{n=1}^∞$
 	\begin{enumerate}
 		\item $J_F(x)$ is discontinuous precisely at $\{x_n\}_{n=1}^∞$, has a jump at $x_n$ equal to that if $F$.
-		\item Th function $F-J_F$ is increasing and continuous.
+		\item The function $F-J_F$ is increasing and continuous.
 	\end{enumerate}
 \end{lem}
 \begin{proof}

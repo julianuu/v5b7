@@ -9,7 +9,7 @@ exterior/outer $α$-dim Hausdorff measure.
 
 \begin{rem} Coverings must be by sets of arb. small measure. (If we allowed the $δ$ to be arbitrary then two parallel lines would get the same 1d-measure as one of them.)
 \end{rem}
-\begin{rem}[Skaling]
+\begin{rem}[Scaling]
 	"The measure of a set should scale like its dimension". E.g.: $Γ⊂ℝ^d$ smoot cureve of length $L$ $sim$ $λΓ$ has length $λL$. $Q⊂ℝ^d$ cube $sum$ $λQ$ has measure $λ^d|Q|$. $|F|$ scaled by $λ⇒(\diam F)^α$ scaled by $λ^α$
 \end{rem}
 \paragraph{Properties}
@@ -21,12 +21,12 @@ exterior/outer $α$-dim Hausdorff measure.
 			\[\sum(\diam_j F_j')^α+\sum_j(\diam F_j'')^α\leq\sum_k\diam(F_k)^α\]
 			Take inf over all covers, let $δ→0^+$, done.
 		\end{proof}
-		$m_α^*$ satisfies all properties of a Caratheodory outer measure $\therefore m_α^*$ is a countabley additive maisure when restricted to Borel sets, call it $m_α$= $α$-dim Hausdorff measure.
+		$m_α^*$ satisfies all properties of a Caratheodory outer measure $\therefore m_α^*$ is a countabley additive measure when restricted to Borel sets, call it $m_α$, the $α$-dim Hausdorff measure.
 	\item $\{E_j\}$ countable family of disjoint Borel sets $⇒$
-		\[m_α(\dot\bigcup_{j=1}^∞E_j)=\sum_{j=1}^∞m_α(E_j)\]
+		\[m_α(\mathop{\dot\bigcup}_{j=1}^∞E_j)=\sum_{j=1}^∞m_α(E_j)\]
 	\item Hausdorff masure is invariant under translation and rotations. It scales like:
 		\[m_α(λE)=λ^αm_α(E)\]
-	\item $m_0(E)=\#E,\ m_1(E)=|E|$ (=1D LEbesgue measure of $E$), $E⊂ℝ$ Borel.
+	\item $m_0(E)=\#E,\ m_1(E)=|E|$ (=1D Lebesgue measure of $E$), $E⊂ℝ$ Borel.
 	\item $E⊂ℝ^d$ Borel, $m_α(E)\simeq|E|$
 		\begin{proof}
 			\begin{enumerate}
@@ -43,29 +43,29 @@ exterior/outer $α$-dim Hausdorff measure.
 		Consequence: Given $E⊂ℝ^d$ Borel, $∃!α$ such that
 		\[m_β(E)=
 			\begin{cases}
-				∞&β<α\\0β>α
+				∞&β<α\\0&β>α
 			\end{cases}
 		\]
 		\[α=\sup\{β:m_β(E)=∞\}=\inf\{β:m_β(E)=0\}:=\text{Hausdorff dimension of $E$}=\dim E\]
-		At the critical value $α=\dim E\ 0\leq m_α(E)\leq∞$. If $E$ is bounded and the enequalities are strict, we say that $E$ has strict Hausdorff dimension $α$.
+		At the critical value $α=\dim E\ 0\leq m_α(E)\leq∞$. If $E$ is bounded and the inequalities are strict, we say that $E$ has strict Hausdorff dimension $α$.
 \end{enumerate}
-\begin{theo} The Cantor set $C⊂[0,1)$ has strict Hausdorff dimensios $\frac{\log 2}{\log 3}$.
+\begin{theo} The Cantor set $C⊂[0,1)$ has strict Hausdorff dimension $\frac{\log 2}{\log 3}$.
 \end{theo}
 ETS: $0<m_α(C)\leq 1$
 \begin{proof} \highl{$m_α(C)\leq 1$:}
-	$C=\bigcap C_k$ where each $C_k$ is a finite unionof $2^k$ inetrvals of length $3^{-k}$.. Given $δ>0$ coose $k$ large enough tuch tht $3^{-k}<δ$. $C_k$ covers $C$ and Consists of $2^k$ intervals of diameter $3^{-k}<δ$. $H_α^δ(C)\leq 2^k(3^{-k})^α=1$, let $δ→0^+$, done.
+	$C=\bigcap C_k$ where each $C_k$ is a finite unionof $2^k$ inetrvals of length $3^{-k}$.. Given $δ>0$ coose $k$ large enough such that $3^{-k}<δ$. $C_k$ covers $C$ and Consists of $2^k$ intervals of diameter $3^{-k}<δ$. $H_α^δ(C)\leq 2^k(3^{-k})^α=1$, let $δ→0^+$, done.
 
 	\highl{$m_α(C)>0$}:
 	\begin{lem}%1
 		$E\Subset d$ compact, $f:E→ℝ$ $γ$-Hölder, \[|f(x)-f(y)|\leq m|x-y|^γ\quad(∀x,y∈E)\quad 0<γ\leq 1\]
 		Then
 		\begin{enumerate}
-			\item $m_β(f(E))\leq M^βm_α(E)$ if $β=\fracαγ$.
-			\item $\dim f(E)\leq\frac1γ\dim(E)$
+			\item $m_β(f(E))\leq M^βm_α(E)$ if $β=\fracαγ$.\label{it:hölderhm}
+			\item $\dim f(E)\leq\frac1γ\dim(E)$\label{it:hölderhd}
 		\end{enumerate}
 	\end{lem}
-	\begin{proof} $\{F_k\}$ countable family of sets that overs $E$ $\therefore\{f(F_k∩E)\}$ covers $f(E)$. $\diam f(F_k∩E)\leq M(\diam F_k)^γ$.
-		\[\sum_k(\diam f(EℵF_k))^{\fracαγ}\leq M^{\fracαγ}\sum_k(\diam F_k)^α,\] done. and 1 implies 2.
+	\begin{proof} $\{F_k\}$ countable family of sets that covers $E$ $\therefore\{f(F_k∩E)\}$ covers $f(E)$. $\diam f(F_k∩E)\leq M(\diam F_k)^γ$.
+		\[\sum_k(\diam f(EℵF_k))^{\fracαγ}\leq M^{\fracαγ}\sum_k(\diam F_k)^α,\] done. And \ref{it:hölderhm} implies \ref{it:hölderhd}.
 	\end{proof}
 	\begin{lem} The Cantor-Lebesgue function $F:C→[0,1]$ is $γ=\frac{\log 2}{\log 3}$-Hölder.
 	\end{lem}%2
@@ -74,20 +74,25 @@ ETS: $0<m_α(C)\leq 1$
 
 		$F_n$ increases at most $2^{-n}$ on an interval of length $3^{-n}$. $\therefore$ slope $\leq(\frac32)^n$ $\therefore |F_n(x)-F_n(y)|\leq(\frac32)^n|x-y|$. $|F_n(x)-F(x)|\leq2^{-n}$.
 		Given $x,y$ chose $n$: $3^n|x-y|\sim1,\ 3^γ=2$.
-		\[|F(x)-F(y)|\leq|F_n(x)-F_n(y)|+|F_n(x)-F(x)|+|F_n(y)-F(y)|\leq(\frac32)^n|x-y|+2\cdot 2^{-n}\leq c2^{-n}=c(3^{-n})^γ\leq c'|x-y|^γ\]
+		\begin{align*}
+			|F(x)-F(y)|&\leq|F_n(x)-F_n(y)|+|F_n(x)-F(x)|+|F_n(y)-F(y)|\\
+			    &\leq(\frac32)^n|x-y|+2\cdot 2^{-n}\leq c2^{-n}=c(3^{-n})^γ\leq c'|x-y|^γ
+		\end{align*}
 	\end{proof}
-	Apply LEmma 1 with $E=C,\ f=F,\ γ=\frac{\log 2}{\log 3}⇒1=m_1([0,1])\leq Mm_α(C)$, $\dim C=\frac{\log 2}{\log 3}$
+	Apply first lemma with $E=C,\ f=F,\ γ=\frac{\log 2}{\log 3}⇒1=m_1([0,1])\leq Mm_α(C)$, $\dim C=\frac{\log 2}{\log 3}$
 \end{proof}
 
 \paragraph{Rectifiable curves}
-\begin{theo} $γ:[a,b]→ℝ^d$ continuous and simple. Then $γ$ is rectifiable iff $Γ=\{γ(t):a\leq t\leq b\}$ has strict Hausdorff dimension equal to 1. $m_1(Γ)=l(γ)$.
+\begin{theo} $γ:[a,b]→ℝ^d$ continuous and simple. Then $γ$ is rectifiable iff $Γ=\{γ(t):a\leq t\leq b\}$ has strict Hausdorff dimension equal to 1. In that case $m_1(Γ)=l(γ)$.
 \end{theo}
-\begin{proof} $⇒$: Let $γ$ be rectifiable of length $L$. Consider acrlength parametrization $\tildeγ$. $Γ=\{\tildeγ(s):0\leq s\le L\}$. \[|\tildeγ(s_1)-\tildeγ(s_2)|\leq|s_1-s_2|\]
-	By Lemma 1 (i) $m_1(Γ)\leq L$. Wh $m_1(Γ)\geq L$?
+\begin{proof} $⇒$: Let $γ$ be rectifiable of length $L$. Consider arclength parametrization $\tildeγ$. $Γ=\{\tildeγ(s):0\leq s\le L\}$. \[|\tildeγ(s_1)-\tildeγ(s_2)|\leq|s_1-s_2|\]
+	By first lemma \ref{it:hölderhm} $m_1(Γ)\leq L$. Why $m_1(Γ)\geq L$?
 	\[Γ_j=\{γ(t):t_j\leq t\leq t_{j+1}\}\]
 	\[Γ=\bigcup_{j=1}^{N-1}Γ_j\quad m_1(Γ)=\sum_{j=0}^{N-1}m_1(Γ_j)\]
 	Claim: $m_1(Γ_j)\geq l_j:=|γ(t_j)-γ(t_{j+1})|$
-	\begin{proof} $π:ℝ^2∞ℝ$ $(x,y)↦x$ Lipschitz, $π(Γ_j)⊂[0,l_j]$ Lemma 1 (i) implies the claim.
+	\begin{proof} $π:ℝ^2→ℝ,\ (x,y)↦x$ Lipschitz, $π(Γ_j)⊂[0,l_j]$ first lemma \ref{it:hölderhm} implies the claim.
 	\end{proof}
 	$\therefore m_1(Γ)\geq\sum m_1(Γ_j)\geq\sum l_j,\ L:=\sup_p\sum l_j\therefore m_1(Γ)\geq L$, done.
+
+	(What about the other direction?)
 \end{proof}
