@@ -10,13 +10,14 @@ where $η:ℝ→ℝ_+$ smooth such that
 		1&|s|\leq 1\\ 0&|s|\geq 2
 	\end{cases}
 \]
-Then the maximal operator we consider equal to
+Then the maximal operator we consider is $\simeq$ to
 \[\sup_{k∈ℤ}|A_kf(x)|\]
-up to a factor (right?)
 
 Now we consider $γ(s)=(s,s^2)$. Then
-\[A_jf(x)=2^j∫f(x_1-s,x_2-s^2)η(2^js)\md s=2^{j+k}∫f(x_1-2^k\tilde s,x_2-2^{2k}\tilde s^2)η(2^{jk}\tilde s)\md \tilde s
-=2^{j+k}∫f(2^h(2^{-k}x_1-\tilde s),2^{2k}(2^{-2k}x_2-\tilde s^2))η(2^{j+k}\tilde s)\md \tilde s=P_{-k}A_{j+k}P_kf(x)\]
+\begin{align*}
+	A_jf(x)&=2^j∫f(x_1-s,x_2-s^2)η(2^js)\md s=2^{j+k}∫f(x_1-2^k\tilde s,x_2-2^{2k}\tilde s^2)η(2^{jk}\tilde s)\md \tilde s\\
+	       &=2^{j+k}∫f(2^h(2^{-k}x_1-\tilde s),2^{2k}(2^{-2k}x_2-\tilde s^2))η(2^{j+k}\tilde s)\md \tilde s=P_{-k}A_{j+k}P_kf(x)
+\end{align*}
 where $s=2^{-k}\tilde s$ and 
 \[P_kf(x)=f(2^kx_1,2^{2k}x_2)\]
 \[⇒M=P_{-k}MP_k\]
@@ -28,7 +29,7 @@ where $ψ$ is compactly supported and smooth and
 is supported in a ball of radius $2^{-j}$ with respect to the metric
 \[ρ(x,y)=\max(|x_1-y_2|,|x_2-y_2|^{\f12})\]
 \[B_jf(x)\lesssim M_ρf(x)\]
-where $M$ is the maximal function with respect to $(ℝ^2,ρ,\tx{Leb. measure})$, doubling metric measure space. $M_ρ$ is $L^p$-bounded for some reason. Therefore \[f↦\sup_j|B_j|\] is bounded on $L^p(ℝ^2),\ 1<p\leq∞$. Need to estimate
+where $M$ is the maximal function with respect to $(ℝ^2,ρ,\tx{Leb. measure})$, doubling (?) metric measure space. $M_ρ$ is $L^p$-bounded for some reason (I guess we know that for normal balls, but why for these…?). Therefore \[f↦\sup_j|B_j|\] is bounded on $L^p(ℝ^2),\ 1<p\leq∞$. Need to estimate
 \[\sup_j|(A_j-B_j)f(x)|\leq(\sum_j|(A_j-B_j)f(x)|^2)^{\f12}\]
 \[∫f\mdμ_j=2^j∫f(s,s^2)η(2^js)\md s\]
 \[A_jf=μ_j*f,\quad B_jf=ψ_j*f\]
@@ -36,9 +37,12 @@ Define
 \[σ_j:=μ_j-ψ_j\]
 Goal: Show that
 \[\|(\sum_j|σ_j*f|^2)^{\f12}\|_p\lesssim\|f\|_p\]
-By interpolation it suffices to show this for $1<p\leq 2$. $p=2$:
+By interpolation (what is meant by that? Is it the thing with the transpose? I don't really see how that goes here) it suffices to show this for $1<p\leq 2$. $p=2$:
 Let $f∈S$. Then by Plancherel
-\[\|(\sum_j|σ_j*f|^2)^{\f12}\|_2^2=∫\sum_jσ_j*f|^2=\sum_j∫|σ_j*f|^2=\sum_j∫|\hatσ_j|^2|\hat f|^2\leq∫|\hat f(ξ)|^2\sum_j|\hatσ_j(ξ)|^2\lesssim∫|\hat f|^2=\|f\|_2^2\]
+\begin{align*}
+	\|(\sum_j|σ_j*f|^2)^{\f12}\|_2^2&=∫\sum_j|σ_j*f|^2=\sum_j∫|σ_j*f|^2=\sum_j∫|\hatσ_j|^2|\hat f|^2\\
+	&\leq∫|\hat f(ξ)|^2\sum_j|\hatσ_j(ξ)|^2\lesssim∫|\hat f|^2=\|f\|_2^2
+\end{align*}
 if we show that $\sum_j|\hatσ_j(ξ)|^2$ is bounded by a constant. Since the parabola has nonvanishing curvature we have
 \[|\hatμ_0(ξ)|\lesssim|ξ|^{-\f12}\]
 Since $ψ_0$ is smooth we have for all $N$

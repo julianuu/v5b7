@@ -68,7 +68,7 @@ This also holds for $C^0_0$ by density.
 \end{proof}
 Now the theorem follows from the Lemmas and the $L^2$ boundedness of the maximal function.
 
-Now look at $d_1$. Then the theorem fails because
+Now look at $d=1$. Then the theorem fails because
 \[A_tf(x)=\f12(f(x+t)+f(x-t))\]
 and we can take as a counteraxample a function nonnegative which blows up close to $0$ but is in $L^p$ for every $p<∞$ such that $\sup_{t>0}(A_tf)(x)=∞$ everywhere.
 
@@ -81,7 +81,7 @@ $d\geq 2$: The maximal operator $f↦\sup_{t>0}(A_t(f)|$ is bounded on $L^p(ℝ^
 	\item No such result holds in $L^p(ℝ^d)$ if $p\leq\f d{d-1}$: Let
 		\[f(y)=\f{|y|^{1-d}}{\log\f1{|y|}}1_{\{|y|\leq\f12\}}(y)\]
 		Then $f∈L^p$ if $p\leq\f d{d-1}$: First, forget about the log for a moment. It is only there to take care of the endpoint.
-		\[\|f\|_{L^p(ℝ^d)}^p\simeq∫_0^{\f12}\f{r^{(1-d)p}}{(\log\f1r)^p}rw{d-1}\md r=∫_0^{\f12}r^{(1-d)(p-1)}\md r\]
+		\[\|f\|_{L^p(ℝ^d)}^p\simeq∫_0^{\f12}\f{r^{(1-d)p}}{(\log\f1r)^p}r^{d-1}\md r=∫_0^{\f12}r^{(1-d)(p-1)}\md r\]
 		\[(1-d)(p-1)>-1\quad(d-1)(p-1)<1\quad p<\f1{d-1}+1=\f d{d-1}\]
 		For any $x$, the quantity $(A_tf)(x)$ is unbounded when $f\sim|x|$:
 		\[\therefore\sup_t(A_tf)(x)=∞\quad\tx{everywhere}\]
