@@ -1,6 +1,6 @@
 today:
 \[(A_tf)(x)=∫_{|y|=1}f(x-ty)\mdσ(y)=(f*σ_t)(x)\]
-which is the average of $f$ over the sphere of radius $t$ contered at $x$,
+which is the average of $f$ over the sphere of radius $t$ centered at $x$,
 \[∫_{|x|=t}g(x)\mdσ_t(x):=∫_{|x|=1}g(tx)\mdσ(x).\]
 This definition works fine provided $g$ is continuous.
 
@@ -14,18 +14,26 @@ A priori estimate for the spherical maximal averages:
 \end{theo}
 Note that this can be improved up to $d\geq 2$, but fails for $d=1$.
 
-Key: Let $f∈C^1_0(ℝ^d)$. Then \[(Sf)(x)=(∫_0^∞|\f{∂A_tf}{∂t}(x)|^2t\md t)^{\f12}.\]
+Key: Let $f∈C^1_0(ℝ^d)$ and
+\[(Sf)(x)=(∫_0^∞|\f{∂A_tf}{∂t}(x)|^2t\md t)^{\f12}.\]
 This also holds for $C^0_0$ by density.
 \begin{lem}
 	\[\sup_{t>0}|(A_tf)(x)|\leq(Mf)(x)+c(Sf)(x)\]
 	where $Mf$ is the standard Hardy-Littlewood maximal function over centered balls.
 \end{lem}%1
-\begin{proof}[Proof fo Lemma 1]	
-	\[(A_tf)(x)=t^{-d}∫_0^t\f∂{∂s}[s^d(A_sf)(x)]\md s=I+II\] using that the integrand equals
-	\[ds^{d-1}A_sf)(x)+s^d\f{∂(A_s)f)}{∂s}(x)\]
-	\[I=dt^{-d}∫_0^ts^{d-1}(∫_{|y|=1}f(x-sy)\mdσ(y))\md s=dt^{-d}∫_{B(x,t)=\{y:|x-y|\leq t\}}f(y)\md y=\f1{\f{t^d}d}∫_{B(x,t)}f\leq\sup_{t>0}\dashint_{B(x,t)}f=(Mf)(x)\]
+\begin{proof}[Proof of lemma]	
+	\[(A_tf)(x)=t^{-d}∫_0^t\f∂{∂s}[s^d(A_sf)(x)]\md s=I+\mathit{II},\]
+	using that the integrand equals
+	\[ds^{d-1}(A_sf)(x)+s^d\f{∂(A_s)f}{∂s}(x).\]
+	\begin{align*}
+		I&=dt^{-d}∫_0^ts^{d-1}(∫_{|y|=1}f(x-sy)\mdσ(y))\md s=dt^{-d}∫_{B(x,t)=\{y:|x-y|\leq t\}}f(y)\md y\\
+		 &=\f1{\f{t^d}d}∫_{B(x,t)}f\leq\sup_{t>0}\dashint_{B(x,t)}f=(Mf)(x)
+	\end{align*}
 	due to our choice of normalization $|B(x,t)|=∫_0^t\ub{ω_{d-1}}_1s^{d-1}\md s=\f{t^d}d$.
-	\[II=t^{-d}∫_0^ts^{d-\f12}(\f{∂A_sf)}{∂s}(x)s^{\f12})\md s\leq(∫_0^∞|\f{∂(A_sf)(x)}{∂s}|^2s\md s)^{\f12}\cdot t^{-d}(∫_0^ts^{2d-1}\md s)^{\f12}\lesssim_d(Sf)(x)\]
+	\begin{align*}
+		\mathit{II}&=t^{-d}∫_0^ts^{d-\f12}\f{∂(A_sf)}{∂s}(x)s^{\f12}\md s\\
+		&\leq(∫_0^∞|\f{∂(A_sf)(x)}{∂s}|^2s\md s)^{\f12}\cdot t^{-d}(∫_0^ts^{2d-1}\md s)^{\f12}\lesssim_d(Sf)(x)
+	\end{align*}
 \end{proof}
 \begin{lem}
 	If $d\geq 4$ then 
@@ -51,11 +59,11 @@ This also holds for $C^0_0$ by density.
 		The statement follows from this and Cauchy-Schwarz applied to the definition of $μ(ξ)$.
 	\end{proof}
 	By Plancherel we get
-	\[∫_{ℝ^d}|\f{∂(A_sf)}{∂s}(x)|^2\md x=∫_{ℝ^d}|\hat f(ξ)|^2\f{|(sξ)|^2}{s^2}\mdξ\]
+	\[∫_{ℝ^d}|\f{∂(A_sf)}{∂s}(x)|^2\md x=∫_{ℝ^d}|\hat f(ξ)|^2\f{|μ(sξ)|^2}{s^2}\mdξ\]
 	Now we multiply by $s$ and integrate with respect to $s$ and get
 	\[∫_{ℝ^d}|Sf(x)|^2\md x=∫_{ℝ^d}|\hat f(ξ)|^2\ub{(∫_0^∞\f{|μ(sξ)|^2}s\md s)}_{*}\md ξ\]
 	It is enough to show, that $*$ is bounded with respect to $ξ$.
-	\[∫_0^∞\f{|μ(sξ)|^2}s\md s=∫_0^{\f1{|ξ|}}+∫_{\f1{|ξ|}}^∞\leq A(|ξ|^2∫_0^{\f1{|ξ|}}s^2\f{\md s}s+|ξ|^{-(d-3)}∫_{\f1{|ξ|}}^∞s^{-(d-3)}\f{\md s}s)\leq C<\]
+	\[∫_0^∞\f{|μ(sξ)|^2}s\md s=∫_0^{\f1{|ξ|}}+∫_{\f1{|ξ|}}^∞\leq A(|ξ|^2∫_0^{\f1{|ξ|}}s^2\f{\md s}s+|ξ|^{-(d-3)}∫_{\f1{|ξ|}}^∞s^{-(d-3)}\f{\md s}s)\leq C\]
 	where $C$ is independent of $ξ$. The whole thing is true iff $-(d-3)-1<-1,\ d\leq 4$, since this takes care of the second summand and the first summand is no problem.
 \end{proof}
 Now the theorem follows from the Lemmas and the $L^2$ boundedness of the maximal function.

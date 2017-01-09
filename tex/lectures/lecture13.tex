@@ -1,6 +1,6 @@
 	Step 2: Dyadic decomposition of $A$.
 
-	Co-area formula (see Evans-Cariery (?), Stein-Shakarchi IV, Exercise 8, Ch. 8): Fix $h∈S(ℝ)$ sucht that $∫h=1,\ M=\{x∈ℝ^d\ |\ ρ(x)=0\}$. Then
+	Co-area formula (see Evans-Cariery (?), Stein-Shakarchi IV, Exercise 8, Ch. 8): Fix $h∈S(ℝ)$ such that $∫h=1,\ M=\{x∈ℝ^d\ |\ ρ(x)=0\}$. Then
 	\[∫_Mf\f{\mdσ}{|∇ρ|}=\lim_{ε→0^+}\f1ε∫_{ℝ^d}h(\f{ρ(x)}ε)f(x)\md x.\]
 	E.g.\ $ρ(x)=|x|-1\therefore M=\se^{d-1},\ ∇ρ(x)=\f x{|x|},\therefore|∇ρ|=1$
 	\[∫_{\se^{d-1}}f\mdσ=\lim_{ε→0^+}\f1ε∫_{ℝ^d}h(\f{|x|-1}ε)F(x)\md x\]
@@ -31,7 +31,7 @@
 	\begin{enumerate}
 		\item $f∈L^2(ℝ^d)⇒$
 			\[A_k(f)∈C^∞_0(ℝ^d)\]
-		\item \[\|A_k(f)\|_{L^2}\leq c2^{-k(\f{d-1}2)}\|f\|_{L^2}.\] Recall $\|S_λ\|_{L^2→L^2}\lesssimλ^{-\f{d+1}2i}$ and change variables in the definition of $A_k(f)$.
+		\item \[\|A_k(f)\|_{L^2}\leq c2^{-k(\f{d-1}2)}\|f\|_{L^2}.\] Recall $\|S_λ\|_{L^2→L^2}\lesssimλ^{-\f{d+1}2}$ and change variables in the definition of $A_k(f)$.
 		\item $∃m:|j-k|\geq m\ ∀N$
 			\[\|(A_k^*A_j)(f)\|_{L^1}\lesssim_N 2^{-N\max(k,j)}\|f\|_{L^2}.\] Similarly for $A_kA_j^*$. For the proof, invoke nonstationary phase. Also, recall $|I(λ)|^2=I(λ)\overline{I(λ)}$.
 		\item $A_k^{(α)}=(\f∂{∂x})^αA_k$. Then \[\|A_k^{(α)}\|_{L^2→L^2}\lesssim2^{k|α|}2^{-k(\f{d-1}2)}\] and \[\|A_k^{(α)}(A_j^{(α)})^*\|_{L^2→L^2}\lesssim_{α,N}2^{-N\max(k,j)}.\]
