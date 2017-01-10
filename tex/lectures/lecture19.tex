@@ -1,0 +1,80 @@
+Z. Dvir "On the size of Kakeya sets in finite fields". IAMS (2008), 5 pages.
+
+$\F=$ finite field of $q$ elements $(\F,+,\cdot)$. $K$ is aKakeya set of $\F^n$ if it contains a line in every direction if $∀x∈\F^n\ ∃y∈\F^n$:
+\[L_{y,x}=\{y+ax\mid a∈\F\}⊂K\]
+\paragraph{Motivation:} (Euclidean Kakeya conjecture) [Hausdorff dimension of Kakya set in $ℝ^n$ equals $n$.] and its many connections to HA, PDE, NT,…
+
+Wolf '99: $\#(\tx{Kakeya set in $\F^n$})\gtrsim_nq^n$. Proved $\gtrsim_n q^{\f{n+1}2}$, later improved by Rogers, Bourgain-Katz-Tao, Mockenhaupt-Tao, Tao, where the first and third where the world record before 2008: $\gtrsim_nq^{\f{4n}7}$.
+
+Tools: 
+\begin{itemize}
+	\item additive number theory
+	\item sum-product phenomena on finite fields, i.e.\ $\#(A+rB)_{r∈\F},\ A,B⊂\F^n$ field.
+\end{itemize}
+Dvir's breakthrough: "Polynomial method". Key: Any degree $q-2$ homogeneous polynomial in $n$ variables in $\F[x_1,…,x_n]$ can be reconstructed from its values on any Kakeya set $K⊂\F^n$.
+\[\therefore\#K\gtrsim\dim\{P∈\F[x_1,…,x_n]:\deg(P)=q-2\}\sim q^{n-1}\]
+if $q$ is large.
+\begin{theo} If $K⊂\F^n$ Kakeya. Then $\|K\geq c_nq^{n-1}$.
+\end{theo}
+\begin{cor} $∀n∀ε∃C=c_{n,ε}$ s.t.\ and Kakeya set $K⊂\F^n$ satisfies $\#K\geq Cq^{n-ε}$.
+\end{cor}
+\begin{proof}
+	$K⊂\F^n$ Kakeya $⇒K\times K⊂\F^n\times \F^n$ Kakeya. More generally, $K^r⊂\F^{rn}$ Kakeya, $\therefore(\#K)^r\geq C_{n,r}q^{nr-1}\therefore\#K\geq c_{n,r}'q^{n-\f1r}$.
+\end{proof}
+(Another instance of the tensor power trick.)
+\begin{theo} Let $K⊂\F^n$ be a $(δ,γ)$-Kakeya set. Then \[\#K\geq\binom{d+n-1}{n-1}\]
+	with
+	\[d:=\lfloor q\min\{δ,γ\}\rfloor-2.\]
+\end{theo}
+\begin{defi} $K⊂\F^n$ is a $(δ,γ)$-Kakeya set if $∃L⊂\F^n$ of size $\geqδq^n$ s.t.\ $∀x∈L∃$ line in direction $x$ that intersects $K$ is $\geqγq$ points.
+\end{defi}
+The second theorem implies the first by setting $δ=γ=1$:
+\[\#K\geq\binom{q-2+n-1}{n-1}=\f{(q-2+n-1)…(q-2+1)}{(n-1)!}\gtrsim_n q^{n-1}.\]
+Main tool: Schwartz-Zippel lemma: Let \[0\neq f∈\F[x_1,…,x_n]:\deg(f)\leq d.\]
+Then
+\[\#\{x∈\F^n:f(x)=0\}\leq dq^{n-1}\quad(=\f dqq^n).\]
+$n=1$: Any polynomial of degree at most $d$ has at most $d$ zeros. $n>1$: induction (see: Wikipedia)
+\begin{proof}{Proof of second theorem}
+	Aiming at a contradiction, suppose $\#K<\binom{d+n-1}{n-1}=\#$ of monomials in $\F[x_1,…,x_n]$ of degree $d$. Why? $x_1^{α_1}…x_n^{α_n}:α_1+…+α_n=d$, where $α_j\geq 0$ integers. Choose $n-1$ out of $d-1$ possibilities $β_1+…β_n=d$ where $β_j>0$ integers. $\binom{d-1}{n-1}$. $(α_1+1)+…+(α_n+1)=d+n$ $B_1+…+β_n=d+n$ $\binom{d+n-1}{n-1}\checkmark$. Therefore $∃0\neq g∈\F[x_1,…,x_n]$ hmg of degree $d$: $g(x)=0,\ ∀x∈K$. $φ_i:V→F^K,\ P\mapsto (P(x))_{x∈K}$. Why? Solve system of $a$ (one for each point in $K$) linear equations in $b$ (number of coefficients of $g$) variables. Since $a<b$, the system is (homogeneous and) underdetermined and therefore, a nonzero solution exists.
+	Set \[K':=\{cx\mid x∈K,\ c∈\F\}.\]
+	$g$ homogeneous implies $g(cx)=c^dg(x)=0$. Therefore $g(x)=0\ ∀x∈K'$. Claim: $g(y)=0\ (∀y∈L)$.
+	\begin{proof}[Proof of claim] $y=0⇒g(y)=g(0)=0$ since $g$ is homogeneous (and vanishes at some point)
+
+		$y\neq 0:∃ζ∃\F^n:L_{ζ,y}=\{ζ+ay\mid a∃\F\}$ intersects $K$ in $\geqγq$ points. So ther exist $d+2$ disticnt fied elements $a_1,…,a_{d+2}∈\F:ζ+a_jy∈K\ (1\leq j\leq d+2)$ since $d+2\leqγq$. These points are not necessarily nonzero. But there exist $d+1$ disticnt nonzero elements $a_1,…,a_{d+1}∈\F:ζ+a_jy∈K$ ($1\leq j\leq d+1,\ a_j\neq 0$)
+		For $j=1,…,d+1$, let $b_j=a_j^{-1}$ Then the $d+1$ points $w_j=\ub{b_j}_{∈\F}\ub{(ζ+a_jy)}_{∈K}=b_jζ+y∈K'\ (∀1\leq j\leq d+1)$.
+		Case 1: $ζ=0⇒g(y)=g(w_j)=0$, done.
+
+		Case 2: $ζ\neq 0⇒ω_1,…,ω_{d+1}$ are $d+1$ distinct points belongig to the same line. Restriction of $g$ to this line is a degree $\leq d$ univariate polynomial. Since it has $d+1$ zeros, it must be zero on the whole line $\therefore$ $g(y)=0$, done.
+
+		This is a contradiction since $\f dq<δ$. Indeed, by Schwartz-Zippel, a nonzero polynomial of degree $d$ can only be zero at most on a $\f dq$ fraction of $\F^n$.
+	\end{proof}
+\end{proof}
+\begin{theo} $K⊂\F^n$ Kakeya. Then $\#K\geq c_nq^n$. 
+\end{theo}
+Polynomial method: control $\#E$ by looking at polynomials vanishing on $E$. Factorthm: $d∈ℕ,\ \F$ field.
+\begin{enumerate}
+	\item $0\neq P∈\F[x],\deg(p)\leq d⇒\#\{x∈\F:p(x)=0\}\leq d$
+	\item Given $E⊂\F:\#E\led d\ ∃0\neq p∈\F[x]$ of $\deg(p)\leq d$ and $p\equiv 0$ on $E$. $p(x)=\prod_{e∈E}(x-e)$.
+\end{enumerate}
+\begin{itemize}
+	\item Exhibit nonzero, low degree polynomial that vanishes on $E⇒$ uppeor bound for $\#E$.
+	\item Show only how degree polynomial that vanishes on $E$ is the zero polynomial $⇒$ lower bound for $\#E$
+\end{itemize}
+Now do the second bullet.
+\begin{lem} $E⊂\F^n:\#E<\binom{n+d}n$ for some $d\geq 0$. Then $∃0\neq p∈\F[x_1,…,x_n],\ deg p\leq d$: $p$ vanishes on $E$.
+\end{lem}
+\begin{proof} Let
+	\[W=\{P∈\F[x_1,…,x_n]:\deg(p)\leq d\}.\]
+	Then \[\dim_\F(W)=\sum_{j=0}^d\binom{j+n-1}{n-1}=\binom{d+n}n.\]
+	\[\dim_\F(\F^E)=\#E<\dim_FW\]
+	Therfore the map $W→\F^E,\ P↦(P(x))_{x∈E}$ cannot be injective. Any nonzero element of $\ker(φ)$ will do.
+\end{proof}
+\begin{lem} $p∈\F[x_1,…,x_n]:\deg(p)\leq\#F-1=q-1$ and $p$ varises on a Kakeya set $E⊂\F^n$. Then $p\equiv 0$.
+\end{lem}
+\begin{proof} By contradiction: $p\neq 0$. Write
+	\[p=\sum_{j=0}^dp_j\]
+	with $p_d\neq 0$ (for some $0\leq d\leq q-1$). $p$ vanishes on $E⇒d\neq 0$. Let $r∈\F^n\sm\{0\}$ be an arbitrary direction. $E$ akeyp $⇒E\supset L_{x,r}=\{x+tv:t∈\F\}$ for some $x=x_r$. $p(x+tr)=0\ (∀t∈\F)$. But this is a polynomial in $t$ of degree $\leq q-1$ that vanishes on $q$ points. Hence $P(x+tv)$ vanishes identically (by the factor theorem). $\therefore t^d$ coefficient of $p(x+tv)=p_d(v)=0\ (∀v\neq 0)\therefore p_d$ vanishes on all of $\F^n$ (since it is homogeneous of degree $d>0$). Since $\deg(p_d)=d<q$, apply factor theorem repeatedly to show $p_d=0$, contradiction.
+\end{proof}
+The two lemmas together imply that every Kakeya set in $\F^n$ has cardinality $\geq\binom{q+n-1}n=\f1{n!}+O_n(q^{n-1})$ (if not, apply first lemma to get a nonzero, low degree ($q-1$) polynomial that vanishes on a Kakeya set. This contradicts the second lemma!).
+
+Saraf & Sudan '09 $\f1{n!}$ can be improved to $β^n$

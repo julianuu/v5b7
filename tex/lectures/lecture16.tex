@@ -8,11 +8,11 @@ Given $f:\se^{d-1}→ℂ$, consider the Fourier transform $\wh{Fσ}(ξ)=∫_{\se
 		Consider $ξ=k$ then $|\wh{f_kσ}(ξ)|=σ(\se^{d-1})\simeq 1$, no decay here. Now take
 		\[f=\sum_{j\geq 0}\f{f_{k_j}}{j^2}\]
 		where $|k_j|→∞$ sufficiently fast, e.g.\ $k_j=j!$. Easy to check: $f$ is continuous but $|\wh{fσ}(ξ)|\leq c(1+|ξ|)^{-ε}$ does not hold for any $c<∞,\ ε>0$. (uniformly in $ξ$).
-	\item Problem of distinguished origin disappears if we take $L^q$ norms (There was some discussion on the wording going on which I did not understand)
+	\item Problem of distinguished origin disappears if we take $L^q$ norms (There was some discussion on the wording going on?)
 \end{itemize}
 Restriction conjecture (Stein): Prove, that if $f∈L^∞(\se^{d-1})$, then
 \[\|\wh{fσ}\|_{L^q(ℝ^d)}\leq c_{q,d}\|f\|_{L^∞(\se^{d-1},σ)}\]
-for very $q>\f{2d}{d-1}$.
+for every $q>\f{2d}{d-1}$.
 \begin{itemize}
 	\item Range of exponents would be sharp: take $f\equiv 1∈L^∞(\se^{d-1})$
 		\[\|\whσ\|_{L^q(ℝ^d)}^q=∫_{ℝ^d}|\whσ(ξ)|^q\md ξ\lesssim∫_{ℝ^d}(1+|ξ|)r^{-\f{d-1}2q}\mdξ\simeq_d∫_0^∞(1+r)^{-\f{d-1}2q}r^{d-1}\md r\]
@@ -24,7 +24,7 @@ Corresponding problem for $L^2$ densities was solved by Tomas-Stein inequality (
 if $q\geq\f{2d+2}{d-1}$, and this range is the best possible. Note, that this was already proven last term and can be found in Stein/Shakarchi
 
 \begin{itemize}
-	\item Assumptions are of the form $q>q_0$ or $g\geq q_0$. Why?
+	\item Assumptions are of the form $q>q_0$ or $q\geq q_0$. Why?
 		\[\|\wh{fσ}\|_{L^∞(ℝ^d)}=\sup_{ξ∈ℝ^d}|∫_{\se^{d-1}}f(x)e^{-2ηixξ}\md σ_x|\leq∫_{\se^{d-1}}|f(x)|\mdσ_x=\|f\|_{L^1(\se^{d-1})}\lesssim\|f\|_{L^2(\se^{d-1})}\]
 		+ Riesz-Thorin because the sphere is compact
 	\item $q\geq\f{2d+2}{d-1}$ is the best possible for $L^2$ densities: Knapp counterexample.
