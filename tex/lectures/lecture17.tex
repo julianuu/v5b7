@@ -25,7 +25,7 @@ The restriction conjecture states that these conditions are also sufficient.
 	\[\|\wh k_j\|_{L^∞}\lesssim 2^j\]
 	$k_j=ϕ_{2^{-j}}\whσ$ implies $\wh k_j=ψ^{2^{-j}}*σ$ where $ψ^ε(x)=ε^{-d}ψ(ε^{-1}x)$ and $ψ=\whϕ∈S$. Now
 	\[|\wh k_j(ξ)|\lesssim_N2^{jd}∫_{\se^{d-1}}(1+2^j|ξ-η|)^{-N}\mdσ(η)\qquad∀N∈ℕ\]
-	Now let $D(x,r)=B(x,r)∩\se^{d-1}$. Then $σ(D(x,r))\lesssim r^{d-1}$. (Is this right?) So
+	Now let $D(x,r)=B(x,r)∩\se^{d-1}$. Then $σ(D(x,r))\lesssim r^{d-1}$. So
 	\begin{align*}
 		|\wh k_j(ξ)|&\lesssim2^{jd}∫_{D(ξ,2^{-j})}(1+2^j|ξ-η|)^{-N}\mdσ(η)\\
 		      &\qquad+\sum_{k\geq 0}∫_{D(ξ,2^{k+1-j})\sm D(ξ,2^{k-j})}(1+2^j|ξ-η|)^{-N}\mdσ(η)
@@ -50,7 +50,7 @@ then for
 \[\|T_K\|_{L^2→L^2}\leq\sqrt{AB}.\]
 \begin{proof}[Proof of the theorem]
 	Let $ϕ∈S(ℝ^d)$ be radial such that $ϕ\geq 1$ on the unit disc $\whϕ$ has compact support. $ϕ_ε(x):=ϕ(εx)$. Then
-	\[\|\wh{fν}\|_{L^2(D(0,R))}\leq\|ϕ_{R^{-1}}(x)\wh{fν}(-x)\|_{L^2_X(ℝ^d)}=\|\wh{ϕ_{R^{-1}}}*(fν)\|_{L^2(ℝ^d)}=\|∫_YR^d\whϕ(R(x-y))f(y)\mdν(y)\|_{L^2}\]
+	\[\|\wh{fν}\|_{L^2(D(0,R))}\leq\|ϕ_{R^{-1}}(x)\wh{fν}(-x)\|_{L^2_x(ℝ^d)}=\|\wh{ϕ_{R^{-1}}}*(fν)\|_{L^2(ℝ^d)}=\|∫_YR^d\whϕ(R(x-y))f(y)\mdν(y)\|_{L^2}\]
 	We have the estimates
 	\[∫_{ℝ^d}R^d\whϕ(R(x-y))|\md x=\|ϕ\|_{L^1}<∞\]
 	by change of variables.
@@ -69,7 +69,7 @@ Note, that the unit circle is a special case.
 	Step 1: 'Even integer' trick.
 	\[\|∫_Iφ(t)e^{iγ(t)ξ}\md t\|_{L^q_ξ(ℝ^2)}^2=∫_I∫_Iφ(t)\overline{φ(s)}e^{i(γ(t)-γ(s))ξ}\md t\md s\|_{L^{\f q2}(ℝ^2)}\]
 
-	Step 2: Change variables $I\times I→U⊂ℝ^2,\ (t,s)↦γ(t)-γ(s)=x$. Choose $I$ small enough such that the changle of variables is invertible with Jacobian $J=\det(\f{∂(t,s)}{∂x})$ satisfying $|J|\simeq|t-s|^{-1}$. Let $γ(t)=(x_1(t),x_2(t))$. Then
+	Step 2: Change variables $I\times I→U⊂ℝ^2,\ (t,s)↦γ(t)-γ(s)=x$. Choose $I$ small enough such that the change of variables is invertible with Jacobian $J=\det(\f{∂(t,s)}{∂x})$ satisfying $|J|\simeq|t-s|^{-1}$. Let $γ(t)=(x_1(t),x_2(t))$. Then
 	\[|\f{∂x}{∂(t,s)}|=|
 		\begin{pmatrix}
 			-x_1'(s)&-x_2'(s)\\x_1'(t)&x_2'(t)
