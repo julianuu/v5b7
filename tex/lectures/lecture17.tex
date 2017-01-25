@@ -50,7 +50,10 @@ then for
 \[\|T_K\|_{L^2→L^2}\leq\sqrt{AB}.\]
 \begin{proof}[Proof of the theorem]
 	Let $ϕ∈S(ℝ^d)$ be radial such that $ϕ\geq 1$ on the unit disc $\whϕ$ has compact support. $ϕ_ε(x):=ϕ(εx)$. Then
-	\[\|\wh{fν}\|_{L^2(D(0,R))}\leq\|ϕ_{R^{-1}}(x)\wh{fν}(-x)\|_{L^2_x(ℝ^d)}=\|\wh{ϕ_{R^{-1}}}*(fν)\|_{L^2(ℝ^d)}=\|∫_YR^d\whϕ(R(x-y))f(y)\mdν(y)\|_{L^2}\]
+	\begin{align*}
+		\|\wh{fν}\|_{L^2(D(0,R))}&\leq\|ϕ_{R^{-1}}(x)\wh{fν}(-x)\|_{L^2_x(ℝ^d)}=\|\wh{ϕ_{R^{-1}}}*(fν)\|_{L^2(ℝ^d)}\\
+					  &=\|∫_{R^d}\whϕ(R(x-y))f(y)\mdν(y)\|_{L^2}
+	\end{align*}
 	We have the estimates
 	\[∫_{ℝ^d}R^d\whϕ(R(x-y))|\md x=\|ϕ\|_{L^1}<∞\]
 	by change of variables.
