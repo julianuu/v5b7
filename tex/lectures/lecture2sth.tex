@@ -2,14 +2,14 @@
 \[\|\wh{fσ}\|_{L^q(ℝ^d)}\lesssim\|f\|_{L^2(\se^{d-1})}\]
 if $q\geq\f{2(d+1}{d-1}$.
 \begin{proof} decay
-	\[|\whσ(x)|\lessim(1+|x|)^{-\f{d-1}2}\qquad L^1→L^∞\]
+	\[|\whσ(x)|\lesssim(1+|x|)^{-\f{d-1}2}\qquad L^1→L^∞\]
 	dimensionality: \[σ(D(x,r))\simeq r^{d-1}\qquad L^2→L^2\]
 \end{proof}
 \paragraph{Restriction conjecture}
 \[\|\wh{fσ}\|_{L^x(ℝ^d)}\lesssim\|f\|_{L^∞(\se^{d-1})}\]
-if $q>\f{2d}{d-1}$, $R_{\se^{d-1}}^*(∞→q)$. Bourgain: Equivalent to $R_{\se^{d-1}}^*(q→q)$. Tao: $q>\f{2(d+2)d}$ beats Tomas-Stein (e.g.\ $d=3$ TS: $q\geq 4$, RC:$q>3$, $q>\f{10}3$)
+if $q>\f{2d}{d-1}$, $R_{\se^{d-1}}^*(∞→q)$. Bourgain: Equivalent to $R_{\se^{d-1}}^*(q→q)$. Tao: $q>\f{2(d+2)}d$ beats Tomas-Stein (e.g.\ $d=3$ TS: $q\geq 4$, RC:$q>3$, $q>\f{10}3$)
 
-\paragraph{Kakeya THeory}: How small can a Kakeya set be? Lebesque masure: 0 (Bescovitch 20's), Hausdorff dimension: $K⊂ℝ^d$ Kakeya $⇒\dim_H(K)=d$. (KC: true if $d=2$ (Davies 70's), open if $d\qeq 3$)
+\paragraph{Kakeya THeory}: How small can a Kakeya set be? Lebesque masure: 0 (Bescovitch 20's), Hausdorff dimension: $K⊂ℝ^d$ Kakeya $⇒\dim_H(K)=d$. (KC: true if $d=2$ (Davies 70's), open if $d\geq 3$)
 
 KMF\[f_δ^*(e)=\sup_{a∈ℝ^d}\dashint_{T_e^δ}|f|\] Goal: $∀ε\ ∃C_ε$:
 \[\|f_δ^*\|_{L^p(\se^{d-1})}\leq C_εδ^{-ε}\|f\|_{L^p(ℝ^d)}\]
@@ -30,9 +30,9 @@ Seen: RC $⇒$ KMFC $⇒$ KC, where the first was duality, randomized Knapp + Kh
 What about KC $⇒$ RC? Or KMFC $⇒$ RC? Unknown. Partial progress: Beat TS by using a (strong) Kakeya estimate.
 
 \begin{theo}[Bourgain '91] 
-	Suppose \[\|\sum_j1_{T_{e_j}^δ(a_j)}\|_{L^{q'}(ℝ^d)}\lessim_εδ^{-(\f dq-1+ε)}\]%1
+	Suppose \[\|\sum_j1_{T_{e_j}^δ(a_j)}\|_{L^{q'}(ℝ^d)}\lesssim_εδ^{-(\f dq-1+ε)}\]%1
 	holds $∀ε>0$, some fixed $q>2$. Then
-	\[\|\wh{fσ}\|_{L^p}\lessim\|f\|_{L^∞(\se^{d-1})}\|\]%2
+	\[\|\wh{fσ}\|_{L^p}\lesssim\|f\|_{L^∞(\se^{d-1})}\]%2
 	for some $p<\f{2(d+1)}{d-1}$.
 \end{theo}
 \begin{rem} (1) is equivalent to "Kakeya sets in $ℝ^d$ have Hausdorff dimension $\geq q$". Why? By duality, (1) is equivalent to \[\|f_δ^*\|_{L^q(\se^{d-1})}\lesssim_εδ^{-(\f dq-1+ε)}\|f\|_{L^q(ℝ^d)}.\]
@@ -50,7 +50,7 @@ What about KC $⇒$ RC? Or KMFC $⇒$ RC? Unknown. Partial progress: Beat TS by 
 	\[\|\wh{fσ}\|_{L^p(B(0,R))}\lesssim R^{\f2p-\f12}\|f\|_{L^2(\se^2)}.\]%3
 	if $2\leq p\leq 4$.
 
-	Upshot: Exponent $\f2p-\f12$ can be lowered if $\|f\|_{L^2}$ is replaced by $\|fu|_{L^∞}$.
+	Upshot: Exponent $\f2p-\f12$ can be lowered if $\|f\|_{L^2}$ is replaced by $\|f\|_{L^∞}$.
 
 	\begin{lem} $d=3,\ 2<p<4$, (1) holds for some $q>2$. Then
 		\[\|\wh{fσ}\|_{L^p(B(0,R))}\lesssim R^{α(p)}\|f\|_{L^∞(\se^2)}\]
@@ -71,19 +71,19 @@ What about KC $⇒$ RC? Or KMFC $⇒$ RC? Unknown. Partial progress: Beat TS by 
 			where sum is over $j$ such that $τ_j$ intersects $Q$.
 		\end{rem}
 		Using (3)
-		\[\|G\|_{L^p(Q)}\lesssim\sqtr R^{\f2p-\f12}\|\sum_{τ_j∩Q\neq\emptyset}f_j\|_{L^2(\se^2)}\lesssim\sqtr R^{\f2p-12}(N(Q)|S_j|)^{\f12}\simeqδ^{\f43-\f1p}δ^{\f12}N(Q)^{\f12}\]
+		\[\|G\|_{L^p(Q)}\lesssim\sqrt R^{\f2p-\f12}\|\sum_{τ_j∩Q\neq\emptyset}f_j\|_{L^2(\se^2)}\lesssim\sqrt R^{\f2p-12}(N(Q)|S_j|)^{\f12}\simeqδ^{\f43-\f1p}δ^{\f12}N(Q)^{\f12}\]
 		since
 		\[∫|\sum_jf_j|^2=\sum_j\sum_{j'}f_j\bar{f_{j'}}\lesssim\sum_j∫_{s_j}|f_j|^2\leq\sum_j|S_j|=|S_j|N(Q)\]
 		$δR=1,\ |S_j|=δ$.
 
 		Sum over $Q$:
-		\[\|G\|_{L^p(B(0,R))}^p\lesssimδ^{\f{3p}4-1}\sum_QN(Q)^{\f p2}\simeqδ^{\f{3p}4+\f2}\|\sum_j1_{τ_j}\|_{L^{\f p2}}^{\f p2}\]
+		\[\|G\|_{L^p(B(0,R))}^p\lesssimδ^{\f{3p}4-1}\sum_QN(Q)^{\f p2}\simeqδ^{\f{3p}4+\f p2}\|\sum_j1_{τ_j}\|_{L^{\f p2}}^{\f p2}\]
 		since
 		\[\|\sum_j1_{τ_j}\|_{L^{\f p2}}^{\f p2}=∫|\sum_j1_{τ_j}|^{\f p2}=\sum_Q∫_Q|\ub{\sum_j1_{τ_j}}_{\simeq N(Q)}|^{\f p2}\simeq\sum_QN(Q)^{\f p2}|Q|\]
 		and $|Q|=(δ^{-\f12})^3$.
 
 		Let $p=2q'$ (where $q'$ is the exponent in (1)). (1) implies
-		\[\|\sum_j1_{T_{e_j}^{\sqrtδ}(a_j)}\|_{L^{q'}}\lessim\sqtrδ^{-(\f3q-1+ε)}\]
+		\[\|\sum_j1_{T_{e_j}^{\sqrtδ}(a_j)}\|_{L^{q'}}\lesssim\sqrtδ^{-(\f3q-1+ε)}\]
 		Dilate this by $\f1δ$
 		\[\|\sum_j1_{τ_j}\|_{L^{q'}}\lesssim_ε\sqrtδ^{-(\f3q-1+ε)}δ^{-\f3{q'}}=δ^{-1-\f3p-ε}.\]
 		Altogether
@@ -92,11 +92,11 @@ What about KC $⇒$ RC? Or KMFC $⇒$ RC? Unknown. Partial progress: Beat TS by 
 		\[\|\wh{fσ}\|_{L^p(B(0,R))}\lesssim R^{\f1p-\f14+ε}\]
 		Done, because $\f1p-\f1l<\f2p-\f12⇔p<4$.
 	\end{proof}
+\end{proof}
+\paragraph{Decoupling theorems (for the Fourier transform)} (Bourgain-Demeter '15)
 
-	\paragraph{Decoupling theorems (for the Fourier transform)} (Bourgain-Demeter '15)
-	
-	E.g.: Let $S$ be a compact $C^2$ hypersurface in $ℝ^d$ with positive definite $II$ (i.e.\ all principal curvatures are $>0$). Let $N_δ$ be a $δ$ neighborhood of $S$ and $f:\supp(\wh f)⊂N_δ$.
+E.g.: Let $S$ be a compact $C^2$ hypersurface in $ℝ^d$ with positive definite $II$ (i.e.\ all principal curvatures are $>0$). Let $N_δ$ be a $δ$ neighborhood of $S$ and $f:\supp(\wh f)⊂N_δ$.
 
-	Let $θ$ ba a portion of $N_δ$ with angle $\sqrtδ$, $θ∈P_δ$ a finite overlappinf cover of $N_δ(S)$. Let $\wh f_θ=\wh f1_θ$. Then
-	\[\|f\|_{L^p}\lesssim_εδ^{-\f{d-1}4+\f{d+1}{2p}-ε}(\sum_{θ∈P_δ}\|f_θ\|_{L^p}^2)^{\f12}\]
-	for all $p\geq\f{2(d+1}{d-1}$.
+Let $θ$ ba a portion of $N_δ$ with angle $\sqrtδ$, $θ∈P_δ$ a finite overlappinf cover of $N_δ(S)$. Let $\wh f_θ=\wh f1_θ$. Then
+\[\|f\|_{L^p}\lesssim_εδ^{-\f{d-1}4+\f{d+1}{2p}-ε}(\sum_{θ∈P_δ}\|f_θ\|_{L^p}^2)^{\f12}\]
+for all $p\geq\f{2(d+1}{d-1}$.

@@ -1,0 +1,86 @@
+\paragraph{The joints problem in $ℝ^n$} (after R.\ Quilodran)
+
+$d=2$ intersections of lines
+
+$q\geq 3$: $L=$ set of lines. $J=$ set of points that can be written as $\bigcap_{i=1}^dl_i,\ l_i∈L$ and the directions of lines ar linearly independent.
+
+in $d=2$, $N\sim N^2$: In a lattice set $L⇒|L|\sim N,\ |J|\sim N^2$. In general $|J|\lesssim|L|^2$. The lattice case generalizes to higher dimensions, where in each direction/hyperplane we take $N^{\f1{d-1}}$ lines. Then $|L|\simeq N$ and $|J|\sim N^{\f d{d-1}}$.
+
+Conjecture (solved '09): $d\geq 3$: \[|J|\lesssim|L|^{\f d{d-1}}.\]
+\begin{itemize}
+	\item For $d=3$, Guth and Katz solved in 2009.
+	\item For general $d\geq 3$, Quilodran solved in 2009.
+\end{itemize}
+
+\begin{theo}[Joints theorem]
+	$L,J$ as above:
+	\[|J|\lesssim|L|^{\f d{d-1}}\]
+\end{theo}
+Need:
+\begin{enumerate}
+	\item (FTA): $p:ℝ→ℂ$ polynomial with $\deg(P)\leq m$, $p$ has more than $m$ roots then $p=0$.
+	\item $A$ finite, $A⊂ℝ^d⇒∃$ polynomial $q$ of degree $\sim |A|^{\f1d}$ such that $Q|_A=0$.
+\end{enumerate}
+($\dim\langle \tx{poly of degree $\leq k$ in $ℝ^d$}\rangle =\binom{d+k}k\sim k^d$)
+\begin{proof}
+	\begin{lem}[1] Let $J'$ be a subset of $J$ such that $∀l∈L$ with $l∩J'\neq\emptyset⇒|l∩J'|\geq m⇒|J'|\leq c_nm^n$, where $c_n$ depends only on $n$.
+	\end{lem}
+	\begin{proof} Suppose not. Then $∀k\geq 1∈L,J\supset J$ such that $|J'|\leq\f{m^n}k$. Pick a polynomail $Q∈ℝ[x_1,…,x_n]$ such that $Q|_{J'}=0$. We can take then $\deg(Q)\leq c(n)|J'|^{\f1n}\f{c(n)}{k^{\f1n}}m<m$. so choose $k$. $∀l_i$, that intersects $J'⇒Q|_{l_i}=0$. $l_i\sim$ equation $(a_v+tv_i)$. $Q(a_i+tv_i)=0$ differentiate in $t$
+		\[∇Qv_i(a_i+tv_i)=0⇒∇Q(a_i+tv_i)=0\]
+		By reiterating
+		\[\f{∂^αQ}{∂x^α}|_{l_i}=0⇒\f{∂^αQ}{∂x^α}|_{J'}=0⇒Q=0,\]
+		contradiction.
+	\end{proof}
+	Now set $m=D|J|^{\f1n}$, where $D^nC_n>1$.
+	\begin{itemize}
+		\item $L^{(0)}=L,\ J^{(0)}=J$;
+		\item Assume $L^{(i)}$ and $J^{(i)}$ are defined. If $∀l_i∈L^{(i)}$ such that $l_i∩J^{(i)}\geq m$ then $|J|\geq|J^{(i)}|\geq c_nm^n=D^nC_n|J|>|J|$, contradiction. Therefore there exists one with $|l_i∩J^{(i)}|<m$.
+
+			Take $l_i$ away from $L^{(i)}$, this new set is $L^{(i+1)}$, $J^{(i+1)}$ set of its joints. 
+	\end{itemize}
+	In particular: $|J^{(i)}|\leq|J^{(i+1)}|+m$. Notice $i\geq|L|-(n-1)⇒|J^{(i)}|=0$. Iterating $|J|\leq m(|L|-(n-1))\leq m|L|=D|J|^{\f1m}|L|$. This is equivalent to $|J|\leq D^{\f n{n-1}}|L|^{\f n{n-1}}$ wher $D^{\f n{n-1}}\sim C_n$.
+\end{proof}
+
+\paragraph{The $l^2$ decoupling theorem} (Intoduction after C.\ Demeter and J.\ Bourgain)
+
+Setting: $P^1⊂ℝ^2$. $P^1=\{(ξ,ξ^2):|ξ|\leq\f12\}$. $N_δ=\{(ξ,ξ^2+η):|ξ|\leq\f12,\ |η|\leq2δ\}$. $C_θ=c+[-\f{δ^{\f12}}2,\f{δ^{\f12}}2],\ c∈\f{δ^{\f12}}2ℤ∩[-\f12,\f12]]$. Let $P_δ$ be a cover of $[-\f12,\f12]$ with overlap s.t\ every point is at most in two intervals, set of those $θ$. $v_θ$ normal it $θ$. $T(θ)$ tube in direction $v_θ$ of length $δ^{-1}$ and width $δ^{-\f12}$. Let $f$ be such that $\supp(\wh f)⊂N_δ$. Then let
+\[f_θ=(\wh f1_θ\check)\]
+for sure
+\[f=\f12\sum_{θ∈P_δ}f_θ\]
+\begin{theo}[$l^2$ decoupling '14]
+	Let $f$ such that $\supp(\wh f)⊂N_δ$. Let $p=6,ε>0$. Then
+	\[\|f\|_{L^p(ℝ^2)}\lesssim_εδ^{-ε}(\sum_{θ∈P_δ}\|f_θ\|_{L^p(ℝ^2)}^2)^{\f12}\]
+\end{theo}
+Notes:
+\begin{enumerate}
+	\item The exponent is ($ε-$-)optimal (randomized Knapp). ($p>6⇒$ similar inequality holds with $δ^{-\f14+\f3{2p}-ε}$ instead of $δ^{-ε}$)
+	\item Does not hold for $p<2$. ($f_θ=g_θ(:+c_θ)$, $\supp(\wh{g_θ})\leqθ$, $\{c_θ\}$ far away from each other.)
+	\item Let \[\|f\|_{p,δ}=(\sum_{θ∈P_δ}\|f_θ\|_{L^p(ℝ^2)}^2)^{\f12}.\]
+		(It is a norm?) It has the following properties:
+		\begin{enumerate}
+			\item Minkowski ($p\geq2$)
+			\item (Plancherel) $\|f\|_2\sim\|f\|_{2,δ}$.
+				\begin{proof}
+					\[\sum_{θ∈P_δ}\|f_θ\|_{L^2(ℝ^2)}^2=\sum_{θ∈P_δ}\|\wh{f_θ}\|_{L^2(ℝ^2)}^2=\sum_{θ∈P_δ}\|\wh f1_θ\|_{L^2}^2=∫(\sum_{θ∈P_δ}1_θ)|\wh f|^2=2∫_{ℝ^2}|\wh f|^2=2\|f\|_2^2\]
+				\end{proof}
+			\item \[\|f\|_{p,δ}\leq \|f\|_{2,δ}^{\f2p}\|f\|_{∞,δ}^{1-\f2p}\]
+				\begin{proof}
+					\[(\sum_{θ∈P_δ}\|f_θ\|_{L^p}^2)^{\f12}\leq(\sum_{θ∈P_δ}(\|f_θ\|_{L^2}^{\f2p}\|f\|_{L^∞}^{1-\f2p})^2)^{\f12}\leq(\sum_{θ∈P_δ}\|f_θ\|_{L^2}^2)^{\f1p}(\sum_{θ∈P_δ}\|f\|_{L^∞}^2)^{\f{1-2p}2}\]
+				\end{proof}
+			\item We obtain a decoupling theorem for $2\leq p<6$! ($f$, s.t.\ $\supp{\wh f}⊂N_δ,\ 2<p<6,\ ε>0$) \[\|f\|_{L^p(ℝ^2)}\lesssim_εδ^{-ε}(\sum_{θ∈P_δ}\|f_θ\|_{L^p(ℝ^2)}^2)^{\f12}\]
+				\[\|f\|_{L^p(ℝ^2)}\leq K_p(δ)(\sum_{θ∈P_δ}\|f_θ\|_{L^p(ℝ^2)}^2)^{\f12}\]
+				\[\|f\|_{L^p(B_{δ^{-1}})}\leq K^{(1)}(Δ)(\sum_{θ∈P_δ}\|f_θ\|_{L^p(ℝ^2)}^2)^{\f12}\]
+				Let $w\geq 0$ such that $1_{B(0,1)}\lesssim w\lesssim(1+|x|)^{-20},\ w_{B_R}(x)=w(\f{x-C_{B_R}}R)$
+				(Show that $w$ can be taken with $\supp(\wh w)⊂B(0,1)$)
+				\[\|f\|_{L^p(w_{B_{δ^{-1}}})}\leq K^{(2)}_p(δ)(\sum_{θ∈P_δ}\|f_θ\|_{L^p(w_{B_{δ^{-1}}})}^2)^{\f12}\]
+				Let $\mdσ$ be the projection measure on $P^1$, $g:[-\f12,\f12]→ℂ$ \[\|\wh{g\mdσ}\|_{L^p(w_{B_{δ^{-1}}})}\leq K^{(3)}_p(δ)(\sum_{θ∈P_δ}\|\wh{g_θ\mdσ}\|_{L^p(w_{B_{δ^{-1}}})})^{\f12}.\]
+				\[K_p(δ)\sim K_p^{(1)}\sim K_p^{(2)}\sim K_p^{(3)}\]
+				(exercise) (\[\|f\|_{L^p(B_{δ^{-1}})}\leq\|f\|_{L^2(B_{δ^{-1}})}\|f\|_{L^6(B_{δ^{-1}})}^{1-θ}\lesssim_εδ^{-ε}\|f\|_{2,δ}^θ\|f\|_{6,δ}\]
+				now we substitute the first guy by $L^2(w_{B^{δ^{-1}}})$, similarly the second and get
+				\[\lesssim_εδ^{-ε}\|f\|_{2,δ}^θ\|f\|_{6,δ}^{1-θ}\]
+				Baernstein's: $\supp(\wh g)⊂B(0,R),\ q\geq p\geq 1$. Then
+				\[\|g\|_q\leq R^{n\f1p-\f1q)}\|g\|_p\]
+				Now we use Hölder in the first and Baernstein in the second term and get
+				\[\lesssim_εδ^{-ε}\|f\|_{p,δ}\]
+		\end{enumerate}
+\end{enumerate}
