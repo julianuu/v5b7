@@ -1,0 +1,92 @@
+\paragraph{The $l^2$ decoupling theorem} (after J.\ Bourgain nd C.\ Demeter)
+\begin{theo}[$l^2$ decoupling] $f$ with $\supp(\wh f)⊂N_δ$, $p\geq 6$. Then $∀ε>0$
+	\[\|f\|_{L^p(ℝ^2)}\lesssim_εδ^{-\f14+\f3{2p}-ε}(\sum_{θ∈P_δ}\|f_θ\|_{L^p(ℝ^2)}^2)^{\f12}=:\|f\|_{p,δ}\]
+\end{theo}
+Last class: If we heve the $L^6$ theorem then wa have a $L^p$ theorem for $2\leq p\leq 6$. (e.g\ "$\sim$" for $p=2$)
+
+\begin{theo}[Bernstein's (Nikolsky) inequality] $f$, s.t.\ $\supp(\wh f)⊂D(0,R),\ 1\leq p\leq q\leq∞$. Then
+\[\|f\|_{L^q(ℝ^2)}\lesssim R^{2(\f1p-\f1q)}\|f\|_{L^p(ℝ^2)}\]
+\end{theo}
+\begin{proof}
+	\begin{itemize}
+		\item We can assume $R=1$.
+		\item Take $χ\geq 0,\ ∈C_c^∞(ℝ^2)$ and $χ|_{D(0,1)}=1$. Then $\wh f=χ\wh f$ i.e.\ $f=\check χ*f$. Now
+		\item \[\|f\|_{L^q(ℝ^2)}=\|\checkχ*f\|_{L^q(ℝ^2)}\lq\|\checkχ\|_{L^r}\|f\|_{L^p}\leq\|\checkχ\|_{L^1}^θ\|\checkχ\|_{L^∞}^{1-θ}\|f\|_{L^p}\leq\max\{\|\checkχ\|_{L^1}\|\checkχ\|_{L^∞}\}\|f\|_{L^p}\]
+	\end{itemize}
+\end{proof}
+
+Let $K_p(δ)$ be the optimal constant in the decoupling theorem.
+\paragraph{Parabolic Rescaling:} Let $0\leq δ\leq σ<1$ and $τ⊂[-\f12,\f12],\ |τ|=σ^{\f12}$.
+\[\|f_τ\|_{L^p(ℝ^2)}\lesssim K_p(\fδσ)(\sum_{θ∈P_δ,\ θ∩τ\neq\emptyset}\|f_θ\|_{L^p(ℝ^2)}^2)^{\f12}\]
+
+\paragraph{Multilinear decoupling} 
+\begin{itemize}
+	\item Let $w$ be the weight that appeared last class. Then
+		\[\|\wh{g\mdσ}\|_{L^p(w_{B_{δ^{-1}}})}\lesssim K_p(δ)(\sum_{θ∈P_δ}\|\wh{g_θ\md σ}\|_{L^p(w_{B_{δ^{-1}}})})^{\f12}=:\|g\|_{p,δ,B_{δ^{-1}}}\]
+	\item Call $τ_1,τ_2$ caps in $P^1$ $ν$-transverse if $|N(τ_2)∧N(τ_2)|\geqν$. ($τ_1,τ_2$ are $ν$-transverse iff $d(C_{τ_1},C_{τ_2})\gtrsimν$)
+		\paragraph{Multilinear decoupling inequality}: Let $τ_1,τ_2$ be $ν$-transverse caps. Then
+		\[\||\wh{g_{τ_1}\mdσ}|^{\f12}|\wh{g_{τ_2}\mdσ}|^{\f12}\|_{L^p(B_{δ^{-1}})}\lesssim c_(δ,ν)\|g_{τ_1}\|_{p,δ,B_{δ^{-1}}}^{\f2}\|g_{τ_2}\|_{p,δ,B_{δ^{-1}}}^{\f12}\]
+	\item By Hölder
+		\[\||\wh{g_{τ_1}\mdσ}|^{\f12}|\wh{g_{τ_2}}|^{\f12}\|_{L^p(B_{δ^{-1}})}\leq\|\wh{g_{τ_1}\mdσ}\|_{L^p(B_{δ^{-1}})}\|\wh{g_{τ_1}\mdσ}\|_{L^p(B_{δ^{-1}})}\lesssim K_p(δ)\|g_{τ_1}\|_{p,δ,B_{δ^{-1}}}^{\f12}\|g_{τ_2}\|_{p,δ,B_{δ^{-1}}}^{\f12}\]
+		Therefore \[c_p(δ,ν)\lesssim K_p(δ).\]
+\end{itemize}
+\begin{theo}[Comparison L-ML] For every $ν∈(0,1]$ there is an $ε(ν)$ such that $\lim_{ν→0}ε(ν)=0$ there is a $C_ν>0$ such that
+	\[K_p(δ)\leq c_νδ^{-ε(ν)}c_p(δ,ν)\]
+	The $δ$ is not present for $n=2$.
+\end{theo}
+J.\ Hickmann (U. Chicago), M.\ Vitturi (Nantes) have lecture notes about equivalences between decoupling and Kakeya
+\begin{itemize}
+	\item By rescaling with scale $δ$ $K_p(δ)\lesssim K_p(δ^{\f12})^2$. Hence there exists
+		\[γ=\liminf_{δ→*}\f{\log K_p(δ)}{\log(δ^{-1})}<∞\]
+		($δ^{-γ}\lesssim K_p(δ)\lesssim_εδ^{-ε-γ}$) (exercise)
+
+		$γ=\f14-\f3{2p}+α$ ($p>6$, fixed) we want $α=0$.
+\end{itemize}
+Tool: (M.\ R.\ I.) (Bennet, Carbery, Tao)  $τ_1,τ_2$ $ν$-transversal. $f_1,f_2$ s.t.\ $\supp(\wh{f_i})⊂N_{N^{-1}}_δ(τ_i)$. Then
+\[\||f_1|^{\f12}|f_2|^{\f12}\|_{L^4(B_N)}\lesssim_{ε,ν}N^{-\f12+ε}\|f_1\|_2^{\f12}\|f_1\|_2^{\f12}\]
+
+Claim: We have alread a decoupling for $2\leq p\leq 4$! ($\leq\f{2n}{n-1}$) That is, $K_p(δ)\lesssim_εδ^{-ε}$.
+\[\|f_1\|_{L^2(B_N)}\sim\|f_i\|_{L^{2,δ}(B_N)}\lesssimN^{\f12}\|f_i\|_{L^{4,δ}(B_N)}\]
+hence \[\||f_1|^{\f12}|f_2|^{\f12}\|_{L^4(B_N)}\lesssim_εN^ε\|f_1\|_{L^{4,δ}(B_N)}^{\f12}\|f_2\|_{L^{4,δ}(B_N)}^{\f12}\]
+hence
+\[C_q(δ,ν)\lesssim_{ε,ν}δ^{-ε}\]
+and
+\[K_4(δ)\lesssim_εδ^{-ε}\]
+and then Interpolation (Bernstein?)
+
+New ingredient 1: (Rough Interpolation of $\|\cdot\|_{p,δ}$ norms) Let $p\geq 4$, $f_1,f_2$ as before (i.e.\ $\supp(\wh{f_i})⊂V_{N^{-1}}(τ_1)$), $τ_1,T_2$ $ν$-transversal. Then
+\[\||f_1|^{\f12}|f_2|^{\f12}\|_{L^p(B_N)}\lesssim_{ε,ν}N^{\f1n-\f3p+ε}\|f_1\|_{L^{\f p2,δ}}^{\f12}\|f_2\|_{L^{\f p2,δ}}^{\f12}\]
+Note:
+\begin{itemize}
+	\item This generalizes the M.\ R.\ I.\ for $p\geq 4$!
+	\item \[\|(\sum_{θ∈P_δ}|f_{1,θ}|^2)^{\f12}(\sum_{θ∈P_δ}|f_{2,θ}|^2)^{\f12}\|_{L^p(B_N)}\lesssim_{ε,ν}N^{-\f2p+ε}\|f_1\|_{L^{\f p2,δ}}^{\f12}\|f_2\|_{L^{\f p2,δ}}^{\f12}\]
+	\item \[\|\wh{g\mdσ}\|_{p,δ,B}=(\sum_{θ∈P_δ}\|\wh{g_θ\mdσ}\|_{L^p(w_B)})^{\f12}\]
+		(Fix $p>4$)
+	\item $ξ=\f2{p-2},\ η=\f{p-6}{p(p-2)}$.
+	\item \[\||\wh{g_{τ_1}\mdσ}|^{\f12}|\wh{g_{τ_2}\mdσ}|^{\f12}\|_{L^p(B_N)}\lesssim_εA_β(N)N^ε(\|\wh{g_{τ_1}\mdσ}\|_{p,δ,B_N}^{\f12}\|\wh{g_{τ_2}\mdσ}\|_{p,δ,B_N}^{\f12})^{1-β}(\|\wh{g_{τ_1}\mdσ}\|_{\f p2,δ,B_N}^{\f12}\|\wh{g_{τ_2}\mdσ}\|_{\f p2,δ,B_N}^{\f12})^β\]
+		\begin{pro}
+			\begin{enumerate}
+				\item For $β=1$ $A_1(N)=N^{\f1n-\f3p}$
+				\item If it holds for $β∈(0,1]$, then
+					\[A_{βξ}(N)=A_β(N^{\f12})N^{βη+\fγ2(1-βξ)}\]
+			\end{enumerate}
+		\end{pro}
+	\item Step 1: $α>0$ is equivalent to
+		\[γ\f{1-ξ}{1-2ξ}λ\f14-\f3p+\f{2η}{1-2ξ}\]
+		So chose $s_0∈ℕ$ and $ε_0>0$
+		\[γ(\f{1-ξ}{1-2ξ}-\f{ξ(2ξ)^{s_0}}{1-2ξ})>\f14-\f3p+2^{s_0}ε_0+\f{2η}{1-ξ}(1-(2ξ)^{s_0})+\f2p(2ξ)^{s_0}\]
+
+		Step 2 Choose $ν_0>0$ such that $ε(ν_0)<ε_0$.
+
+		3 $A_{ξ^s}(N)=N^{ψ(ξ^δ)},\ ψ(ξ^{δ+1})=\f12ψ(ξ^δ)+\fγ2(1-ξ^{s+1})+ηϕ^s$. By iterating
+		\[ψ(ξ^s)=\f{ψ(1)}{2^s}+γ(1-2^{-s})+2(\fηξ-\fγ2)\f{2^{-s}-ξ^{-s}}{ξ^{-1}-2}\]
+
+		4. \[\|\wh{g_{τ_1}\mdσ}\|_{\f p2,δ,B_N}\lesssim N^{\f2p}\|\wh{g_{τ_1}\mdσ}\|_{p,δ,B_N}\]
+		hence with $N=δ^{-1}$ \[C_p(δ,ν)\lesssim_εδ^{-ε}A_{ξ^s}(δ^{-1})δ^{-\f{2ξ^s}p}\]
+		and
+		\[K_p(δ)\lesssim_εδδ^{-ε_0}δ^{-ε}δ^{-\f{2ξ^{s_0}}p}δ^{-ψ(ξ^{s_0})}\]
+		and letting $δ→0$ \[γ-ε_0\leqψ(ξ^{s_0})+\f{2ξ^{s_0}}p\]
+
+		($ψ(1)=\f14-\f3p$) and then contradict something, then contradicting $α>0$. Then $p=6$ is done, for $p>6$ interpolate
+		\[\|f\|_{L^6(B_N)}\lesssim N\|f\|_{L^q(B_N)}\leq NN^ε\|f\|_{L^{q,N^{-1}}}\]
+\end{itemize}
