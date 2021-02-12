@@ -1,0 +1,97 @@
+\paragraph{Sphere packing problem}
+What is the largest fraction of $ℝ^d$ that can be covered by a collection of congruent balls with disjoint interiors?
+sphere packing $\P⊂ℝ^d$. THe upper density is
+\[\limsup_{r→∞}\f{|B_r^d(0)∩\P|}{|B_r^d(0)|}\]
+sphere packing density $Δ_{ℝ^d}$ is the sup over all upper densities.
+
+Groemer: there exists an optimal sphere packing. Find it!
+
+$d=1$ $\checkmark$
+
+$d=2$: Thue (1910) Hexagonal lattice: put balls in the cenetrs of the hexagons that touch the hexagons from the inside. This is the best possible.
+\[Δ_{ℝ^2}=\fπ{2\sqrt 3}\approx 0.09…\]
+(square lattice is worse, $\fπ4\approx 0.79…$.)
+
+$d=3$ Kepler's problem. Hales (2005), Hales et al.\ (2015): Face-centered cubic packing is the best possible.
+
+$d=8$ M.\ Viasovska (2016)
+
+$d=24$
+
+Why $d=8$ special?
+
+Lower bounds: $Δ_{ℝ^d}\geq2^{-d}$. Covering argument
+
+\paragraph{Lattices and periodic packings} Lattice in $ℝ^d$ is the image of $ℤ^d$ under invariant linear transformation. Sphere packing $\P$ is periodic if there exists a lattice $Λ$ such that $\P$ is invariant under translation by every element of $Λ$. A lattice packing is a periodic packing in which the spheres form a single orbit under the translation symmetry group. 
+
+lattice packings $⊂$ periodic packings, and those come arbitrarily close to $Δ_{ℝ^d}$.
+
+Let $Λ$ be a lattice with basis $v_1,…,v_d$ fundamental cell of $Λ$ with respect to this basis
+\[C=\{x_1v_1+…+x_dv_d:0\leq x_1<1,\ 1\leq i\leq d\}\]
+Take balls $B_r^d$ where $r=\f12$ length of shortest nonzero vector in $Λ$. The density of $Λ$ then is
+\[\f{|B_r^d|}{|C|}=\f{\f{π^{\f d2}}{(\f d2!}r^d}{|\det(v_1,…,v_d)|}\]
+where the denominator is $\vol(\f{ℝ^d}Λ)$
+The density of a periodic packing is
+\[\f{N|B_r^d|}{\vol(\f{ℝ^d}Λ)}\]
+
+$E_8$ lattice ($⊂ℝ^8$) $v_1,v_2,…,v_8∈ℝ^8$. Dynkin diagram (linking consecutive numbers and 3 and 5)
+
+For $i\neq j$
+\[\langle v_i,v_j\rangle =
+	\begin{cases}
+		-1 &\tx{if nodes $i,j$ are linked by an edge}\\
+		0
+	\end{cases}
+\]
+$\|v_i\|^2=2$. $G=(\langle v_i,v_j\rangle)_{i,j=1}^8$. $\det(G-tI)\approx t^8-t^7+t^6-t^5+t^4-t^3+t^2-t^1$ has no roots when $t<0$ because every term is the positive. Why is $E_8$ so special? It is integral (all inner products between vectors in $E_8$ are integers), integral (squared length of every vector is an even integer
+\[|\sum_{j=1}^8m_jv_j|^2=2\sum_{j=1}^8m_j^2+\sum_{i\neq j}2m_im_j\langle v_i,v_j\rangle\] only distances $(\sqrt{2k})_{k=1,2,3,…}$ appear as distances in the lattice),
+unimodular ($\def(G)=1=\vol(\f{ℝ^d}Λ)^2$), self dual ($E_8=E_8^*$), where
+\[Λ^*=\{y∈ℝ^d:\langle x,y\rangle∈ℤ,\ ∀x∈Λ\}\], $v_1,…,v_d$ basis of $Λ$, $v_j^*(v_i)=δ_{ij}$.
+
+\begin{lem} 
+	If $Λ$ is integral and unimodular then $Λ$ is self dual.
+\end{lem}
+\begin{proof}
+	$Λ$ integral $⇔Λ⊂Λ^*$. $Λ$ is unimodular
+	\[[Λ^*:Λ]=\f{\vol(\f{ℝ^d}Λ)}{\vol(\f{ℝ^d}Λ)}=\vol(\f{ℝ^d}Λ)^2=1\]
+	and is the unique such lattice in $ℝ^8$!
+\end{proof}
+
+Fourier analysis: Cohn-Elkies (2003): Linear programming bounds
+\[\wh f(y)=∫_{ℝ^d}f(x)e^{-2πixy}\md x\]
+$f,\wh f∈L^1(ℝ^d)$ then
+\[f(x)=∫_{ℝ^d}\wh f(y)e^{2πixy}\md y\]
+\[\wh{τ_tf}=e^{2πit\cdot}\wh f\]
+Poisson summation:
+\[(Pf)(x)=\sum_{m∈ℤ^d}f(x+m)∈L^1(Π=[-\f12,\f12]^d)\]
+\[\|Pf\|_{L^1(Π^d)}\leq\|fu|_{L^1(ℝ^d)}\]
+\[\wh{Pf}(k)=\sum_m∫_{[-\f12,\f12]^d}f(x+m)e^{-2πik}\md x=\sum_m∫_{m+[-\f12,\f12]^d}\ub{e^{2πikm}_1\md y=\wh f(k)\]
+	\[(Pf)(x)=\sum_{k∈ℤ^d}\wh{Pf}(k)e^{2πikx}\]
+	\[\sum_{m∈ℤ^d}f(x+m)=\sum_{k∈ℤ^d}\wh f(k)e^{2πikx}\]
+	at $x=0$
+	\[\sum_{m∈ℤ^d}f(m)=\sumv{k∈ℤ^d}\wh f(k)\]
+	In a lattice $Λ$,
+	\[\sumv{x∈Λ}f(x)=\f1{\vol(\f{ℝ^d}Λ)}\sum_{y∈Λ^*}\wh f(y)\]
+	because
+	\[\sum_{x∈Λ}f(x+t)=\f1{\vol(\f{ℝ^d}Λ)}\sum_{y∈Λ^*}\wh f(y)e^{2πiyt}\]
+	\begin{theo} Let $r>9$ and $f:ℝ^d→ℝ$ Schwartz such that $f(0)=\wh f(0)>0,\ \wh f(y)\geq 0\ (∀y∈ℝ^d),\ f(x)\leq 0,\ (∀|x|\geq r)$. Then \[∇_{ℝ^d}\leq\vol(B_{\f r2}^d)\]
+	\end{theo}
+	\begin{proof} Step 1: Lattice packings. $Λ⊂ℝ^d$ lattice. Then its density is $\f{\vol(B_{\f r2}^d)}{\vol(\f{ℝ^d}Λ)}$ with $r$ minimal length in $Λ$. Wts $\vol(\f{ℝ^d}Λ)\geq 1$. Poisson implies
+		\[f(0)\geq\sum_{x∈Λ}f(x)=\f1{\vol(\f{ℝ^d}Λ)}\sum_{y∈Λ^*}\wh f(y)\geq\f{\wh f(0)}{\vol(\f{ℝ^d}Λ)},\] done.
+
+		Step 2: periodic packings. Density $\f{N\vol(\f{ℝ^d}Λ)}{\vol(\f{ℝ^d}Λ)}$, wts $\vol(\f{ℝ^d}Λ)\geq N$: Poisson implies
+		\[Nf(0)\sum_{j,k=1}^N\sum_{x∈Λ}f(t_j-t_k+)=\f1{\vol(\f{ℝ^d}Λ)}\sum_{y∈Λ^*}\wh f(y)|\sum_{j=1}^Ne^{2πiyt_j}|^2\geq\f{N^2\wh f(0)}{\vol(\f{ℝ^d}Λ)}\]
+		Step 3: Approximate.
+	\end{proof}
+	\begin{itemize}
+		\item Equality iff $f$ vanishes of $Λ\setminus 0$ and $\wh f$ vanishes on $Λ^*\setminus 0$.
+		\item wlog $f,\wh f$ are radially symmetric.
+		\item $f=\f{f+\wh f}2+\f{f-\wh f}2=:f_++f_-$. Then $\wh f_+=f_+$ and $\wh f_-=-f_-$.
+	\end{itemize}
+	Goel: Construct radial (Schwartz) eigenfunctions of the Fourier transform with prescribed roots (at $\sqrt 2,\sqrt 4,\sqrt 6,\sqrt8,…$). "The sphere packing problem in dimension 8" Annals of Math (2016)
+
+	$f(x)=e^{-π|x|^2}$ satisfies $f=\wh f$.
+	\[f()=∫_0^∞e^{-π|x|^2t}g(t)\md t\]
+	\[\wh f(y)>∫_{ℝ^d}∫_0^∞e^{-π|x|^2tg(t)\md te^{-2πixy}\md x=∫_0^∞g(t)t^{-\f d2}e^{-\f{π|y|^2}t}\md t=∫_0^∞g(\f1t)t^{\f d2}e^{-π|y|^2t}\f{\md t}{t^2}\]
+		if 
+		\[g(t)=t^{\f d2-2}g(\f1t)\] + Analytic number theory… (modular forms: Theta series, Eisenstein "series" …)
